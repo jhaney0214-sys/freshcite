@@ -42,16 +42,16 @@ does not belong to the figure. Every article was read. The whole report is in
 | Economy of Moldova | poverty rate "26.8% (2020)" | 31.6% in 2023 |
 | Jamaica and the World Bank | GNI per capita "$4,990 (2018)" | that is the 2016 value; 2018 was 5,610 |
 
-**How often it is right.** A random sample of 40 findings, drawn from articles
-the rules had not been tuned on, was checked by hand: **37 were right, 3
-wrong** (about 92%). The three were three patterns: an age read as a
-statistic ("under the age of 15"), a dated sentence whose year sat past a
-second figure, and a change "from 12.07 to 10.9" read as a current value.
-All three are fixed, and so is a fourth pattern found by reading the report,
-a male/female breakdown judged on the wrong figure. One of those fixes also
-silenced a correct finding in the sample. **The fixed rules have not been
-re-measured on a fresh sample**, so 92% is the measured figure, not the
-current one.
+**How often it is right.** A fresh random sample of 40 findings, re-scanned live
+on 2026-09-26 and drawn from articles that are not test fixtures, was checked by
+hand: **33 right, 7 wrong (82.5%)**. That is the current rules' measured
+accuracy. The 92% measured earlier was on the rules before their last fixes.
+The seven wrong ones, one line each, are in
+[`reports/2026-09-26-accuracy-sample.md`](reports/2026-09-26-accuracy-sample.md).
+Two patterns account for three of them: an article about a historical state
+(the Ukrainian SSR) held to the modern country's latest value, and a figure
+rounded to match an old year when the latest value rounds to it too. A sex
+breakdown and an exchange rate each got past a rule meant to stop them.
 
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
