@@ -235,6 +235,10 @@ FIGURE = re.compile(
     r"(?P<number>\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)"
     r"(?:\s?(?P<unit>%|(?:per\s?cent|percent|thousand|million|mn|billion|bn|trillion)\b))?",
     re.I)
+#: "under the age of 15": an age, not the statistic. Found in the unseen sample.
+AGE = re.compile(r"\bage[ds]?\s+(?:of\s+)?(?:under\s+|over\s+)?$", re.I)
+#: "decreased from 12.07 to 10.9": a change over a period, true of that period.
+CHANGE = re.compile(r"\bfrom\s+\S*\d[\d.,]*\S*\s+(?:\S+\s+){0,6}?to\s+\S*\d", re.I)
 BOUND = re.compile(r"(?:exceed(?:s|ed|ing)?|over|more than|above|under|below|less than|fewer than|"
                    r"greater than|at least|at most|up to|nearly|almost)\s*(?:US\$|\$)?\s*$", re.I)
 APPROXIMATE = re.compile(r"(?:about|around|approximately|roughly|circa|some|an estimated|estimated)"
@@ -317,6 +321,8 @@ def figures(text):
         scale = MULTIPLIERS.get(unit_key, 1.0)
         tolerance = 0.5 * 10 ** (trailing - decimals) * scale
         before = text[max(0, match.start() - 25):match.start()]
+        if AGE.search(before) or re.match(r"\s*(?:years?[ -]old|-year-olds?)\b", text[match.end():], re.I):
+            continue
         found.append(Figure(match.group(0).strip(), value * scale, tolerance,
                             match.start(), decimals, grouped, unit_key or None,
                             significant, bool(BOUND.search(before)),
@@ -483,6 +489,18 @@ def judge(article, citation, key, claim, series, row=False):
         return Finding(kind=NO_FIGURE, **base)
     ordered = sorted(found, key=lambda f: -f.position)
     presents_current = row or bool(CURRENT_WORDS.search(claim))
+    # Prose that names any year, or describes a change "from X to Y", is
+    # about a period and stays true of it. Found in the unseen sample:
+    # "$2.6 billion (28% of GDP) in 2022" and "from 12.07 to 10.9".
+    dated_prose = not presents_current and bool(YEAR.search(claim) or CHANGE.search(claim))
+    # A sentence that already states the latest value is current, whatever
+    # else it says. Found in the full report: "life expectancy of 83 years
+    # (81 years for males...)" was judged on the 81, which is the 2008 total.
+    latest_value = series.values[series.latest]
+    for figure in ordered:
+        if not figure.bound and figure.significant >= 2 and figure.matches(latest_value):
+            return Finding(kind=CURRENT, figure=figure, year=stated_year(claim, figure),
+                           matched_year=series.latest, **base)
     for figure in ordered:
         if figure.bound:
             continue
@@ -516,7 +534,7 @@ def judge(article, citation, key, claim, series, row=False):
             # presents itself as the current value is made stale by a newer
             # year: an infobox row, a sentence with no year, or one that
             # says "as of".
-            if (citation.indicator not in DATED_BY_USE
+            if (citation.indicator not in DATED_BY_USE and not dated_prose
                     and (presents_current or stated is None)):
                 return Finding(kind=NEWER, figure=figure, year=stated, matched_year=matched,
                                note="%s is the %d value; the source has %d: %s" % (
@@ -625,7 +643,9 @@ def markdown(findings, checked, when, unread=()):
                when, __version__, checked, len(findings)), "",
            "Each row gives the sentence as it reads now, the figure as written, and "
            "what the cited series says today. **Nothing here has been edited**; "
-           "each row is for an editor to judge.", ""]
+           "each row is for an editor to judge.", "",
+           "Sentences quoted from English Wikipedia are CC BY-SA 4.0 by Wikipedia "
+           "contributors; see each article's history. World Bank data is CC BY 4.0.", ""]
     for kind in REPORTED:
         rows = [f for f in findings if f.kind == kind]
         out += ["## %s (%d)" % (HEADINGS[kind], len(rows)), ""]

@@ -286,6 +286,31 @@ class Verdicts(unittest.TestCase):
         f = self.judge("output declining 0.9% in 2020 and rebounding 7.5% in 2021", {2021: 7.9})
         self.assertEqual(f.kind, asof.DIFFERS)
 
+    def test_a_sentence_that_states_the_latest_value_is_current(self):
+        """Full report: the male figure in a breakdown matched an old total."""
+        f = self.judge("Australia's life expectancy of 83 years (81 years for males and 85 years for females)",
+                       {2008: 81.0, 2024: 83.0}, indicator="SP.DYN.LE00.IN")
+        self.assertEqual((f.kind, f.figure.raw), (asof.CURRENT, "83"))
+
+    def test_an_age_is_not_the_statistic(self):
+        """Unseen sample: "estimated to be under the age of 15" was read as 15%."""
+        claim = "A large share of the population is estimated to be under the age of 15"
+        self.assertEqual(self.judge(claim, {2019: 30.0}).kind, asof.NO_FIGURE)
+        self.assertEqual(asof.figures("children 5 years old and 12-year-olds"), [])
+
+    def test_prose_that_names_any_year_is_dated(self):
+        """Unseen sample: "$2.6 billion (28% of GDP) in 2022" was called newer
+        because the 28% sat between the figure and its year."""
+        f = self.judge("with service exports totalling $2.6 billion (28% of GDP) in 2022",
+                       {2022: 2.6e9, 2025: 4.9e9})
+        self.assertEqual(f.kind, asof.HISTORICAL)
+
+    def test_a_change_from_one_value_to_another_is_dated(self):
+        """Unseen sample: "decreased by 9.69%, from 12.07 to 10.9 per 1,000"."""
+        f = self.judge("the birth rate decreased by 9.69%, from 12.07 to 10.9 per 1,000 people",
+                       {2018: 10.9, 2024: 6.8})
+        self.assertEqual(f.kind, asof.HISTORICAL)
+
     def test_an_estimate_is_not_called_a_revision(self):
         f = self.judge("with approximately 184,000 international arrivals in 2015", {2015: 199000.0})
         self.assertEqual(f.kind, asof.UNMATCHED)
