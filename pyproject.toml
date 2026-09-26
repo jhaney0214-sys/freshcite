@@ -3,7 +3,7 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "asof"
+name = "freshcite"
 dynamic = ["version"]
 description = "Wikipedia figures checked against the dataset their citation names"
 readme = "README.md"
@@ -16,10 +16,10 @@ classifiers = [
 ]
 
 [project.scripts]
-asof = "asof:main"
+freshcite = "freshcite:main"
 
 [tool.setuptools]
-py-modules = ["asof"]
+py-modules = ["freshcite"]
 
 [tool.setuptools.dynamic]
-version = {attr = "asof.__version__"}
+version = {attr = "freshcite.__version__"}

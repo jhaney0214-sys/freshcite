@@ -1,4 +1,4 @@
-"""asof - Wikipedia figures checked against the dataset their citation names.
+"""freshcite - Wikipedia figures checked against the dataset their citation names.
 
 A Wikipedia sentence that cites
 
@@ -17,8 +17,8 @@ and counts it, rather than guessing. A checker that is right about the things
 it reports and silent about the rest is useful; one that is sometimes wrong is
 noise an editor learns to skip.
 
-    python asof.py check "Economy of Senegal"      # one article
-    python asof.py scan --limit 200 --out report   # the articles citing the World Bank
+    python freshcite.py check "Economy of Senegal"      # one article
+    python freshcite.py scan --limit 200 --out report   # the articles citing the World Bank
 
 Standard library only, Python 3.8 or later.
 """
@@ -40,7 +40,7 @@ import urllib.request
 __version__ = "0.1.0"
 
 #: Wikimedia's user-agent policy asks for a way to reach the operator.
-USER_AGENT = "asof/%s (+https://github.com/jhaney0214-sys/placeholder1)" % __version__
+USER_AGENT = "freshcite/%s (+https://github.com/jhaney0214-sys/freshcite)" % __version__
 WIKI = "https://en.wikipedia.org"
 WORLDBANK_API = "https://api.worldbank.org/v2/country/%s/indicator/%s?format=json&per_page=200&page=%d"
 
@@ -639,7 +639,7 @@ def markdown(findings, checked, when, unread=()):
     for f in findings:
         counts[f.kind] = counts.get(f.kind, 0) + 1
     out = ["# Figures checked against the World Bank", "",
-           "Generated %s by asof %s. %d articles, %d World Bank citations." % (
+           "Generated %s by freshcite %s. %d articles, %d World Bank citations." % (
                when, __version__, checked, len(findings)), "",
            "Each row gives the sentence as it reads now, the figure as written, and "
            "what the cited series says today. **Nothing here has been edited**; "
@@ -697,9 +697,9 @@ def print_findings(findings, stream=sys.stdout):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--version", action="version", version="asof " + __version__)
-    parser.add_argument("--cache", default=".asof-cache",
-                        help="where fetched pages are kept (default .asof-cache)")
+    parser.add_argument("--version", action="version", version="freshcite " + __version__)
+    parser.add_argument("--cache", default=".freshcite-cache",
+                        help="where fetched pages are kept (default .freshcite-cache)")
     sub = parser.add_subparsers(dest="command")
     one = sub.add_parser("check", help="check one article")
     one.add_argument("title")

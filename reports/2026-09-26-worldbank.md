@@ -1,6 +1,6 @@
 # Figures checked against the World Bank
 
-Generated 2026-09-26 by asof 0.1.0. 1270 articles, 2730 World Bank citations.
+Generated 2026-09-26 by freshcite 0.1.0. 1270 articles, 2730 World Bank citations.
 
 Each row gives the sentence as it reads now, the figure as written, and what the cited series says today. **Nothing here has been edited**; each row is for an editor to judge.
 

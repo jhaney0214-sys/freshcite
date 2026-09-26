@@ -24,4 +24,4 @@ jobs:
       - name: Tests
         run: python -m unittest discover -s tests
       - name: The command line starts
-        run: python asof.py --version
+        run: python freshcite.py --version

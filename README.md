@@ -1,4 +1,4 @@
-# asof
+# freshcite
 
 **Wikipedia figures checked against the dataset their citation names.**
 
@@ -9,7 +9,7 @@ https://data.worldbank.org/indicator/SP.POP.TOTL?locations=KE
 ```
 
 has already said, in a form a program can read, which series and which country
-its number came from. `asof` reads the link, fetches that series from the World
+its number came from. `freshcite` reads the link, fetches that series from the World
 Bank, finds the year the figure belongs to, and reports two things:
 
 - **a newer figure is available**: the sentence gives the 2014 value and the
@@ -59,8 +59,8 @@ like these, and each has a test built from the real sentence behind it.
 ## Running it
 
 ```bash
-python asof.py check "Economy of Senegal"            # one article
-python asof.py scan --limit 200 --out report         # articles citing the World Bank
+python freshcite.py check "Economy of Senegal"            # one article
+python freshcite.py scan --limit 200 --out report         # articles citing the World Bank
 ```
 
 `scan` finds the articles through Special:LinkSearch, checks each, and writes
