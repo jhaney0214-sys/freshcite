@@ -403,6 +403,8 @@ DATED_BY_USE = ("PA.NUS.FCRF",)
 #: A figure the page computes (`#expr`, `formatnum`) is not one a person wrote.
 COMPUTED_MARK = re.compile(r"#expr|formatnum|\bround\s+\d", re.I)
 RESPECTIVELY = re.compile(r"\brespectively\b", re.I)
+SPAN = re.compile(r"\baverag(?:e|ed|es|ing)\b|\b(?:from|between)\s+(?:19|20)\d\d\s+(?:to|and|until|through)\s+(?:19|20)\d\d\b"
+                  r"|\b(?:19|20)\d\d\s*[\u2013-]\s*(?:(?:19|20)\d\d|\d\d)\b", re.I)
 #: Words that make a sentence with a year a statement of the current value.
 CURRENT_WORDS = re.compile(r"\bas of\b|\bcurrently\b|\bstands at\b|\bis now\b|\bthe latest\b", re.I)
 #: Smaller than this, a changed value is a revision nobody needs to act on.
@@ -466,6 +468,11 @@ def judge(article, citation, key, claim, series, row=False):
     base = dict(article=article, citation=citation, claim=claim, key=key, series=series)
     if COMPUTED_MARK.search(claim):
         return Finding(kind=COMPUTED, **base)
+    if SPAN.search(claim):
+        # "averaging 4.8% from 2004 to 2014" is a figure about a span of
+        # years, and no single year of the series can confirm or refute it.
+        # Found in a fresh sample of the first scan: two of twenty findings.
+        return Finding(kind=UNMATCHED, **base)
     if RESPECTIVELY.search(claim):
         # "in 1986 and 1987 growth decreased to 1.9% and 1.6% respectively"
         # pairs figures with years by order, which reading figure by figure

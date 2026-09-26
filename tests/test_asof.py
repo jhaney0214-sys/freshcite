@@ -274,6 +274,18 @@ class Verdicts(unittest.TestCase):
                        {1986: 1.9, 1987: 3.4})
         self.assertEqual(f.kind, asof.UNMATCHED)
 
+    def test_a_figure_over_a_span_of_years_is_not_read(self):
+        """Two of twenty in a fresh sample: an average over 2004-2014 was
+        compared with the 2004 value."""
+        for claim in ("This growth rate was maintained, averaging 4.8% from 2004 to 2014",
+                      "growth averaging 9.1% between 2007 and 2010",
+                      "4.8% a year in 2004\u20132014"):
+            self.assertEqual(self.judge(claim, {2004: 5.3, 2007: 9.3}).kind, asof.UNMATCHED, claim)
+
+    def test_one_year_in_a_list_is_not_a_span(self):
+        f = self.judge("output declining 0.9% in 2020 and rebounding 7.5% in 2021", {2021: 7.9})
+        self.assertEqual(f.kind, asof.DIFFERS)
+
     def test_an_estimate_is_not_called_a_revision(self):
         f = self.judge("with approximately 184,000 international arrivals in 2015", {2015: 199000.0})
         self.assertEqual(f.kind, asof.UNMATCHED)
