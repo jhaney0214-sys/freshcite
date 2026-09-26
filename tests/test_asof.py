@@ -94,8 +94,9 @@ class TheRealArticles(unittest.TestCase):
         self.assertEqual((bermuda.kind, bermuda.figure.raw, bermuda.year),
                          (asof.DIFFERS, "-6.8%", 2020))
         self.assertIn("-7.0%", bermuda.note)
-        paraguay = self.one("Economy of Paraguay")
-        self.assertEqual((paraguay.kind, paraguay.year), (asof.DIFFERS, 2023))
+        # Paraguay's Gini "44.4 (2023)" is now 44.2: a 0.45% revision, under
+        # the 2% at which a change is worth an editor's time.
+        self.assertEqual(reported("Economy of Paraguay"), [])
 
     def test_an_exchange_rate_used_to_convert_a_gross_is_left_alone(self):
         """Film articles cite the rate to convert box office; there is no
@@ -142,20 +143,24 @@ class Claims(unittest.TestCase):
 
     def test_an_infobox_row_keeps_its_key(self):
         text = "| gini = {{decrease}} 42.1 {{color|red|x}} (2012)<ref>"
-        key, claim = asof.claim_before(text, text.index("<ref>"))
-        self.assertEqual(key, "gini")
+        key, claim, row = asof.claim_before(text, text.index("<ref>"))
+        self.assertEqual((key, row), ("gini", True))
         self.assertIn("42.1", claim)
         self.assertIn("2012", claim)
 
     def test_the_claim_is_the_last_sentence_before_the_ref(self):
         text = ("Growth was 3% in 1999. Agriculture contributes about 4.3% of GDP."
                 "<ref>x</ref>")
-        _, claim = asof.claim_before(text, text.index("<ref>"))
-        self.assertEqual(claim, "Agriculture contributes about 4.3% of GDP")
+        _, claim, row = asof.claim_before(text, text.index("<ref>"))
+        self.assertEqual((claim, row), ("Agriculture contributes about 4.3% of GDP", False))
+
+    def test_a_list_item_is_a_row(self):
+        text = "*42.4% employment rate (2015)<ref>x</ref>"
+        self.assertTrue(asof.claim_before(text, text.index("<ref>"))[2])
 
     def test_the_claim_starts_after_an_earlier_ref(self):
         text = "First 10%.<ref>a</ref> Second 20%<ref>b</ref>"
-        _, claim = asof.claim_before(text, text.rindex("<ref>"))
+        _, claim, _ = asof.claim_before(text, text.rindex("<ref>"))
         self.assertEqual(claim, "Second 20%")
 
     def test_flatten_keeps_what_a_reader_sees(self):
@@ -215,12 +220,68 @@ class Figures(unittest.TestCase):
 
 class Verdicts(unittest.TestCase):
 
-    def judge(self, claim, values):
-        return asof.judge("A", cite(), None, claim, series(values))
+    def judge(self, claim, values, row=False, indicator="SI.POV.GINI"):
+        return asof.judge("A", cite(indicator), None, claim, series(values, indicator), row)
 
     def test_newer(self):
-        f = self.judge("42.1 (2012)", {2012: 42.1, 2020: 44.7})
+        f = self.judge("42.1 (2012)", {2012: 42.1, 2020: 44.7}, row=True)
         self.assertEqual((f.kind, f.matched_year), (asof.NEWER, 2012))
+
+    def test_a_sentence_about_a_past_year_is_not_made_stale(self):
+        """Found in the first scan: "the fertility rate dropped to 2.75" after
+        1979, and "growth dropped to 3.3% in 1986", reported as "newer"."""
+        f = self.judge("After the one-child policy in 1979, the fertility rate dropped to 2.75",
+                       {1979: 2.75, 2024: 1.01})
+        self.assertEqual((f.kind, f.matched_year), (asof.HISTORICAL, 1979))
+
+    def test_a_sentence_that_says_as_of_is_current_and_can_be_stale(self):
+        f = self.judge("As of 2015, 15.6% of GDP", {2015: 15.6, 2024: 17.3})
+        self.assertEqual(f.kind, asof.NEWER)
+
+    def test_a_sentence_with_no_year_can_be_stale(self):
+        f = self.judge("Its youth literacy rate stands at 98.8%", {2022: 98.8, 2024: 98.9})
+        self.assertEqual((f.kind, f.matched_year), (asof.NEWER, 2022))
+
+    def test_an_exchange_rate_is_never_newer(self):
+        """"4.76 Indian rupees per US dollar" converts a 1965 figure at the 1965 rate."""
+        f = self.judge("4.76 Indian rupees per US dollar", {1965: 4.762, 2025: 87.158},
+                       row=True, indicator="PA.NUS.FCRF")
+        self.assertEqual(f.kind, asof.HISTORICAL)
+
+    def test_a_computed_figure_is_left_alone(self):
+        f = self.judge("INR #expr:(97.2*4.762)/10 round 1 million", {1965: 4.762, 2025: 87.158})
+        self.assertEqual(f.kind, asof.COMPUTED)
+
+    def test_a_bound_is_not_a_value(self):
+        """"exceeded 7% every year from 2003" matched a 2024 value of 7."""
+        f = self.judge("GDP growth exceeded 7% every year from 2003 to 2007",
+                       {2003: 7.9, 2024: 7.0})
+        self.assertEqual(f.kind, asof.UNMATCHED)
+
+    def test_a_low_precision_figure_is_not_matched_to_another_year(self):
+        """"1.6% (1987)" matched Switzerland's 2001 value."""
+        f = self.judge("growth decreased to 1.6% in 1987", {1987: 3.4, 2001: 1.6})
+        self.assertNotEqual(f.kind, asof.MISLABELED)
+
+    def test_a_figure_close_to_its_own_year_is_a_revision_not_a_mislabel(self):
+        """"57.4% employment rate (2016)": the 2016 value is now 57.1, and 57.4
+        happens to be the 2000 value."""
+        f = self.judge("57.4% employment rate (2016)", {2000: 57.4, 2016: 57.1}, row=True)
+        self.assertNotEqual(f.kind, asof.MISLABELED)
+
+    def test_figures_paired_with_years_by_order_are_not_read(self):
+        f = self.judge("apart from 1986 and 1987 when growth decreased to 1.9% and 1.6% respectively",
+                       {1986: 1.9, 1987: 3.4})
+        self.assertEqual(f.kind, asof.UNMATCHED)
+
+    def test_an_estimate_is_not_called_a_revision(self):
+        f = self.judge("with approximately 184,000 international arrivals in 2015", {2015: 199000.0})
+        self.assertEqual(f.kind, asof.UNMATCHED)
+
+    def test_trailing_zeros_are_rounding(self):
+        f = self.judge("arable land was estimated at 119,000,000 hectares as of 2015",
+                       {2015: 118700000.0, 2021: 114870800.0})
+        self.assertEqual((f.kind, f.matched_year), (asof.NEWER, 2015))
 
     def test_a_later_year_with_the_same_value_is_current(self):
         self.assertEqual(self.judge("42.1", {2012: 42.1, 2020: 42.14}).kind, asof.CURRENT)
@@ -233,8 +294,13 @@ class Verdicts(unittest.TestCase):
         self.assertEqual((f.kind, f.year, f.matched_year), (asof.MISLABELED, 2017, 2012))
 
     def test_differs_only_for_a_stated_year_the_source_has(self):
-        self.assertEqual(self.judge("44.4 (2023)", {2023: 44.2}).kind, asof.DIFFERS)
-        self.assertEqual(self.judge("44.4 (2019)", {2023: 44.2}).kind, asof.UNMATCHED)
+        self.assertEqual(self.judge("44.4 (2023)", {2023: 41.0}).kind, asof.DIFFERS)
+        self.assertEqual(self.judge("44.4 (2019)", {2023: 41.0}).kind, asof.UNMATCHED)
+
+    def test_a_revision_under_two_per_cent_is_not_reported(self):
+        """"a 2.78% population growth in 1966" against 2.79: true to the reader."""
+        self.assertEqual(self.judge("2.78% population growth in 1966", {1966: 2.79}).kind,
+                         asof.UNMATCHED)
 
     def test_a_figure_of_another_size_is_not_a_disagreement(self):
         """"16% on less than $8.30/day (2023)": neither number is the source's
@@ -416,7 +482,7 @@ class TheReport(unittest.TestCase):
         self.assertIn("| The link names no single country |", text)
 
     def test_a_pipe_in_a_claim_cannot_break_the_table(self):
-        f = asof.judge("A", cite(), None, "a | b 42.1 (2012)", series({2012: 42.1, 2020: 44.7}))
+        f = asof.judge("A", cite(), None, "a | b 42.1 (2012)", series({2012: 42.1, 2020: 44.7}), True)
         row = [l for l in asof.markdown([f], 1, "d").splitlines() if l.startswith("| [A]")][0]
         self.assertEqual(row.count(" | "), 4)
 

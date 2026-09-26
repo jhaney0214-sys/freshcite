@@ -201,6 +201,10 @@ def claim_before(wikitext, ref_start, reach=400):
     start of the line, or the end of the previous sentence. An infobox row
     keeps its key (`gini`, `population`) because the key says what the figure
     is when the row's own text does not.
+
+    Returns (key, claim, row). `row` is true for an infobox field or a list
+    item: those present a current value, so a newer year makes them stale,
+    where a sentence of prose saying what happened in 1986 stays true.
     """
     start = max(0, ref_start - reach)
     window = wikitext[start:ref_start]
@@ -215,10 +219,11 @@ def claim_before(wikitext, ref_start, reach=400):
     if sentence_end is not None:
         body = body[sentence_end:]
     key = None
-    row = re.match(r"\s*[|*]\s*([a-z_ ]+?)\s*=\s*(.*)$", body, re.S)
-    if row:
-        key, body = row.group(1).strip(), row.group(2)
-    return key, flatten(body.lstrip("*| "))
+    is_row = bool(re.match(r"\s*[|*]", body))
+    field = re.match(r"\s*[|*]\s*([a-z_ ]+?)\s*=\s*(.*)$", body, re.S)
+    if field:
+        key, body = field.group(1).strip(), field.group(2)
+    return key, flatten(body.lstrip("*| ")), is_row
 
 
 # --------------------------------------------------------------- figures
@@ -230,13 +235,18 @@ FIGURE = re.compile(
     r"(?P<number>\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)"
     r"(?:\s?(?P<unit>%|(?:per\s?cent|percent|thousand|million|mn|billion|bn|trillion)\b))?",
     re.I)
+BOUND = re.compile(r"(?:exceed(?:s|ed|ing)?|over|more than|above|under|below|less than|fewer than|"
+                   r"greater than|at least|at most|up to|nearly|almost)\s*(?:US\$|\$)?\s*$", re.I)
+APPROXIMATE = re.compile(r"(?:about|around|approximately|roughly|circa|some|an estimated|estimated)"
+                         r"\s*(?:US\$|\$)?\s*$", re.I)
 YEAR = re.compile(r"(?<!\d)(?<!\d[.,])(19\d\d|20\d\d)(?![\d%]|[.,]\d)")
 
 
 class Figure(object):
     """A number as a sentence writes it, with the precision it was written to."""
 
-    def __init__(self, raw, value, tolerance, position, decimals, grouped, unit):
+    def __init__(self, raw, value, tolerance, position, decimals, grouped, unit,
+                 significant=3, bound=False, approximate=False):
         self.raw = raw
         self.value = value
         self.tolerance = tolerance
@@ -244,6 +254,13 @@ class Figure(object):
         self.decimals = decimals
         self.grouped = grouped
         self.unit = unit
+        #: How many digits the figure commits to. "7%" commits to one, and
+        #: one digit matches too many years of a long series to mean anything.
+        self.significant = significant
+        #: "exceeded 7%", "under 450": a bound, not a value.
+        self.bound = bound
+        #: "about 184,000": a value, but not one to call a revision of.
+        self.approximate = approximate
 
     def __repr__(self):
         return "Figure(%r)" % self.raw
@@ -284,15 +301,26 @@ def figures(text):
         decimals = len(number.split(".")[1]) if "." in number else 0
         grouped = "," in number
         value = float(number.replace(",", ""))
+        digits = number.replace(",", "")
+        if "." in digits:
+            significant = len(digits.replace(".", "").lstrip("0")) or 1
+            trailing = 0
+        else:
+            significant = len(digits.strip("0")) or 1
+            # "119,000,000 hectares" is rounded to the million, not exact.
+            trailing = len(digits) - len(digits.rstrip("0")) if digits.strip("0") else 0
         if match.group("sign"):
             value = -value
         unit_key = (unit or "").lower().replace(" ", "")
         if unit_key == "percent":
             unit_key = "%"
         scale = MULTIPLIERS.get(unit_key, 1.0)
-        tolerance = 0.5 * 10 ** (-decimals) * scale
+        tolerance = 0.5 * 10 ** (trailing - decimals) * scale
+        before = text[max(0, match.start() - 25):match.start()]
         found.append(Figure(match.group(0).strip(), value * scale, tolerance,
-                            match.start(), decimals, grouped, unit_key or None))
+                            match.start(), decimals, grouped, unit_key or None,
+                            significant, bool(BOUND.search(before)),
+                            bool(APPROXIMATE.search(before))))
     return found
 
 
@@ -364,8 +392,28 @@ def worldbank_series(fetch, indicator, country):
 
 #: What a finding can say. The first three are reported; the rest are counted.
 NEWER, MISLABELED, DIFFERS = "newer", "mislabeled", "differs"
-CURRENT, UNMATCHED, NO_FIGURE, NO_COUNTRY, NO_DATA = (
-    "current", "unmatched", "no figure", "no country in link", "no data")
+CURRENT, HISTORICAL, UNMATCHED, NO_FIGURE, COMPUTED, NO_COUNTRY, NO_DATA = (
+    "current", "historical", "unmatched", "no figure", "computed", "no country in link",
+    "no data")
+
+#: An exchange rate is cited to convert an amount at a date, so a newer rate
+#: never makes the sentence stale. Found in the first scan: film articles
+#: converting a 1965 box office at the 1965 rupee rate were reported as "newer".
+DATED_BY_USE = ("PA.NUS.FCRF",)
+#: A figure the page computes (`#expr`, `formatnum`) is not one a person wrote.
+COMPUTED_MARK = re.compile(r"#expr|formatnum|\bround\s+\d", re.I)
+RESPECTIVELY = re.compile(r"\brespectively\b", re.I)
+#: Words that make a sentence with a year a statement of the current value.
+CURRENT_WORDS = re.compile(r"\bas of\b|\bcurrently\b|\bstands at\b|\bis now\b|\bthe latest\b", re.I)
+#: Smaller than this, a changed value is a revision nobody needs to act on.
+DIFFERS_AT_LEAST = 0.02
+#: Within this of the stated year's value, a mismatch is a revision of that
+#: year, not a figure that belongs to another one.
+SAME_YEAR_WITHIN = 0.05
+
+
+def relative(a, b):
+    return abs(a - b) / abs(a) if a else float("inf")
 REPORTED = (NEWER, MISLABELED, DIFFERS)
 
 
@@ -405,46 +453,84 @@ class Finding(object):
         return out
 
 
-def judge(article, citation, key, claim, series):
+def judge(article, citation, key, claim, series, row=False):
     """What the source says about the figure beside `citation`.
 
     Figures are tried nearest-the-citation first, because the number a ref
     supports is almost always the last one before it; a sentence that gives
     two statistics and cites the second must not be judged on the first.
+
+    Every rule below that keeps a finding out of the report was added after
+    reading the first scan's findings by hand, and each names what it caught.
     """
     base = dict(article=article, citation=citation, claim=claim, key=key, series=series)
+    if COMPUTED_MARK.search(claim):
+        return Finding(kind=COMPUTED, **base)
+    if RESPECTIVELY.search(claim):
+        # "in 1986 and 1987 growth decreased to 1.9% and 1.6% respectively"
+        # pairs figures with years by order, which reading figure by figure
+        # gets wrong. Found in the first scan, where 1.9% was given 1987.
+        return Finding(kind=UNMATCHED, **base)
     found = figures(claim)
     if not found:
         return Finding(kind=NO_FIGURE, **base)
-    for figure in sorted(found, key=lambda f: -f.position):
+    ordered = sorted(found, key=lambda f: -f.position)
+    presents_current = row or bool(CURRENT_WORDS.search(claim))
+    for figure in ordered:
+        if figure.bound:
+            continue
         stated = stated_year(claim, figure)
         years = [y for y, v in series.values.items() if figure.matches(v)]
         if not years:
             continue
-        matched = stated if stated in years else max(years)
-        if stated is not None and stated != matched:
-            note = "the text says %d; %s is the %d value" % (stated, figure.raw, matched)
-            if stated in series.values:
-                note += ", and the source gives %s for %d" % (
-                    figure.render(series.values[stated]), stated)
-            return Finding(kind=MISLABELED, figure=figure, year=stated,
-                           matched_year=matched, note=note, **base)
+        if stated in years:
+            matched = stated
+        elif stated is not None:
+            # The figure is some other year's value. Say so only when it is
+            # precise enough that the match is not a coincidence ("exceeded
+            # 7%" matched a 2024 value), and the stated year's own value is
+            # not close enough to make this a revision of that year instead.
+            own = series.values.get(stated)
+            if figure.significant >= 3 and (own is None or relative(own, figure.value) > SAME_YEAR_WITHIN):
+                matched = max(years)
+                note = "the text says %d; %s is the %d value" % (stated, figure.raw, matched)
+                if own is not None:
+                    note += ", and the source gives %s for %d" % (figure.render(own), stated)
+                return Finding(kind=MISLABELED, figure=figure, year=stated,
+                               matched_year=matched, note=note, **base)
+            continue
+        else:
+            if figure.significant < 2:
+                continue
+            matched = max(years)
         latest = series.latest
         if latest > matched and not figure.matches(series.values[latest]):
-            return Finding(kind=NEWER, figure=figure, year=stated, matched_year=matched,
-                           note="%s is the %d value; the source has %d: %s" % (
-                               figure.raw, matched, latest,
-                               figure.render(series.values[latest])), **base)
+            # "Dropped to 3.3% in 1986" is true forever. Only a figure that
+            # presents itself as the current value is made stale by a newer
+            # year: an infobox row, a sentence with no year, or one that
+            # says "as of".
+            if (citation.indicator not in DATED_BY_USE
+                    and (presents_current or stated is None)):
+                return Finding(kind=NEWER, figure=figure, year=stated, matched_year=matched,
+                               note="%s is the %d value; the source has %d: %s" % (
+                                   figure.raw, matched, latest,
+                                   figure.render(series.values[latest])), **base)
+            return Finding(kind=HISTORICAL, figure=figure, year=stated, matched_year=matched,
+                           **base)
         return Finding(kind=CURRENT, figure=figure, year=stated, matched_year=matched, **base)
     # Nothing matched any year. Only when the claim states a year the source
-    # also has, and the figure is the same order of size as the source's value
-    # for it, is that a disagreement worth an editor's time rather than a
-    # figure from somewhere else.
-    for figure in sorted(found, key=lambda f: -f.position):
+    # also has, gives an exact figure rather than a bound or an estimate, and
+    # the figure is the same order of size as the source's value for it but
+    # at least 2% away, is that a disagreement worth an editor's time rather
+    # than a figure from somewhere else or a revision too small to matter.
+    for figure in ordered:
+        if figure.bound or figure.approximate:
+            continue
         stated = stated_year(claim, figure)
         if stated in series.values:
             source = series.values[stated]
-            if source and 0.5 <= figure.value / source <= 2.0:
+            if (source and 0.5 <= figure.value / source <= 2.0
+                    and relative(source, figure.value) >= DIFFERS_AT_LEAST):
                 return Finding(kind=DIFFERS, figure=figure, year=stated,
                                note="the text gives %s for %d; the source now gives %s" % (
                                    figure.raw, stated, figure.render(source)), **base)
@@ -464,7 +550,7 @@ def check_wikitext(title, wikitext, fetch):
         if not citation.country:
             findings.append(Finding(title, citation, NO_COUNTRY))
             continue
-        key, claim = claim_before(wikitext, citation.ref_start)
+        key, claim, row = claim_before(wikitext, citation.ref_start)
         pair = (citation.indicator, citation.country)
         if pair not in cache:
             try:
@@ -474,7 +560,7 @@ def check_wikitext(title, wikitext, fetch):
         if cache[pair] is None:
             findings.append(Finding(title, citation, NO_DATA, claim=claim, key=key))
             continue
-        findings.append(judge(title, citation, key, claim, cache[pair]))
+        findings.append(judge(title, citation, key, claim, cache[pair], row))
     return findings
 
 
@@ -552,8 +638,10 @@ def markdown(findings, checked, when, unread=()):
     out += ["## Not reported, and why", "",
             "| Outcome | Citations |", "| --- | --- |"]
     for kind, label in ((CURRENT, "The figure matches the latest year"),
+                        (HISTORICAL, "The figure is right for the year the sentence gives"),
                         (UNMATCHED, "No figure in the sentence matches any year of the series"),
                         (NO_FIGURE, "No figure in the sentence"),
+                        (COMPUTED, "The figure is computed by the page"),
                         (NO_COUNTRY, "The link names no single country"),
                         (NO_DATA, "The World Bank has no data for the link's indicator and country")):
         out.append("| %s | %d |" % (label, counts.get(kind, 0)))
