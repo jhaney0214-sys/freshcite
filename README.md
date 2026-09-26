@@ -25,10 +25,11 @@ editor can decide in one look.
 ## What it found
 
 **The first full scan, 2026-09-26:** every English Wikipedia article linking to
-`data.worldbank.org/indicator`, **1,270 articles and 2,730 citations. It
-reported 383 findings**: 171 figures with a newer year available, 205 where the
-source now gives a different value for the stated year, and 7 where the year
-does not belong to the figure. Every article was read. The whole report is in
+`data.worldbank.org/indicator`, **1,270 articles and 2,730 citations. With
+the current rules it reports 365 findings**: 159 figures with a newer year
+available, 199 where the source now gives a different value for the stated
+year, and 7 where the year does not belong to the figure. (The first run of
+the day reported 383; the difference is the fixes described below.) Every article was read. The whole report is in
 [`reports/2026-09-26-worldbank.md`](reports/2026-09-26-worldbank.md).
 
 | Article | As written | What the World Bank says now |
@@ -42,16 +43,24 @@ does not belong to the figure. Every article was read. The whole report is in
 | Economy of Moldova | poverty rate "26.8% (2020)" | 31.6% in 2023 |
 | Jamaica and the World Bank | GNI per capita "$4,990 (2018)" | that is the 2016 value; 2018 was 5,610 |
 
-**How often it is right.** A fresh random sample of 40 findings, re-scanned live
-on 2026-09-26 and drawn from articles that are not test fixtures, was checked by
-hand: **33 right, 7 wrong (82.5%)**. That is the current rules' measured
-accuracy. The 92% measured earlier was on the rules before their last fixes.
-The seven wrong ones, one line each, are in
-[`reports/2026-09-26-accuracy-sample.md`](reports/2026-09-26-accuracy-sample.md).
-Two patterns account for three of them: an article about a historical state
-(the Ukrainian SSR) held to the modern country's latest value, and a figure
-rounded to match an old year when the latest value rounds to it too. A sex
-breakdown and an exchange rate each got past a rule meant to stop them.
+**How often it is right.** Measured twice on 2026-09-26, each time on 40
+findings drawn at random from articles that were not test fixtures and had not
+been read while the rules were written:
+
+| Sample | Rules | Right |
+| --- | --- | --- |
+| [first](reports/2026-09-26-accuracy-sample.md) | before this round of fixes | 33 of 40, 82.5% |
+| [second](reports/2026-09-26-accuracy-sample-2.md) | after them, on unseen articles | **36 of 40, 90%** |
+
+The first sample's seven errors fell into six patterns, and each now has a rule
+and a test built from the real sentence. Re-scanning showed two of those rules
+over-reaching, which were fixed before the second sample was drawn: a sex
+breakdown must be kept when the citation is itself a series for one sex, and
+"about" only reads as current when no year is stated. The second sample's four
+errors are two former states the title rule does not recognise (Pahlavi Iran,
+the Russian SFSR), a decimal comma ("14,9"), since fixed, and a sentence giving
+two statistics where the one nearest the citation is not the one it cites.
+**90% is the measured figure; the decimal-comma fix came after it.**
 
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
@@ -87,7 +96,14 @@ the citation in the report's last table, when:**
   to pin to one year;
 - the figure is a bound ("exceeded 7%"), an age, a computed conversion
   (`#expr`), or an exchange rate, which converts an amount at a date and is
-  never out of date.
+  never out of date, nor comparable with a year's average;
+- the figure is one sex's ("77.7 for females") and the citation is the total,
+  or the other sex's; or it is written with a decimal comma ("14,9");
+- the article is about a state that no longer exists (a Soviet Socialist
+  Republic, or a title with a year span such as "(1991–1995)"), whose figures
+  the modern country's latest value does not make stale;
+- the row is one year of a year-by-year table;
+- the figure says "about" and the latest value is within 5% of it.
 
 **How a figure is matched.** A number written as "42.4" matches anything that
 rounds to it, so ±0.05; "57,532,493" must match exactly. The number nearest the

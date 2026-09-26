@@ -237,6 +237,15 @@ FIGURE = re.compile(
     re.I)
 #: "under the age of 15": an age, not the statistic. Found in the unseen sample.
 AGE = re.compile(r"\bage[ds]?\s+(?:of\s+)?(?:under\s+|over\s+)?$", re.I)
+#: "(72.4 for males and 77.7 for females)": one sex, never the total series.
+#: Found in the 2026-09-26 sample, judged against Peru's total life expectancy.
+SEX_AFTER = re.compile(r"\s*(?:years?\s+)?(?:for|among|in|of|in the case of)\s+(?:the\s+)?"
+                       r"(?P<sex>males?|females?|men|women|boys|girls)\b", re.I)
+SEX_BEFORE = re.compile(r"\b(?P<sex>males?|females?|men|women|boys|girls)\s*[:=]?\s*$", re.I)
+
+
+def _sex(word):
+    return "FE" if word.lower().startswith(("f", "w", "g")) else "MA"
 #: "decreased from 12.07 to 10.9": a change over a period, true of that period.
 CHANGE = re.compile(r"\bfrom\s+\S*\d[\d.,]*\S*\s+(?:\S+\s+){0,6}?to\s+\S*\d", re.I)
 BOUND = re.compile(r"(?:exceed(?:s|ed|ing)?|over|more than|above|under|below|less than|fewer than|"
@@ -288,7 +297,7 @@ class Figure(object):
         return text
 
 
-def figures(text):
+def figures(text, by_sex=None):
     """Every number in the claim that could be a statistic.
 
     Bare four-digit years are left out: they are dates, and they are what
@@ -321,7 +330,14 @@ def figures(text):
         scale = MULTIPLIERS.get(unit_key, 1.0)
         tolerance = 0.5 * 10 ** (trailing - decimals) * scale
         before = text[max(0, match.start() - 25):match.start()]
+        # "14,9 per 1,000" is a decimal comma, and reading it as 14 compares
+        # the wrong number. Found in the second 2026-09-26 sample (Panama).
+        if re.match(r",\d(?!\d{2})", text[match.end():]):
+            continue
         if AGE.search(before) or re.match(r"\s*(?:years?[ -]old|-year-olds?)\b", text[match.end():], re.I):
+            continue
+        label = SEX_AFTER.match(text[match.end():]) or SEX_BEFORE.search(before)
+        if label and _sex(label.group("sex")) != by_sex:
             continue
         found.append(Figure(match.group(0).strip(), value * scale, tolerance,
                             match.start(), decimals, grouped, unit_key or None,
@@ -340,7 +356,11 @@ def stated_year(text, figure):
     "In 2016, unsafe water accounted for 68.6 deaths".
     """
     others = [f.position for f in figures(text) if f.position != figure.position]
-    years = [(m.start(), int(m.group(1))) for m in YEAR.finditer(text)]
+    # "since 1998" dates when something began, not the figure beside it.
+    # Found in the 2026-09-26 sample: "trade at 132% of its GDP, while
+    # recording consistent trade surpluses since 1998".
+    years = [(m.start(), int(m.group(1))) for m in YEAR.finditer(text)
+             if not re.search(r"\bsince\s*$", text[max(0, m.start() - 8):m.start()], re.I)]
     for at, year in years:
         if at > figure.position and not [p for p in others if figure.position < p < at]:
             return year
@@ -406,6 +426,11 @@ CURRENT, HISTORICAL, UNMATCHED, NO_FIGURE, COMPUTED, NO_COUNTRY, NO_DATA = (
 #: never makes the sentence stale. Found in the first scan: film articles
 #: converting a 1965 box office at the 1965 rupee rate were reported as "newer".
 DATED_BY_USE = ("PA.NUS.FCRF",)
+#: An article about a state that no longer exists: its figures belong to that
+#: state, and the modern country's latest value does not make them stale.
+#: Found in the 2026-09-26 sample: the Ukrainian SSR's 1990 GDP and the
+#: Republic of Belarus (1991-1995)'s 1993 GDP reported as "newer".
+FORMER_STATE = re.compile(r"Soviet Socialist Republic|\(\s*(?:19|20)\d\d\s*[\u2013-]\s*(?:19|20)\d\d\s*\)")
 #: A figure the page computes (`#expr`, `formatnum`) is not one a person wrote.
 COMPUTED_MARK = re.compile(r"#expr|formatnum|\bround\s+\d", re.I)
 RESPECTIVELY = re.compile(r"\brespectively\b", re.I)
@@ -472,6 +497,11 @@ def judge(article, citation, key, claim, series, row=False):
     reading the first scan's findings by hand, and each names what it caught.
     """
     base = dict(article=article, citation=citation, claim=claim, key=key, series=series)
+    if citation.indicator in DATED_BY_USE:
+        # A rate converts an amount at a date, and "dropped to 165 yen" is a
+        # moment, where the series is a year's average: neither newer nor a
+        # revision. Found in the 2026-09-26 sample as a "differs".
+        return Finding(kind=HISTORICAL, **base)
     if COMPUTED_MARK.search(claim):
         return Finding(kind=COMPUTED, **base)
     if SPAN.search(claim):
@@ -484,7 +514,10 @@ def judge(article, citation, key, claim, series, row=False):
         # pairs figures with years by order, which reading figure by figure
         # gets wrong. Found in the first scan, where 1.9% was given 1987.
         return Finding(kind=UNMATCHED, **base)
-    found = figures(claim)
+    # A series for one sex (SP.DYN.LE00.MA.IN) is cited for that sex's figure,
+    # so the breakdown is kept. Found re-scanning: Japan's "82 years for men".
+    sex = re.search(r"\.(MA|FE)\.", citation.indicator)
+    found = figures(claim, by_sex=sex.group(1) if sex else None)
     if not found:
         return Finding(kind=NO_FIGURE, **base)
     ordered = sorted(found, key=lambda f: -f.position)
@@ -498,7 +531,12 @@ def judge(article, citation, key, claim, series, row=False):
     # (81 years for males...)" was judged on the 81, which is the 2008 total.
     latest_value = series.values[series.latest]
     for figure in ordered:
-        if not figure.bound and figure.significant >= 2 and figure.matches(latest_value):
+        # "about 72 million" is current if the latest value is about that, even
+        # when an old year rounds to it more exactly. Found in the 2026-09-26
+        # sample: Russia's labour force matched to 2001, while 2025 is 72.8M.
+        near = (figure.approximate and stated_year(claim, figure) is None
+                and relative(latest_value, figure.value) <= SAME_YEAR_WITHIN)
+        if not figure.bound and figure.significant >= 2 and (near or figure.matches(latest_value)):
             return Finding(kind=CURRENT, figure=figure, year=stated_year(claim, figure),
                            matched_year=series.latest, **base)
     for figure in ordered:
@@ -534,7 +572,12 @@ def judge(article, citation, key, claim, series, row=False):
             # presents itself as the current value is made stale by a newer
             # year: an infobox row, a sentence with no year, or one that
             # says "as of".
-            if (citation.indicator not in DATED_BY_USE and not dated_prose
+            # A table row keyed by its year ("1996 | 202,000") is one year of
+            # a series, true of that year. Found in the 2026-09-26 sample.
+            year_keyed = (row and stated is not None and any(
+                int(m.group(1)) == stated and m.start() < figure.position
+                for m in YEAR.finditer(claim)))
+            if (not dated_prose and not year_keyed and not FORMER_STATE.search(article)
                     and (presents_current or stated is None)):
                 return Finding(kind=NEWER, figure=figure, year=stated, matched_year=matched,
                                note="%s is the %d value; the source has %d: %s" % (

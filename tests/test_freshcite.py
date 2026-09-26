@@ -292,6 +292,87 @@ class Verdicts(unittest.TestCase):
                        {2008: 81.0, 2024: 83.0}, indicator="SP.DYN.LE00.IN")
         self.assertEqual((f.kind, f.figure.raw), (freshcite.CURRENT, "83"))
 
+    def test_a_breakdown_by_sex_is_not_the_total(self):
+        """2026-09-26 sample: Peru's female 77.7 was judged against the total."""
+        claim = ("Peru has a life expectancy of 75.0 years (72.4 for males and 77.7 for "
+                 "females) according to the latest data for the year 2016 from the World Bank")
+        self.assertEqual([f.raw for f in freshcite.figures(claim)], ["75.0"])
+        f = self.judge(claim, {2016: 76.0, 2024: 77.9}, indicator="SP.DYN.LE00.IN")
+        self.assertNotIn(f.kind, freshcite.REPORTED)
+
+    def test_in_the_case_of_males_is_a_breakdown_too(self):
+        """Re-scan: Benin's "67.1 percent in the case of males" against the total."""
+        claim = ("from 21.8 percent in 2000 to 59 percent in 2016, 67.1 percent in the "
+                 "case of males and 50.7 percent for females")
+        self.assertEqual([f.raw for f in freshcite.figures(claim)],
+                         ["21.8 percent", "59 percent"])
+
+    def test_a_series_for_one_sex_keeps_the_breakdown(self):
+        """Re-scan: Japan cites the male series, so "82 years for men" is the figure."""
+        claim = ("In 2020, the overall life expectancy in Japan at birth was 85 years "
+                 "(82 years for men and 88 years for women)")
+        f = freshcite.judge("Japan", cite("SP.DYN.LE00.MA.IN", "JP"), None, claim,
+                            series({2020: 81.6, 2023: 81.1}, "SP.DYN.LE00.MA.IN", "JP"))
+        self.assertNotEqual(f.kind, freshcite.DIFFERS)
+
+    def test_a_series_for_one_sex_ignores_the_other(self):
+        """Re-scan: Micronesia cites the male series; 69 is the women's figure."""
+        claim = "Life expectancy was 66 for men and 69 for women in 2018"
+        self.assertEqual([f.raw for f in freshcite.figures(claim, by_sex="MA")], ["66"])
+        f = freshcite.judge("FSM", cite("SP.DYN.LE00.MA.IN", "FM"), None, claim,
+                            series({2018: 63.0, 2023: 64.0}, "SP.DYN.LE00.MA.IN", "FM"))
+        self.assertNotEqual(f.figure.raw if f.figure else None, "69")
+
+    def test_a_decimal_comma_is_not_read_as_an_integer(self):
+        """Second 2026-09-26 sample: Panama's "14,9 per 1,000" was read as 14."""
+        claim = "the under-five mortality rate was 14,9 per 1,000 live births"
+        self.assertEqual([f.raw for f in freshcite.figures(claim)], ["1,000"])
+        self.assertEqual([f.raw for f in freshcite.figures("12,345 people")], ["12,345"])
+
+    def test_since_dates_another_clause(self):
+        """2026-09-26 sample: 1998 is when Malaysia's surpluses began."""
+        claim = ("total trade activities at 132% of its GDP, while recording "
+                 "consistent trade surpluses since 1998")
+        self.assertIsNone(freshcite.stated_year(claim, freshcite.figures(claim)[0]))
+        self.assertEqual(freshcite.stated_year("3% in 2019, since 2010", freshcite.figures("3% in 2019, since 2010")[0]), 2019)
+
+    def test_an_approximate_figure_near_the_latest_is_current(self):
+        """2026-09-26 sample: "about 72 million" matched 2001; 2025 is 72.8M."""
+        f = self.judge("It has a labour force of about 72 million", {2001: 72.1e6, 2025: 72.77e6},
+                       indicator="SL.TLF.TOTL.IN")
+        self.assertEqual(f.kind, freshcite.CURRENT)
+        f = self.judge("It has a labour force of 72 million", {2001: 72.1e6, 2025: 72.77e6},
+                       indicator="SL.TLF.TOTL.IN")
+        self.assertEqual(f.kind, freshcite.NEWER, "without 'about' the precision stands")
+
+    def test_about_with_a_stated_year_is_still_that_years(self):
+        """Re-scan: "In 2021, about 23.4%" is a 2021 claim, not a current one."""
+        f = self.judge("In 2021, about 23.4% of Nigeria's GDP was agriculture",
+                       {1988: 23.4, 2021: 29.4, 2025: 23.5}, indicator="NV.AGR.TOTL.ZS")
+        self.assertNotEqual(f.kind, freshcite.CURRENT)
+
+    def test_a_row_keyed_by_its_year_is_that_years(self):
+        """2026-09-26 sample: one row of Kazakhstan's arrivals-by-year table."""
+        f = self.judge('"text-align:center;" 1996 increase 202,000', {1996: 202000.0, 2020: 2035000.0},
+                       row=True, indicator="ST.INT.ARVL")
+        self.assertEqual(f.kind, freshcite.HISTORICAL)
+        f = self.judge("center 1995 increase 218,000", {1995: 233000.0, 1998: 380000.0},
+                       row=True, indicator="ST.INT.ARVL")
+        self.assertEqual(f.kind, freshcite.DIFFERS, "a revised year is still worth reporting")
+
+    def test_a_former_state_is_not_held_to_the_modern_country(self):
+        """2026-09-26 sample: the Ukrainian SSR's 1990 GDP reported as "newer"."""
+        for title in ("Ukrainian Soviet Socialist Republic", "Republic of Belarus (1991\u20131995)"):
+            f = freshcite.judge(title, cite("NY.GDP.MKTP.PP.CD"), "GDP_PPP", "~$395.12 billion",
+                                series({1990: 395.12e9, 2025: 690.4e9}, "NY.GDP.MKTP.PP.CD"), True)
+            self.assertEqual(f.kind, freshcite.HISTORICAL, title)
+
+    def test_an_exchange_rate_is_never_a_revision_either(self):
+        """2026-09-26 sample: "dropped to 165 yen per dollar in 1986" against the 1986 average."""
+        f = self.judge("the exchange rate dropped to 165 yen per dollar in 1986",
+                       {1986: 168.5, 2025: 149.7}, indicator="PA.NUS.FCRF")
+        self.assertNotIn(f.kind, freshcite.REPORTED)
+
     def test_an_age_is_not_the_statistic(self):
         """Unseen sample: "estimated to be under the age of 15" was read as 15%."""
         claim = "A large share of the population is estimated to be under the age of 15"
