@@ -1,0 +1,10 @@
+<!-- Excerpt from the English Wikipedia article "Economy of Bermuda" (https://en.wikipedia.org/wiki/Economy_of_Bermuda), raw wikitext fetched 2026-09-26.
+     Text is CC BY-SA 4.0 by Wikipedia contributors; see the article history for authorship. -->
+| gdp = {{plainlist|
+* {{increase}} $8.980 billion (nominal, 2024)<ref>{{cite web|url=https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=BM|title=GDP (current US$) - Bermuda|publisher=[[World Bank]]|website=data.worldbank.org|access-date=6 August 2025}}</ref>
+* {{increase}} $7.738 billion ([[Purchasing power parity|PPP]], 2024)<ref>{{cite web|url=https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=BM|title=GDP, PPP (current international $) - Bermuda|publisher=[[World Bank]]|website=data.worldbank.org|access-date=6 August 2025}}</ref>}}
+| growth = {{plainlist|
+* {{decrease}} -6.8% (2020)<ref name="WBGR">{{cite web|url=https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BM|title=GDP growth (annual %) - Bermuda|publisher=[[World Bank]]|website=data.worldbank.org|access-date=6 August 2025}}</ref>
+| per capita = {{plainlist|
+* {{increase}} $138,935 (nominal, 2024)<ref>{{cite web|url=https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BM|title=GDP per capita (current US$) - Bermuda|publisher=[[World Bank]]|website=data.worldbank.org|access-date=6 August 2025}}</ref>
+* {{increase}} $119,719 (PPP, 2024)<ref>{{cite web|url=https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?locations=BM|title=GDP per capita, PPP (current international $) - Bermuda|publisher=[[World Bank]]|website=data.worldbank.org|access-date=6 August 2025}}</ref>}}

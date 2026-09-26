@@ -1,0 +1,11 @@
+<!-- Excerpt from the English Wikipedia article "Economy of Paraguay" (https://en.wikipedia.org/wiki/Economy_of_Paraguay), raw wikitext fetched 2026-09-26.
+     Text is CC BY-SA 4.0 by Wikipedia contributors; see the article history for authorship. -->
+}}
+| per capita growth = 5.4%&nbsp;(2025)<ref>{{Cite web|url=https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG|title = GDP per capita growth (annual %), World Bank Group, accessed July 2026}}</ref>
+| poverty = {{plainlist|
+*{{decreasePositive}} 16.0% (2025)<ref>{{cite web |title=Poverty headcount ratio at national poverty lines (% of population) - Paraguay |url=https://data.worldbank.org/indicator/SI.POV.NAHC?locations=PY |website=data.worldbank.org |publisher=World Bank |access-date=21 March 2020}}</ref>
+*{{decreasePositive}} 16% on less than $8.30/day (2023)<ref>{{cite web |url=https://data.worldbank.org/indicator/SI.POV.UMIC?locations=PY&most_recent_value_desc=true |title=Poverty headcount ratio at $5.50 a day (2011 PPP) (% of population) - Paraguay |publisher=[[World Bank]] |website=data.worldbank.org |access-date=21 March 2020}}</ref>}}
+| gini = {{decreasePositive}} 44.4 {{color|darkorange|medium}} (2023)<ref>{{cite web |url=https://data.worldbank.org/indicator/SI.POV.GINI?locations=PY |title=GINI index (World Bank estimate) |publisher=[[World Bank]] |website=data.worldbank.org |access-date=21 March 2020}}</ref>
+| labor = {{plainlist|
+*{{increase}} 3,530,715 (2019)<ref>{{cite web |url=https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=PY&most_recent_value_desc=true |title=Labor force, total - Paraguay |publisher=[[World Bank]] |website=data.worldbank.org |access-date=12 January 2020}}</ref>
+*{{increase}} 67.4% employment rate (2018)<ref>{{cite web |url=https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=PY&most_recent_value_desc=true |title=Employment to population ratio, 15+, total (%) (national estimate) - Paraguay |publisher=[[World Bank]] |website=data.worldbank.org |access-date=24 October 2019}}</ref>}}

@@ -1,0 +1,17 @@
+<!-- Excerpt from the English Wikipedia article "Economy of the Democratic Republic of the Congo" (https://en.wikipedia.org/wiki/Economy_of_the_Democratic_Republic_of_the_Congo), raw wikitext fetched 2026-09-26.
+     Text is CC BY-SA 4.0 by Wikipedia contributors; see the article history for authorship. -->
+*[[Least Developed Countries|Low-income economy]]<ref>{{cite web |url=https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups |title=World Bank Country and Lending Groups |publisher=[[World Bank]] |website=datahelpdesk.worldbank.org |access-date=29 September 2019}}</ref>}}
+| population = {{IncreaseNeutral}} 95,894,118 (2021)<ref>{{cite web |title=Population, total - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/SP.POP.TOTL?locations=CD |website=data.worldbank.org |publisher=World Bank |access-date=3 March 2020}}</ref>
+}}
+| per capita growth = 2.4%&nbsp;(2025)<ref>{{Cite web|url=https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG|title = GDP per capita growth (annual %), World Bank Group, accessed July 2026}}</ref>
+| poverty = {{plainlist|
+*63.9% (2012)<ref>{{cite web |title=Poverty headcount ratio at national poverty lines (% of population) - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/SI.POV.NAHC?locations=CD |website=data.worldbank.org |publisher=World Bank |access-date=3 March 2020}}</ref>
+*76.6% on less than $1.90/day (2012)<ref>{{cite web |title=Poverty headcount ratio at $1.90 a day (2011 PPP) (% of population) - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/SI.POV.DDAY?locations=CD |website=data.worldbank.org |publisher=World Bank |access-date=3 March 2020}}</ref>}}
+| gini = 42.1 {{color|darkorange|medium}} (2012)<ref>{{cite web |title=GINI index (World Bank estimate) - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/SI.POV.GINI?locations=CD |website=data.worldbank.org |publisher=World Bank |access-date=3 March 2020}}</ref>
+| labor = {{plainlist|
+*{{increase}} 29,699,289 (2019)<ref>{{cite web |title=Labor force, total - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CD |website=data.worldbank.org |publisher=World Bank & [[ILO]] |access-date=3 March 2020}}</ref>
+*63.1% employment rate (2012)<ref>{{cite web |title=Employment to population ratio, 15+, total (%) (national estimate) - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=CD |website=data.worldbank.org |publisher=World Bank & ILO |access-date=3 March 2020}}</ref>}}
+!Year
+!Goods Export<br /><small>(billion US$)</small><ref>{{Cite web |title=Goods exports (BoP, current US$) - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/BX.GSR.MRCH.CD?end=2023&locations=CD&most_recent_value_desc=true&start=2005 |access-date=2025-01-25 |website=World Bank Open Data}}</ref>
+!Goods Imports<br /><small>(in</small> b<small>illion US$)</small><ref>{{Cite web |title=Goods imports (BoP, current US$) - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/BM.GSR.MRCH.CD?end=2023&locations=CD&most_recent_value_desc=true&start=2005 |access-date=2025-01-25 |website=World Bank Open Data}}</ref>
+!Net trade<br /><small>(in</small> b<small>illion US$)</small><ref>{{Cite web |title=Net trade in goods (BoP, current US$) - Congo, Dem. Rep. |url=https://data.worldbank.org/indicator/BN.GSR.MRCH.CD?end=2023&locations=CD&most_recent_value_desc=true&start=2005 |access-date=2025-01-25 |website=World Bank Open Data}}</ref>

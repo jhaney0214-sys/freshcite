@@ -1,0 +1,18 @@
+<!-- Excerpt from the English Wikipedia article "Economy of Senegal" (https://en.wikipedia.org/wiki/Economy_of_Senegal), raw wikitext fetched 2026-09-26.
+     Text is CC BY-SA 4.0 by Wikipedia contributors; see the article history for authorship. -->
+*Lower-middle income economy<ref>{{cite web |url=https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups |title=World Bank Country and Lending Groups |publisher=[[World Bank]] |website=datahelpdesk.worldbank.org |access-date=29 September 2019}}</ref>}}
+| population = {{IncreaseNeutral}} 18,384,660 (2023)<ref>{{cite web |title=Population, total - Senegal |url=https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SN&name_desc=false |website=data.worldbank.org |publisher=World Bank |access-date=25 January 2020}}</ref>
+}}
+| per capita growth = 4.3%&nbsp;(2025)<ref>{{Cite web|url=https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG|title = GDP per capita growth (annual %), World Bank Group, accessed July 2026}}</ref>
+*46.7% (2011 est.)<ref name="CIAWFSG"/>
+*67.5% on less than $3.20/day (2011)<ref>{{cite web |title=Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population) - Senegal |url=https://data.worldbank.org/indicator/SI.POV.LMIC?locations=SN&name_desc=false |website=data.worldbank.org |publisher=World Bank |access-date=25 January 2020}}</ref>}}
+| gini = 38.1 {{color|darkorange|medium}} (2018, [[World Bank]])<ref>{{cite web |url=https://data.worldbank.org/indicator/SI.POV.GINI?locations=SN |title=GINI index (World Bank estimate) |publisher=[[World Bank]] |website=data.worldbank.org |access-date=18 March 2019}}</ref>
+| labor = {{plainlist|
+*{{increase}} 5,257,332 (2023)<ref>{{cite web |title=Labor force, total - Senegal |url=https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=SN&name_desc=false |website=data.worldbank.org |publisher=World Bank |access-date=25 January 2020}}</ref>
+*42.4% employment rate (2015)<ref>{{cite web |title=Employment to population ratio, 15+, total (%) (national estimate) - Senegal |url=https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=SN&name_desc=false |website=data.worldbank.org |publisher=World Bank |access-date=25 January 2020}}</ref>}}
+| industries = agricultural and fish processing, phosphate mining, fertilizer production, petroleum refining, zircon, and gold mining, construction materials, ship construction and repair<ref name="CIAWFSG"/>
+| exports = {{increase}} $8.1 billion (2024)<ref>{{cite web|url=https://data.worldbank.org/indicator/NE.EXP.GNFS.CD?end=2024&locations=SN&start=2000&view=chart|title=Exports of current goods and services (current US$)|website=data.worldbank.org|publisher=[[World Bank]]|access-date=25 December 2025}}</ref>
+*(2023)<ref name="CIAWFSG"/>}}
+| imports = {{decreasePositive}} $14.25 billion (2024)<ref>{{cite web|url=https://data.worldbank.org/indicator/NE.EXP.GNFS.CD?end=2024&locations=SN&start=2000&view=chart|title=Imports of current goods and services (current US$)|website=data.worldbank.org|publisher=[[World Bank]]|access-date=25 December 2025}}</ref>
+*(2023)<ref name="CIAWFSG"/>}}
+| current account = {{decrease}} -$6.07 billion ({{increase}} 19.8% of GDP) (2023)<ref>{{cite web|url=https://data.worldbank.org/indicator/BN.CAB.XOKA.CD?end=2024&locations=SN&start=2000&view=chart|title=Exports of current goods and services (current US$)|website=data.worldbank.org|publisher=[[World Bank]]|access-date=25 December 2025}}</ref>

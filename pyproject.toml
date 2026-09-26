@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asof"
+dynamic = ["version"]
+description = "Wikipedia figures checked against the dataset their citation names"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+asof = "asof:main"
+
+[tool.setuptools]
+py-modules = ["asof"]
+
+[tool.setuptools.dynamic]
+version = {attr = "asof.__version__"}
