@@ -356,11 +356,53 @@ class TheFetcher(unittest.TestCase):
             self.assertEqual(fetch("https://x.org/f"), "fresh")
             self.assertEqual(fetch._cache_path("https://x.org/f").read_text(), "fresh")
 
+    def test_a_timeout_is_retried(self):
+        """The first full scan died on one read timeout at article 10."""
+        answer = mock.MagicMock()
+        answer.__enter__.return_value.read.return_value = b"ok"
+        with mock.patch("urllib.request.urlopen", side_effect=[TimeoutError("read"), answer]), \
+                mock.patch("time.sleep") as sleep:
+            self.assertEqual(asof.Fetcher(interval={"x.org": 0})("https://x.org/g"), "ok")
+        self.assertIn(mock.call(5), sleep.call_args_list)
+
+    def test_a_network_that_stays_down_is_given_up_on(self):
+        with mock.patch("urllib.request.urlopen", side_effect=[TimeoutError("read")] * 6), \
+                mock.patch("time.sleep"):
+            with self.assertRaises(TimeoutError):
+                asof.Fetcher(interval={"x.org": 0})("https://x.org/h")
+
     def test_other_errors_are_not_retried(self):
         refused = urllib.error.HTTPError("u", 404, "Not Found", {}, io.BytesIO())
         with mock.patch("urllib.request.urlopen", side_effect=[refused]):
             with self.assertRaises(urllib.error.HTTPError):
                 asof.Fetcher(interval={"x.org": 0})("https://x.org/c")
+
+
+class TheScan(unittest.TestCase):
+
+    def test_one_unreadable_article_does_not_end_the_scan(self):
+        romania = wikitext("Economy_of_Romania")
+        def fetch(url):
+            if "LinkSearch" in url:
+                return "".join('<li><a class="external" href="https://data.worldbank.org/indicator/X">u</a>'
+                               ' is linked from <a href="/wiki/%s" title="%s">%s</a></li>' % (t, t, t)
+                               for t in ("Broken", "Economy of Romania"))
+            if "title=Broken" in url:
+                raise TimeoutError("read")
+            if "action=raw" in url:
+                return romania
+            return offline(url)
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(asof, "Fetcher", return_value=fetch), \
+                mock.patch("sys.stderr", io.StringIO()), mock.patch("sys.stdout", io.StringIO()):
+            self.assertEqual(asof.main(["scan", "--out", tmp]), 0)
+            report = (pathlib.Path(tmp) / "report.md").read_text(encoding="utf-8")
+            findings = json.loads((pathlib.Path(tmp) / "findings.json").read_text(encoding="utf-8"))
+        self.assertIn("## Articles that could not be read (1)", report)
+        self.assertIn("TimeoutError", report)
+        self.assertIn("## A newer figure is available (1)", report)
+        self.assertIn("Generated", report)
+        self.assertEqual([f["article"] for f in findings if f["kind"] == "newer"], ["Economy of Romania"])
 
 
 class TheReport(unittest.TestCase):

@@ -91,7 +91,7 @@ class Fetcher(object):
             self.last[host] = time.time()
             try:
                 request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-                with urllib.request.urlopen(request, timeout=60) as response:
+                with urllib.request.urlopen(request, timeout=30) as response:
                     body = response.read().decode("utf-8")
                 break
             except urllib.error.HTTPError as exc:
@@ -99,6 +99,15 @@ class Fetcher(object):
                     raise
                 pause = int(exc.headers.get("Retry-After") or 30) + 2
                 self.log("rate limited by %s, waiting %ds" % (host, pause))
+                time.sleep(pause)
+            except (urllib.error.URLError, OSError) as exc:
+                # A read that times out or a connection that drops is the
+                # network, not the page. The first full scan died on one
+                # timeout at article 10 of 1,270, which is why this exists.
+                if attempt == 5:
+                    raise
+                pause = 5 * (attempt + 1)
+                self.log("%s from %s, retrying in %ds" % (type(exc).__name__, host, pause))
                 time.sleep(pause)
         if self.cache_dir:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -460,7 +469,7 @@ def check_wikitext(title, wikitext, fetch):
         if pair not in cache:
             try:
                 cache[pair] = worldbank_series(fetch, *pair)
-            except (urllib.error.HTTPError, ValueError):
+            except (OSError, ValueError):
                 cache[pair] = None
         if cache[pair] is None:
             findings.append(Finding(title, citation, NO_DATA, claim=claim, key=key))
@@ -513,7 +522,7 @@ def article_link(title):
     return "[%s](%s/wiki/%s)" % (title, WIKI, urllib.parse.quote(title.replace(" ", "_")))
 
 
-def markdown(findings, checked, when):
+def markdown(findings, checked, when, unread=()):
     """The report an editor reads: findings first, then what was not checked."""
     counts = {}
     for f in findings:
@@ -550,6 +559,12 @@ def markdown(findings, checked, when):
         out.append("| %s | %d |" % (label, counts.get(kind, 0)))
     out += ["", "A citation lands here when the tool cannot say something true about "
             "it. That is most of them, and it is the intended behaviour.", ""]
+    if unread:
+        out += ["## Articles that could not be read (%d)" % len(unread), "",
+                "Their citations were not checked at all, so they are in no count "
+                "above. A later run will pick them up.", ""]
+        out += ["- %s: %s" % (article_link(title), why) for title, why in unread]
+        out.append("")
     return "\n".join(out)
 
 
@@ -588,12 +603,15 @@ def main(argv=None):
         return 0
 
     titles = linked_articles(fetch, most=args.limit)
-    findings = []
+    findings, unread = [], []
     for n, title in enumerate(titles, 1):
         try:
             found = check_article(title, fetch)
-        except urllib.error.HTTPError as exc:
-            sys.stderr.write("skipped %s: HTTP %s\n" % (title, exc.code))
+        except (OSError, ValueError) as exc:
+            # One unreadable page must never end a scan of a thousand.
+            why = "HTTP %s" % exc.code if isinstance(exc, urllib.error.HTTPError) else type(exc).__name__
+            unread.append((title, why))
+            sys.stderr.write("[%d/%d] %s: not read (%s)\n" % (n, len(titles), title, why))
             continue
         findings += found
         reported = sum(1 for f in found if f.kind in REPORTED)
@@ -602,11 +620,13 @@ def main(argv=None):
     out = pathlib.Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     when = datetime.date.today().isoformat()
-    (out / "report.md").write_text(markdown(findings, len(titles), when), encoding="utf-8")
+    (out / "report.md").write_text(markdown(findings, len(titles) - len(unread), when, unread),
+                                   encoding="utf-8")
     (out / "findings.json").write_text(json.dumps(
         [f.as_dict() for f in findings], indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    print("%d articles, %d citations, %d reported -> %s" % (
-        len(titles), len(findings), sum(1 for f in findings if f.kind in REPORTED), out))
+    print("%d articles read, %d not, %d citations, %d reported -> %s" % (
+        len(titles) - len(unread), len(unread), len(findings),
+        sum(1 for f in findings if f.kind in REPORTED), out))
     return 0
 
 
