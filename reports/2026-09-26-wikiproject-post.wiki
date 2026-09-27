@@ -1,0 +1,29 @@
+<!--
+Draft talk-page post for WikiProject Countries and WikiProject Economics.
+Not posted. Before posting:
+  0. Make github.com/jhaney0214-sys/freshcite public (PRE-PUBLIC-CHECKLIST.md
+     first). It is private as of 2026-09-26, and the page, this post and the
+     tool's User-Agent all link to it.
+  1. Paste reports/2026-09-26-worldbank.wiki into User:USERNAME/World Bank figures.
+  2. Replace USERNAME below (twice).
+  3. Post the section below the line on each talk page, once:
+       Wikipedia talk:WikiProject Countries
+       Wikipedia talk:WikiProject Economics
+  4. Put the date in ROADMAP.md: the 30-day re-scan counts fixes from then.
+Every figure below is printed by
+  python tools/findings.py reports/2026-09-26-worldbank.json --articles 1270
+with --show for each example article.
+-->
+== 360 World Bank figures that the cited series no longer supports ==
+
+I checked every English Wikipedia article that cites a <code>data.worldbank.org/indicator</code> link against the series the link names: 1,270 articles and 2,730 citations. For 360 of them, in 208 articles, the series now says something different from the sentence. The list is at [[User:USERNAME/World Bank figures]], in sortable tables grouped by kind:
+
+* '''154''' where the sentence presents a figure as current and the series has a newer year (for example, the poverty rate in [[Economy of Laos]] is given as 15.7% for 2018; the series has 7.1% for 2024);
+* '''199''' where the sentence states a year and the series now gives a different value for that year, usually after a revision (life expectancy in [[Liberia]] is given as 64.4 for 2020; the series now gives 61.3);
+* '''7''' where the figure belongs to a different year from the one stated (GNI per capita in [[Jamaica and the World Bank]] is given as $4,990 for 2018; that is the 2016 value, and 2018 was 5,610).
+
+Nothing has been edited, and I don't plan to edit from this list myself. Each row quotes the sentence, the figure, what the series says now, and links to the series, so it can be judged in one look. On a random sample of 40 rows checked by hand, 36 were right (90%). The four errors have been fixed since, but the fixed version has not been re-measured. So please treat each row as something to check, not something to apply. If a row is wrong, a note in its last column helps me fix the rule behind it.
+
+The list leaves out anything it could not pin to a single year of a single country's series. That includes links naming several countries, figures that match no year, prose about a past year ("fell to 3.3% in 1986"), figures for former states, and a few other cases. So it is not a complete audit, only the rows it is confident about. The checker is [https://github.com/jhaney0214-sys/freshcite freshcite] (open source, read-only).
+
+I'll re-run it in 30 days and post how many rows were resolved, which will say whether a list like this is worth making for other sources. ~~~~

@@ -26,11 +26,16 @@ editor can decide in one look.
 
 **The first full scan, 2026-09-26:** every English Wikipedia article linking to
 `data.worldbank.org/indicator`, **1,270 articles and 2,730 citations. With
-the current rules it reports 365 findings**: 159 figures with a newer year
-available, 199 where the source now gives a different value for the stated
-year, and 7 where the year does not belong to the figure. (The first run of
-the day reported 383; the difference is the fixes described below.) Every article was read. The whole report is in
-[`reports/2026-09-26-worldbank.md`](reports/2026-09-26-worldbank.md).
+the current rules it reports 360 findings in 208 articles**: 154 figures with
+a newer year available, 199 where the source now gives a different value for
+the stated year, and 7 where the year does not belong to the figure. (The first
+run of the day reported 383; the difference is the fixes described below.)
+Every article was read. The whole report is in
+[`reports/2026-09-26-worldbank.md`](reports/2026-09-26-worldbank.md), the same
+findings as a page for a Wikipedia userspace in
+[`reports/2026-09-26-worldbank.wiki`](reports/2026-09-26-worldbank.wiki), and
+every field of every citation in
+[`reports/2026-09-26-worldbank.json`](reports/2026-09-26-worldbank.json).
 
 | Article | As written | What the World Bank says now |
 | --- | --- | --- |
@@ -57,10 +62,15 @@ and a test built from the real sentence. Re-scanning showed two of those rules
 over-reaching, which were fixed before the second sample was drawn: a sex
 breakdown must be kept when the citation is itself a series for one sex, and
 "about" only reads as current when no year is stated. The second sample's four
-errors are two former states the title rule does not recognise (Pahlavi Iran,
-the Russian SFSR), a decimal comma ("14,9"), since fixed, and a sentence giving
-two statistics where the one nearest the citation is not the one it cites.
-**90% is the measured figure; the decimal-comma fix came after it.**
+errors are two former states the title rule did not recognise (Pahlavi Iran,
+the Russian SFSR), a decimal comma ("14,9"), and a sentence giving two
+statistics where the one nearest the citation is not the one it cites. All four
+are fixed since: former states are now read from the article's infobox, and
+two figures that each say what they count are judged by which one names the
+series. Re-scanning with those fixes removed exactly the five rows they were
+meant to (the two former states and the National Reorganization Process, whose
+infobox also ends) and changed nothing else. **90% is the measured figure; the
+fixes came after it, so the current rules are unmeasured.**
 
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
@@ -73,7 +83,11 @@ python freshcite.py scan --limit 200 --out report         # articles citing the 
 ```
 
 `scan` finds the articles through Special:LinkSearch, checks each, and writes
-`report/report.md` for people and `report/findings.json` for anything else.
+`report/report.md` for people, `report/report.wiki` for a Wikipedia
+userspace, and `report/findings.json` for anything else.
+`python freshcite.py wiki findings.json --articles N --date YYYY-MM-DD` makes
+the page again from an earlier scan, and `python tools/findings.py
+findings.json --articles N` prints the summary figures a written piece quotes.
 One file, standard library only, Python 3.8 or later. MIT licensed.
 
 ## When it says nothing

@@ -850,7 +850,9 @@ def main(argv=None):
         return 2
     if args.command == "wiki":
         rows = json.loads(pathlib.Path(args.findings).read_text(encoding="utf-8"))
-        sys.stdout.write(wikitext(rows, args.date, args.articles) + "\n")
+        # Bytes, not text: a Windows console's code page cannot encode the
+        # minus signs and dashes that articles quote, and failed on the first run.
+        sys.stdout.buffer.write((wikitext(rows, args.date, args.articles) + "\n").encode("utf-8"))
         return 0
 
     fetch = Fetcher(cache_dir=args.cache, log=lambda m: sys.stderr.write(m + "\n"))
