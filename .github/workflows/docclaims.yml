@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jhaney0214-sys/docclaims@v0.3.3
+      - uses: jhaney0214-sys/docclaims@v0.4.0
         with:
           path: .
           scan: "*.md reports/*.wiki"
