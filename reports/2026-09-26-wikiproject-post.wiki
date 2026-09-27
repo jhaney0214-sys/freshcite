@@ -1,9 +1,6 @@
 <!--
 Draft talk-page post for WikiProject Countries and WikiProject Economics.
 Not posted. Before posting:
-  0. Make github.com/jhaney0214-sys/freshcite public (PRE-PUBLIC-CHECKLIST.md
-     first). It is private as of 2026-09-26, and the page, this post and the
-     tool's User-Agent all link to it.
   1. Paste reports/2026-09-26-worldbank.wiki into User:USERNAME/World Bank figures.
   2. Replace USERNAME below (twice).
   3. Post the section below the line on each talk page, once:
