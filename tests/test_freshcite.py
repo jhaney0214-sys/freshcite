@@ -662,5 +662,23 @@ class TheReport(unittest.TestCase):
         self.assertEqual(row.count(" | "), 4)
 
 
+class TheCommittedSummary(unittest.TestCase):
+
+    def test_the_summary_is_what_the_findings_print(self):
+        """README numbers are pinned to reports/*-summary.txt by docclaims, so
+        that file must be exactly what tools/findings.py prints today."""
+        root = FIX.parent.parent
+        sys.path.insert(0, str(root / "tools"))
+        import findings as summary  # noqa: E402
+        for path in sorted((root / "reports").glob("*-summary.txt")):
+            data = path.with_name(path.name.replace("-summary.txt", "-worldbank.json"))
+            articles = re.search(r"^articles read\s+(\d+)", path.read_text(encoding="utf-8"), re.M).group(1)
+            out = io.StringIO()
+            with mock.patch("sys.stdout", out):
+                summary.main([str(data), "--articles", articles])
+            # read_text turns a Windows checkout's CRLF back into LF.
+            self.assertEqual(out.getvalue(), path.read_text(encoding="utf-8"), path.name)
+
+
 if __name__ == "__main__":
     unittest.main()

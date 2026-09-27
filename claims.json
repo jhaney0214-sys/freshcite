@@ -1,0 +1,218 @@
+{
+  "_": "The numbers this README states, checked by docclaims (github.com/jhaney0214-sys/docclaims) in CI.",
+  "claims": [
+    {
+      "id": "test_count",
+      "claim": "Tests in the suite",
+      "value": "87 tests",
+      "format": "%d tests",
+      "derive": {
+        "files": [
+          "tests/test_*.py"
+        ],
+        "tests": "python"
+      },
+      "status": "measured",
+      "anchor": "test methods in tests/, counted by parsing",
+      "checked_on": "2026-09-26",
+      "durable": "read from source on every verify",
+      "appears_in": [
+        "README.md"
+      ],
+      "near": [
+        "unittest discover"
+      ],
+      "window": 80
+    },
+    {
+      "id": "articles_read",
+      "claim": "English Wikipedia articles linking to a World Bank indicator, all read",
+      "value": "1,270 articles",
+      "format": "{:,} articles",
+      "derive": {
+        "files": [
+          "reports/2026-09-26-summary.txt"
+        ],
+        "capture": "^articles read\\s+(\\d+)$"
+      },
+      "status": "measured",
+      "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
+      "checked_on": "2026-09-26",
+      "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
+      "appears_in": [
+        "README.md",
+        "reports/2026-09-26-wikiproject-post.wiki"
+      ],
+      "near": [
+        "linking to",
+        "the link names"
+      ],
+      "window": 120
+    },
+    {
+      "id": "citations",
+      "claim": "World Bank citations in those articles",
+      "value": "2,730 citations",
+      "format": "{:,} citations",
+      "derive": {
+        "files": [
+          "reports/2026-09-26-summary.txt"
+        ],
+        "capture": "^World Bank citations\\s+(\\d+)$"
+      },
+      "status": "measured",
+      "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
+      "checked_on": "2026-09-26",
+      "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
+      "appears_in": [
+        "README.md",
+        "reports/2026-09-26-wikiproject-post.wiki"
+      ],
+      "near": [
+        "articles and"
+      ],
+      "window": 60
+    },
+    {
+      "id": "reported",
+      "claim": "Findings the scan reports",
+      "value": "364 findings",
+      "format": "%d findings",
+      "derive": {
+        "files": [
+          "reports/2026-09-26-summary.txt"
+        ],
+        "capture": "^reported\\s+(\\d+) "
+      },
+      "status": "measured",
+      "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
+      "checked_on": "2026-09-26",
+      "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
+      "appears_in": [
+        "README.md"
+      ],
+      "near": [
+        "reports"
+      ],
+      "window": 40
+    },
+    {
+      "id": "articles_with_finding",
+      "claim": "Articles with at least one finding",
+      "value": "211 articles",
+      "format": "%d articles",
+      "derive": {
+        "files": [
+          "reports/2026-09-26-summary.txt"
+        ],
+        "capture": "^articles with a finding\\s+(\\d+)$"
+      },
+      "status": "measured",
+      "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
+      "checked_on": "2026-09-26",
+      "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
+      "appears_in": [
+        "README.md",
+        "reports/2026-09-26-wikiproject-post.wiki"
+      ],
+      "near": [
+        "findings in",
+        "in 211"
+      ],
+      "window": 40
+    },
+    {
+      "id": "newer",
+      "claim": "Figures with a newer year available",
+      "value": "154 figures",
+      "format": "%d figures",
+      "derive": {
+        "files": [
+          "reports/2026-09-26-summary.txt"
+        ],
+        "capture": "^  newer\\s+(\\d+)$"
+      },
+      "status": "measured",
+      "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
+      "checked_on": "2026-09-26",
+      "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
+      "appears_in": [
+        "README.md"
+      ],
+      "near": [
+        "with\na newer",
+        "with a newer"
+      ],
+      "window": 40
+    },
+    {
+      "id": "differs",
+      "claim": "Figures where the source now gives a different value for the stated year",
+      "value": "203 where",
+      "format": "%d where",
+      "derive": {
+        "files": [
+          "reports/2026-09-26-summary.txt"
+        ],
+        "capture": "^  differs\\s+(\\d+)$"
+      },
+      "status": "measured",
+      "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
+      "checked_on": "2026-09-26",
+      "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
+      "appears_in": [
+        "README.md"
+      ],
+      "near": [
+        "different value"
+      ],
+      "window": 60,
+      "allow": {
+        "7 where": "the mislabeled count, the next item in the same list, pinned as its own claim"
+      }
+    },
+    {
+      "id": "mislabeled",
+      "claim": "Figures whose year does not belong to them",
+      "value": "7 where",
+      "format": "%d where",
+      "derive": {
+        "files": [
+          "reports/2026-09-26-summary.txt"
+        ],
+        "capture": "^  mislabeled\\s+(\\d+)$"
+      },
+      "status": "measured",
+      "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
+      "checked_on": "2026-09-26",
+      "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
+      "appears_in": [
+        "README.md"
+      ],
+      "near": [
+        "does not belong"
+      ],
+      "window": 40
+    },
+    {
+      "id": "accuracy",
+      "claim": "Findings right on the third hand-checked random sample of 40",
+      "value": "36 of 40, 90%",
+      "status": "measured",
+      "anchor": "reports/2026-09-26-accuracy-sample-3.md, each of the 40 judged against its series",
+      "checked_on": "2026-09-26",
+      "recheck_by": "2026-12-31",
+      "notes": "Measured before the third sample's fixes; recheck with a fresh sample when the rules change again.",
+      "evidence": {
+        "file": "reports/2026-09-26-accuracy-sample-3.md",
+        "line": "**36 right, 4 wrong: 90%**"
+      },
+      "appears_in": [
+        "README.md"
+      ],
+      "near": [
+        "third]"
+      ]
+    }
+  ]
+}

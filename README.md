@@ -1,5 +1,7 @@
 # freshcite
 
+[![numbers checked by docclaims](https://github.com/jhaney0214-sys/freshcite/actions/workflows/docclaims.yml/badge.svg)](https://github.com/jhaney0214-sys/docclaims)
+
 **Wikipedia figures checked against the dataset their citation names.**
 
 A Wikipedia sentence that cites
@@ -167,9 +169,12 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests
+python -m unittest discover -s tests       # 87 tests
+docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 
-The tests run offline against real captured pages and series in
+Every count this README states is pinned in `claims.json` and checked by
+[docclaims](https://github.com/jhaney0214-sys/docclaims) on each push; the badge
+at the top is that check. The tests run offline against real captured pages and series in
 `tests/fixtures/`. Their licences are noted in `tests/fixtures/README.md`:
 Wikipedia text is CC BY-SA 4.0 and World Bank data is CC BY 4.0.

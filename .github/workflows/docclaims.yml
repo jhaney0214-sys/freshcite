@@ -1,0 +1,22 @@
+# Checks every number the README and the WikiProject draft state against
+# claims.json, which reads each one from the committed scan summary or from
+# the test suite. Its status is the README's "numbers checked" badge.
+name: docclaims
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jhaney0214-sys/docclaims@v0.3.3
+        with:
+          path: .
+          scan: "*.md reports/*.wiki"
