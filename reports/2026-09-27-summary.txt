@@ -1,0 +1,22 @@
+articles read              1270
+World Bank citations       2730
+reported                    356  (13.0% of citations)
+  newer                     154
+  mislabeled                  7
+  differs                   195
+articles with a finding     204
+silent, by reason:
+  no country in link        984
+  unmatched                 496
+  no figure                 367
+  historical                279
+  current                   234
+  no data                    14
+newer: years behind the latest, median 4, 5 or more 71 of 154, most 15
+series most often reported:
+   55  Labor force, total
+   38  Employment to population ratio, 15+, total (%) (national estimate)
+   36  Gini index
+   31  Population, total
+   17  Poverty headcount ratio at national poverty lines (% of population)
+    9  Unemployment, total (% of total labor force) (modeled ILO estimate)

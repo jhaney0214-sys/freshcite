@@ -244,6 +244,11 @@ AGE = re.compile(r"\bage[ds]?\s+(?:of\s+)?(?:under\s+|over\s+)?$", re.I)
 SEX_AFTER = re.compile(r"\s*(?:years?\s+)?(?:(?:for|among|in|of|in the case of)\s+(?:the\s+)?)?"
                        r"(?P<sex>males?|females?|men|women|boys|girls)\b", re.I)
 SEX_BEFORE = re.compile(r"\b(?P<sex>males?|females?|men|women|boys|girls)\s*[:=]?\s*$", re.I)
+#: "Among males the life expectancy was 79": the sex opens the clause and the
+#: figure closes it, with no other number, stop or year between. Found in the
+#: fifth 2026-09-27 sample (Finland), judged against the total series.
+SEX_CLAUSE = re.compile(r"\b(?:among|for|in)\s+(?:the\s+)?(?P<sex>males?|females?|men|women|boys|girls)\b(?!['\u2019])"
+                        r"[^.;:\d]{0,40}$", re.I)
 
 
 def _sex(word):
@@ -345,7 +350,8 @@ def figures(text, by_sex=None):
         # 2026-09-26 sample (Bolivia, Violeta Chamorro).
         if re.search(r"\b(?:per|for every)\s*$", before, re.I):
             continue
-        label = SEX_AFTER.match(text[match.end():]) or SEX_BEFORE.search(before)
+        label = (SEX_AFTER.match(text[match.end():]) or SEX_BEFORE.search(before)
+                 or SEX_CLAUSE.search(text[max(0, match.start() - 70):match.start()]))
         if label and _sex(label.group("sex")) != by_sex:
             continue
         found.append(Figure(match.group(0).strip(), value * scale, tolerance,
@@ -442,7 +448,11 @@ CURRENT, HISTORICAL, UNMATCHED, NO_FIGURE, COMPUTED, NO_COUNTRY, NO_DATA = (
 #: An exchange rate is cited to convert an amount at a date, so a newer rate
 #: never makes the sentence stale. Found in the first scan: film articles
 #: converting a 1965 box office at the 1965 rupee rate were reported as "newer".
-DATED_BY_USE = ("PA.NUS.FCRF",)
+#: The same for the other conversion factors: a figure in a sentence citing
+#: one is an amount converted at it, "285 million pesos (US$16 million)", never
+#: the factor. Found in the fifth 2026-09-27 sample (Hurricane Norma), where the
+#: correct conversion was reported as a revision of the DEC factor.
+DATED_BY_USE = ("PA.NUS.FCRF", "PA.NUS.ATLS", "PA.NUS.PPP", "PA.NUS.PRVT.PP", "PA.NUS.PPPC.RF")
 #: An article about a state that no longer exists: its figures belong to that
 #: state, and the modern country's latest value does not make them stale.
 #: Found in the 2026-09-26 sample: the Ukrainian SSR's 1990 GDP and the

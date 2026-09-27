@@ -1,0 +1,733 @@
+This page lists figures in English Wikipedia articles that cite a [https://data.worldbank.org World Bank] series, where the series now says something different. It was generated 2026-09-27 by [https://github.com/jhaney0214-sys/freshcite freshcite] 0.1.0, which read 1270 articles and 2730 World Bank citations, and reported 356.
+
+'''Nothing here has been edited.''' Each row gives the sentence as it reads, the figure as written, and what the cited series says today; each is for an editor to judge. A figure that is right for the year it states is never listed, and neither is anything the tool could not match to one year of the series. Please note in the last column what you did, or why the row is wrong.
+
+World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets CC BY 4.0].
+
+== A newer figure is available (154) ==
+{| class="wikitable sortable" style="font-size:90%"
+! Article !! Where !! As written !! What the source says !! Series !! Done
+|-
+| [[Africa]] || <nowiki>te (children per woman) for sub-Saharan Africa is 4.7 as of 2018, the highest in the world</nowiki> || <nowiki>4.7</nowiki> || <nowiki>4.7 is the 2018 value; the source has 2024: 4.3</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=ZG <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Sub-Saharan Africa</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Aging of China]] || <nowiki>death</nowiki> || <nowiki>7.1</nowiki> || <nowiki>7.1 is the 2020 value; the source has 2024: 7.8</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.CDRT.IN?locations=CN <nowiki>Death rate, crude (per 1,000 people)</nowiki>, <nowiki>China</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Arab world]] || <nowiki>population_density</nowiki> || <nowiki>29.8</nowiki> || <nowiki>29.8 is the 2013 value; the source has 2023: 36.8</nowiki> || [https://data.worldbank.org/indicator/EN.POP.DNST?locations=1A&view=chart <nowiki>Population density (people per sq. km of land area)</nowiki>, <nowiki>Arab World</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Azerbaijan]] || <nowiki>Azerbaijan spent $2.24 billion on its defence budget as of 2020 lc=y</nowiki> || <nowiki>$2.24 billion</nowiki> || <nowiki>$2.24 billion is the 2020 value; the source has 2024: 3.78 billion</nowiki> || [https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=AZ <nowiki>Military expenditure (current USD)</nowiki>, <nowiki>Azerbaijan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Azerbaijan]] || <nowiki>and some 12.7% of general government expenditure</nowiki> || <nowiki>12.7%</nowiki> || <nowiki>12.7% is the 2012 value; the source has 2024: 15.2%</nowiki> || [https://data.worldbank.org/indicator/MS.MIL.XPND.ZS?locations=AZ <nowiki>Military expenditure (% of general government expenditure)</nowiki>, <nowiki>Azerbaijan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Balkans]] || <nowiki>29.0 color green low (2012)</nowiki> || <nowiki>29.0</nowiki> || <nowiki>29.0 is the 2012 value; the source has 2020: 29.4</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=AL <nowiki>Gini index</nowiki>, <nowiki>Albania</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bangladesh]] || <nowiki>which is the world's seventh-largest, with an unemployment rate of 3.6% as of 2024 lc=y</nowiki> || <nowiki>3.6%</nowiki> || <nowiki>3.6% is the 2024 value; the source has 2025: 3.8%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=BD <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bangladesh]] || <nowiki>and 6% aged 65 and above as of 2023 lc=y</nowiki> || <nowiki>6%</nowiki> || <nowiki>6% is the 2023 value; the source has 2025: 7%</nowiki> || [https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS?locations=BD <nowiki>Population ages 65 and above (% of total population)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bangladesh]] || <nowiki>Bangladesh has a literacy rate of 76% as of 2021: 79% for males and 71.9% for females</nowiki> || <nowiki>76%</nowiki> || <nowiki>76% is the 2021 value; the source has 2022: 79%</nowiki> || [https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=BD <nowiki>Literacy rate, adult total (% of people ages 15 and above)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bangladesh]] || <nowiki>f-pocket expenditures made up the vast majority of the total budget, totalling roughly 73%</nowiki> || <nowiki>73%</nowiki> || <nowiki>73% is the 2015 value; the source has 2023: 79%</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.OOPC.CH.ZS?locations=BD <nowiki>Out-of-pocket expenditure (% of current health expenditure)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bangladesh]] || <nowiki>pectancy in Bangladesh at birth was 74 years (72 years for males and 76 years for females)</nowiki> || <nowiki>74</nowiki> || <nowiki>74 is the 2022 value; the source has 2024: 75</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=BD <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Brazil]] || <nowiki>while about 23% live at $8.30 a day</nowiki> || <nowiki>23%</nowiki> || <nowiki>23% is the 2023 value; the source has 2024: 21%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.UMIC?locations=BR <nowiki>Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population)</nowiki>, <nowiki>Brazil</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of Albania]] || <nowiki>fertility</nowiki> || <nowiki>1.35</nowiki> || <nowiki>1.35 is the 2023 value; the source has 2024: 1.34</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=AL <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Albania</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of Saudi Arabia]] || <nowiki>density</nowiki> || <nowiki>14.967</nowiki> || <nowiki>14.967 is the 2022 value; the source has 2023: 15.678</nowiki> || [https://data.worldbank.org/indicator/EN.POP.DNST?locations=SA <nowiki>Population density (people per sq. km of land area)</nowiki>, <nowiki>Saudi Arabia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of the world]] || <nowiki>to the highest of 6.7 in Niger</nowiki> || <nowiki>6.7</nowiki> || <nowiki>6.7 is the 2018 value; the source has 2024: 5.9</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?most_recent_value_desc=true&locations=NE <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Niger</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Algeria]] || <nowiki>bankrate</nowiki> || <nowiki>4.5%</nowiki> || <nowiki>4.5% is the 2024 value; the source has 2025: 7.2%</nowiki> || [https://data.worldbank.org/indicator/FR.INR.RINR?locations=DZ <nowiki>Real interest rate (%)</nowiki>, <nowiki>Algeria</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Argentina]] || <nowiki>increase 55.1% employment rate (2021)</nowiki> || <nowiki>55.1%</nowiki> || <nowiki>55.1% is the 2021 value; the source has 2025: 57.6%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=AR <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Argentina</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Armenia]] || <nowiki>decreasePositive 23.5% in poverty (2018)</nowiki> || <nowiki>23.5%</nowiki> || <nowiki>23.5% is the 2018 value; the source has 2024: 21.7%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=AM <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Armenia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Armenia]] || <nowiki>gini</nowiki> || <nowiki>27.9</nowiki> || <nowiki>27.9 is the 2022 value; the source has 2024: 27.4</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=AM <nowiki>Gini index</nowiki>, <nowiki>Armenia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Armenia]] || <nowiki>increase 50.1% employment rate (2017)</nowiki> || <nowiki>50.1%</nowiki> || <nowiki>50.1% is the 2017 value; the source has 2023: 59.9%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=AM <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Armenia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Azerbaijan]] || <nowiki>population</nowiki> || <nowiki>10,153,958</nowiki> || <nowiki>10,153,958 is the 2023 value; the source has 2025: 10,246,996</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=AZ <nowiki>Population, total</nowiki>, <nowiki>Azerbaijan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bahrain]] || <nowiki>population</nowiki> || <nowiki>1,588,670</nowiki> || <nowiki>1,588,670 is the 2024 value; the source has 2025: 1,600,366</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BH <nowiki>Population, total</nowiki>, <nowiki>Bahrain</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bangladesh]] || <nowiki>unemployment</nowiki> || <nowiki>3.6%</nowiki> || <nowiki>3.6% is the 2024 value; the source has 2025: 3.8%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=BD <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bangladesh]] || <nowiki>consumption</nowiki> || <nowiki>76%</nowiki> || <nowiki>76% is the 2024 value; the source has 2025: 78%</nowiki> || [https://data.worldbank.org/indicator/NE.CON.TOTL.ZS?locations=BD <nowiki>Final consumption expenditure (% of GDP)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bangladesh]] || <nowiki>gfcf</nowiki> || <nowiki>31%</nowiki> || <nowiki>31% is the 2024 value; the source has 2025: 29%</nowiki> || [https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS?locations=BD <nowiki>Gross fixed capital formation (% of GDP)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bangladesh]] || <nowiki>savings</nowiki> || <nowiki>24%</nowiki> || <nowiki>24% is the 2024 value; the source has 2025: 22%</nowiki> || [https://data.worldbank.org/indicator/NY.GDS.TOTL.ZS?locations=BD <nowiki>Gross domestic savings (% of GDP)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Belarus]] || <nowiki>decreasePositive 5.6% (2018)</nowiki> || <nowiki>5.6%</nowiki> || <nowiki>5.6% is the 2018 value; the source has 2024: 3.5%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=BY&name_desc=false <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Belarus</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Belarus]] || <nowiki>gini</nowiki> || <nowiki>25.2</nowiki> || <nowiki>25.2 is the 2018 value; the source has 2020: 24.4</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=BY&view=chart <nowiki>Gini index</nowiki>, <nowiki>Belarus</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Belarus]] || <nowiki>decrease 4,835,456 (2024)</nowiki> || <nowiki>4,835,456</nowiki> || <nowiki>4,835,456 is the 2024 value; the source has 2025: 4,795,335</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BY <nowiki>Labor force, total</nowiki>, <nowiki>Belarus</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Belize]] || <nowiki>increase 59.8% employment rate (2017)</nowiki> || <nowiki>59.8%</nowiki> || <nowiki>59.8% is the 2017 value; the source has 2019: 63.4%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=BZ <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Belize</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Benin]] || <nowiki>decrease 70.0% employment rate (2011)</nowiki> || <nowiki>70.0%</nowiki> || <nowiki>70.0% is the 2011 value; the source has 2022: 75.0%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=BJ&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Benin</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bhutan]] || <nowiki>gini</nowiki> || <nowiki>37.4</nowiki> || <nowiki>37.4 is the 2017 value; the source has 2022: 28.5</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=BT <nowiki>Gini index</nowiki>, <nowiki>Bhutan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bhutan]] || <nowiki>increase 61.6% employment rate (2015)</nowiki> || <nowiki>61.6%</nowiki> || <nowiki>61.6% is the 2015 value; the source has 2025: 62.6%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=BT <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Bhutan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bolivia]] || <nowiki>decreasePositive 36.5% (2023)</nowiki> || <nowiki>36.5%</nowiki> || <nowiki>36.5% is the 2023 value; the source has 2024: 37.7%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?end=2021&locations=BO&start=2019&view=chart <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bolivia]] || <nowiki>gini</nowiki> || <nowiki>42.1</nowiki> || <nowiki>42.1 is the 2023 value; the source has 2024: 40.9</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?end=2021&locations=BO&start=2019&view=chart <nowiki>Gini index</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bolivia]] || <nowiki>increase 69.3% employment rate (2018)</nowiki> || <nowiki>69.3%</nowiki> || <nowiki>69.3% is the 2018 value; the source has 2024: 77.4%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=BO&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Botswana]] || <nowiki>55.7% employment rate (2013)</nowiki> || <nowiki>55.7%</nowiki> || <nowiki>55.7% is the 2013 value; the source has 2024: 52.2%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=BW <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Botswana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Botswana]] || <nowiki>unemployment</nowiki> || <nowiki>23.4%</nowiki> || <nowiki>23.4% is the 2023 value; the source has 2024: 24.4%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=BW <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Botswana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Brunei]] || <nowiki>population</nowiki> || <nowiki>458,949</nowiki> || <nowiki>458,949 is the 2023 value; the source has 2025: 466,330</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BN <nowiki>Population, total</nowiki>, <nowiki>Brunei Darussalam</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Brunei]] || <nowiki>60.5% employment rate (2023)</nowiki> || <nowiki>60.5%</nowiki> || <nowiki>60.5% is the 2023 value; the source has 2024: 61.1%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=BN&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Brunei Darussalam</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Burkina Faso]] || <nowiki>population</nowiki> || <nowiki>23,025,776</nowiki> || <nowiki>23,025,776 is the 2023 value; the source has 2025: 24,074,580</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BF <nowiki>Population, total</nowiki>, <nowiki>Burkina Faso</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Burkina Faso]] || <nowiki>inflation</nowiki> || <nowiki>4.2%</nowiki> || <nowiki>4.2% is the 2024 value; the source has 2025: -0.6%</nowiki> || [https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=BF <nowiki>Inflation, consumer prices (annual %)</nowiki>, <nowiki>Burkina Faso</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Burkina Faso]] || <nowiki>gini</nowiki> || <nowiki>35.3</nowiki> || <nowiki>35.3 is the 2014 value; the source has 2021: 37.4</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=BF&name_desc=false <nowiki>Gini index</nowiki>, <nowiki>Burkina Faso</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Burkina Faso]] || <nowiki>61.4% employment rate (2014)</nowiki> || <nowiki>61.4%</nowiki> || <nowiki>61.4% is the 2014 value; the source has 2025: 63.3%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=BF <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Burkina Faso</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Cambodia]] || <nowiki>increase 81.1% employment rate (2016)</nowiki> || <nowiki>81.1%</nowiki> || <nowiki>81.1% is the 2016 value; the source has 2023: 79.8%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=KH <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Cambodia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Chile]] || <nowiki>inflation</nowiki> || <nowiki>3.045%</nowiki> || <nowiki>3.045% is the 2020 value; the source has 2025: 4.213%</nowiki> || [https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?end=2020&locations=CL&start=2016 <nowiki>Inflation, consumer prices (annual %)</nowiki>, <nowiki>Chile</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Chile]] || <nowiki>reserves</nowiki> || <nowiki>$39.166 billion</nowiki> || <nowiki>$39.166 billion is the 2020 value; the source has 2025: 49.450 billion</nowiki> || [https://data.worldbank.org/indicator/FI.RES.TOTL.CD?end=2020&locations=CL&start=2010 <nowiki>Total reserves (includes gold, current US$)</nowiki>, <nowiki>Chile</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Colombia]] || <nowiki>inflation</nowiki> || <nowiki>6.6%</nowiki> || <nowiki>6.6% is the 2024 value; the source has 2025: 5.1%</nowiki> || [https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CO <nowiki>Inflation, consumer prices (annual %)</nowiki>, <nowiki>Colombia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Costa Rica]] || <nowiki>decreasePositive 20.3% (2024)</nowiki> || <nowiki>20.3%</nowiki> || <nowiki>20.3% is the 2024 value; the source has 2025: 17.1%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=CR <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Costa Rica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Costa Rica]] || <nowiki>decreasePositive 13% on less than $8.30/day (2024)</nowiki> || <nowiki>13%</nowiki> || <nowiki>13% is the 2024 value; the source has 2025: 10%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.UMIC?locations=CR <nowiki>Poverty headcount ratio at $8.30 a day (2021 PPP) (% of population)</nowiki>, <nowiki>Costa Rica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Costa Rica]] || <nowiki>gini</nowiki> || <nowiki>45.8</nowiki> || <nowiki>45.8 is the 2024 value; the source has 2025: 45.5</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=CR <nowiki>Gini index</nowiki>, <nowiki>Costa Rica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Costa Rica]] || <nowiki>increase 54.5% employment rate (2022)</nowiki> || <nowiki>54.5%</nowiki> || <nowiki>54.5% is the 2022 value; the source has 2025: 52.4%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=CR <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Costa Rica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>increaseNegative 25.0% (2019)</nowiki> || <nowiki>25.0%</nowiki> || <nowiki>25.0% is the 2019 value; the source has 2025: 21.4%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=EC <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>gini</nowiki> || <nowiki>45.4</nowiki> || <nowiki>45.4 is the 2018 value; the source has 2025: 45.9</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=EC <nowiki>Gini index</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>decrease 64.3% employment rate (2018)</nowiki> || <nowiki>64.3%</nowiki> || <nowiki>64.3% is the 2018 value; the source has 2025: 62.2%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=EC <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of El Salvador]] || <nowiki>gini</nowiki> || <nowiki>38.0</nowiki> || <nowiki>38.0 is the 2017 value; the source has 2023: 39.8</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=SV <nowiki>Gini index</nowiki>, <nowiki>El Salvador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Estonia]] || <nowiki>increase 755414 (2023)</nowiki> || <nowiki>755414</nowiki> || <nowiki>755414 is the 2023 value; the source has 2025: 754206</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=EE <nowiki>Labor force, total</nowiki>, <nowiki>Estonia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ethiopia]] || <nowiki>35.0 color darkorange medium (2015, World Bank)</nowiki> || <nowiki>35.0</nowiki> || <nowiki>35.0 is the 2015 value; the source has 2021: 31.1</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=ET <nowiki>Gini index</nowiki>, <nowiki>Ethiopia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Fiji]] || <nowiki>Gross domestic product (GDP): US$5.48 billion</nowiki> || <nowiki>US$5.48 billion</nowiki> || <nowiki>US$5.48 billion is the 2023 value; the source has 2025: 6.20 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=FJ&view=chart <nowiki>GDP (current US$)</nowiki>, <nowiki>Fiji</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Gabon]] || <nowiki>population</nowiki> || <nowiki>2,484,789</nowiki> || <nowiki>2,484,789 is the 2023 value; the source has 2025: 2,593,130</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=GA <nowiki>Population, total</nowiki>, <nowiki>Gabon</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Georgia (country)]] || <nowiki>gini</nowiki> || <nowiki>33.5</nowiki> || <nowiki>33.5 is the 2022 value; the source has 2024: 33.9</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=GE <nowiki>Gini index</nowiki>, <nowiki>Georgia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Georgia (country)]] || <nowiki>increase 56% employment rate (2020)</nowiki> || <nowiki>56%</nowiki> || <nowiki>56% is the 2020 value; the source has 2024: 61%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=GE&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Georgia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ghana]] || <nowiki>services: 46.9%</nowiki> || <nowiki>46.9%</nowiki> || <nowiki>46.9% is the 2024 value; the source has 2025: 47.2%</nowiki> || [https://data.worldbank.org/indicator/SL.SRV.EMPL.ZS?locations=GH <nowiki>Employment in services (% of total employment) (modeled ILO estimate)</nowiki>, <nowiki>Ghana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Greenland]] || <nowiki>population</nowiki> || <nowiki>56,836</nowiki> || <nowiki>56,836 is the 2024 value; the source has 2025: 56,831</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=GL&name_desc=true <nowiki>Population, total</nowiki>, <nowiki>Greenland</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Guatemala]] || <nowiki>decreasePositive 2.5% (2017)</nowiki> || <nowiki>2.5%</nowiki> || <nowiki>2.5% is the 2017 value; the source has 2024: 1.9%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=GT <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Guatemala</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Guatemala]] || <nowiki>decreasePositive 5.0% youth unemployment (2017)</nowiki> || <nowiki>5.0%</nowiki> || <nowiki>5.0% is the 2017 value; the source has 2024: 3.8%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.1524.NE.ZS?locations=GT <nowiki>Unemployment, youth total (% of total labor force ages 15-24) (national estimate)</nowiki>, <nowiki>Guatemala</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Hungary]] || <nowiki>12.3% in poverty (2018)</nowiki> || <nowiki>12.3%</nowiki> || <nowiki>12.3% is the 2018 value; the source has 2021: 12.1%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=HU <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Hungary</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of India]] || <nowiki>Agriculture: 44%</nowiki> || <nowiki>44%</nowiki> || <nowiki>44% is the 2023 value; the source has 2025: 42%</nowiki> || [https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS?locations=IN <nowiki>Employment in agriculture (% of total employment) (modeled ILO estimate)</nowiki>, <nowiki>India</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of India]] || <nowiki>Services: 34%</nowiki> || <nowiki>34%</nowiki> || <nowiki>34% is the 2019 value; the source has 2025: 33%</nowiki> || [https://data.worldbank.org/indicator/SL.SRV.EMPL.ZS?locations=IN <nowiki>Employment in services (% of total employment) (modeled ILO estimate)</nowiki>, <nowiki>India</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ivory Coast]] || <nowiki>39.5% (2018 est.)</nowiki> || <nowiki>39.5%</nowiki> || <nowiki>39.5% is the 2018 value; the source has 2021: 37.5%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=CI <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Cote d'Ivoire</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ivory Coast]] || <nowiki>gini</nowiki> || <nowiki>41.5</nowiki> || <nowiki>41.5 is the 2015 value; the source has 2021: 35.3</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=CI <nowiki>Gini index</nowiki>, <nowiki>Cote d'Ivoire</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ivory Coast]] || <nowiki>decrease 54.2% employment rate (2017)</nowiki> || <nowiki>54.2%</nowiki> || <nowiki>54.2% is the 2017 value; the source has 2022: 65.6%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=CI&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Cote d'Ivoire</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Jordan]] || <nowiki>decrease 32.1% employment rate (2014)</nowiki> || <nowiki>32.1%</nowiki> || <nowiki>32.1% is the 2014 value; the source has 2024: 34.0%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=JO&most_recent_value_desc=true <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Jordan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Kenya]] || <nowiki>72.4% employment rate (2016)</nowiki> || <nowiki>72.4%</nowiki> || <nowiki>72.4% is the 2016 value; the source has 2021: 64.9%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=KE&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Kenya</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Kosovo]] || <nowiki>consumption</nowiki> || <nowiki>97.5%</nowiki> || <nowiki>97.5% is the 2022 value; the source has 2025: 95.7%</nowiki> || [https://data.worldbank.org/indicator/NE.CON.TOTL.ZS?locations=XK <nowiki>Final consumption expenditure (% of GDP)</nowiki>, <nowiki>Kosovo</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Kuwait]] || <nowiki>population</nowiki> || <nowiki>4,853,420</nowiki> || <nowiki>4,853,420 is the 2023 value; the source has 2025: 4,865,298</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=KW&most_recent_value_desc=true <nowiki>Population, total</nowiki>, <nowiki>Kuwait</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Kyrgyzstan]] || <nowiki>gini</nowiki> || <nowiki>28.8</nowiki> || <nowiki>28.8 is the 2021 value; the source has 2024: 27.5</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=KG <nowiki>Gini index</nowiki>, <nowiki>Kyrgyz Republic</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Laos]] || <nowiki>population</nowiki> || <nowiki>7,769,819</nowiki> || <nowiki>7,769,819 is the 2024 value; the source has 2025: 7,873,046</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=LA <nowiki>Population, total</nowiki>, <nowiki>Lao PDR</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Laos]] || <nowiki>15.7% on less than $3.00/day (2018)</nowiki> || <nowiki>15.7%</nowiki> || <nowiki>15.7% is the 2018 value; the source has 2024: 7.1%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.DDAY?locations=LA <nowiki>Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)</nowiki>, <nowiki>Lao PDR</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Lebanon]] || <nowiki>gini</nowiki> || <nowiki>31.8</nowiki> || <nowiki>31.8 is the 2011 value; the source has 2022: 35.5</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=LB&name_desc=false <nowiki>Gini index</nowiki>, <nowiki>Lebanon</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Lebanon]] || <nowiki>39.5% employment rate (2007)</nowiki> || <nowiki>39.5%</nowiki> || <nowiki>39.5% is the 2007 value; the source has 2019: 43.4%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=LB <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Lebanon</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Liberia]] || <nowiki>population</nowiki> || <nowiki>5,612,817</nowiki> || <nowiki>5,612,817 is the 2024 value; the source has 2025: 5,731,206</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=LR <nowiki>Population, total</nowiki>, <nowiki>Liberia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Liberia]] || <nowiki>inflation</nowiki> || <nowiki>8.2%</nowiki> || <nowiki>8.2% is the 2024 value; the source has 2025: 8.3%</nowiki> || [https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=LR <nowiki>Inflation, consumer prices (annual %)</nowiki>, <nowiki>Liberia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Madagascar]] || <nowiki>gini</nowiki> || <nowiki>42.6</nowiki> || <nowiki>42.6 is the 2012 value; the source has 2021: 36.8</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=MG <nowiki>Gini index</nowiki>, <nowiki>Madagascar</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Malawi]] || <nowiki>51.5% (2016)</nowiki> || <nowiki>51.5%</nowiki> || <nowiki>51.5% is the 2016 value; the source has 2019: 50.7%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=MW&name_desc=false <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Malawi</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Malawi]] || <nowiki>gini</nowiki> || <nowiki>44.7</nowiki> || <nowiki>44.7 is the 2016 value; the source has 2019: 38.5</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=MW&name_desc=false <nowiki>Gini index</nowiki>, <nowiki>Malawi</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Mauritius]] || <nowiki>unemployment</nowiki> || <nowiki>8.6%</nowiki> || <nowiki>8.6% is the 2020 value; the source has 2024: 5.2%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=MU&name_desc=false <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Mauritius</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Moldova]] || <nowiki>increaseNegative 26.8% (2020)</nowiki> || <nowiki>26.8%</nowiki> || <nowiki>26.8% is the 2020 value; the source has 2023: 31.6%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=MD <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Moldova</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Moldova]] || <nowiki>gini</nowiki> || <nowiki>26.0</nowiki> || <nowiki>26.0 is the 2019 value; the source has 2023: 26.8</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=MD <nowiki>Gini index</nowiki>, <nowiki>Moldova</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Monaco]] || <nowiki>increase $10.00 billion (nominal, 2023)</nowiki> || <nowiki>$10.00 billion</nowiki> || <nowiki>$10.00 billion is the 2023 value; the source has 2024: 11.13 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=MC <nowiki>GDP (current US$)</nowiki>, <nowiki>Monaco</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Mongolia]] || <nowiki>gini</nowiki> || <nowiki>32.7</nowiki> || <nowiki>32.7 is the 2018 value; the source has 2022: 31.4</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=MN <nowiki>Gini index</nowiki>, <nowiki>Mongolia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Mongolia]] || <nowiki>decreasePositive 16.8% youth unemployment (2018)</nowiki> || <nowiki>16.8%</nowiki> || <nowiki>16.8% is the 2018 value; the source has 2024: 14.4%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.1524.NE.ZS?locations=MN&name_desc=false <nowiki>Unemployment, youth total (% of total labor force ages 15-24) (national estimate)</nowiki>, <nowiki>Mongolia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Nepal]] || <nowiki>gini</nowiki> || <nowiki>32.8</nowiki> || <nowiki>32.8 is the 2010 value; the source has 2022: 30.0</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=NP <nowiki>Gini index</nowiki>, <nowiki>Nepal</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Niger]] || <nowiki>gini</nowiki> || <nowiki>34.3</nowiki> || <nowiki>34.3 is the 2014 value; the source has 2021: 32.9</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=NE <nowiki>Gini index</nowiki>, <nowiki>Niger</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Nigeria]] || <nowiki>gini</nowiki> || <nowiki>35.1</nowiki> || <nowiki>35.1 is the 2018 value; the source has 2022: 33.9</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=NG <nowiki>Gini index</nowiki>, <nowiki>Nigeria</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of North Korea]] || <nowiki>Transmission losses sit at just under 16% (15.8%) as of 2014</nowiki> || <nowiki>15.8%</nowiki> || <nowiki>15.8% is the 2014 value; the source has 2023: 15.5%</nowiki> || [https://data.worldbank.org/indicator/EG.ELC.LOSS.ZS?locations=KP <nowiki>Electric power transmission and distribution losses (% of output)</nowiki>, <nowiki>Korea, Dem. People's Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Oman]] || <nowiki>population</nowiki> || <nowiki>5,281,538</nowiki> || <nowiki>5,281,538 is the 2024 value; the source has 2025: 5,494,691</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=OM <nowiki>Population, total</nowiki>, <nowiki>Oman</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Palestine]] || <nowiki>decrease 32.0% employment rate (2018)</nowiki> || <nowiki>32.0%</nowiki> || <nowiki>32.0% is the 2018 value; the source has 2025: 32.5%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=PS&most_recent_value_desc=true <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>West Bank and Gaza</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Panama]] || <nowiki>gini</nowiki> || <nowiki>48.9</nowiki> || <nowiki>48.9 is the 2023 value; the source has 2024: 49.7</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=PA&name_desc=true <nowiki>Gini index</nowiki>, <nowiki>Panama</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Panama]] || <nowiki>increase 61.5% employment rate (2018)</nowiki> || <nowiki>61.5%</nowiki> || <nowiki>61.5% is the 2018 value; the source has 2025: 57.3%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=PA&name_desc=true <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Panama</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Papua New Guinea]] || <nowiki>population</nowiki> || <nowiki>10,576,502</nowiki> || <nowiki>10,576,502 is the 2024 value; the source has 2025: 10,762,817</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PG&name_desc=false <nowiki>Population, total</nowiki>, <nowiki>Papua New Guinea</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Paraguay]] || <nowiki>increase 67.4% employment rate (2018)</nowiki> || <nowiki>67.4%</nowiki> || <nowiki>67.4% is the 2018 value; the source has 2025: 68.7%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=PY&most_recent_value_desc=true <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Paraguay</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Puerto Rico]] || <nowiki>35.2% employment rate (2015)</nowiki> || <nowiki>35.2%</nowiki> || <nowiki>35.2% is the 2015 value; the source has 2020: 37.2%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=PR&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Puerto Rico (US)</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Romania]] || <nowiki>% of the population (one of the highest rates in Europe) and contributes about 4.3% of GDP</nowiki> || <nowiki>4.3%</nowiki> || <nowiki>4.3% is the 2019 value; the source has 2025: 3.0%</nowiki> || [https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=RO <nowiki>Agriculture, forestry, and fishing, value added (% of GDP)</nowiki>, <nowiki>Romania</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Russia]] || <nowiki>poverty</nowiki> || <nowiki>11%</nowiki> || <nowiki>11% is the 2021 value; the source has 2024: 7%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=RU <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Russian Federation</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Russia]] || <nowiki>increase 60.8% employment rate (2023)</nowiki> || <nowiki>60.8%</nowiki> || <nowiki>60.8% is the 2023 value; the source has 2025: 61.5%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=RU&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Russian Federation</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Senegal]] || <nowiki>42.4% employment rate (2015)</nowiki> || <nowiki>42.4%</nowiki> || <nowiki>42.4% is the 2015 value; the source has 2024: 42.0%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=SN&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Senegal</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Seychelles]] || <nowiki>unemployment</nowiki> || <nowiki>3.7%</nowiki> || <nowiki>3.7% is the 2017 value; the source has 2024: 2.6%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=SC&name_desc=true <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Seychelles</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Seychelles]] || <nowiki>gini</nowiki> || <nowiki>46.8</nowiki> || <nowiki>46.8 is the 2013 value; the source has 2018: 32.1</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=SC&name_desc=true <nowiki>Gini index</nowiki>, <nowiki>Seychelles</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Singapore]] || <nowiki>increase 65.1% employment rate (2018)</nowiki> || <nowiki>65.1%</nowiki> || <nowiki>65.1% is the 2018 value; the source has 2025: 65.7%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=SG&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Singapore</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Sudan]] || <nowiki>41.1% employment rate (2011)</nowiki> || <nowiki>41.1%</nowiki> || <nowiki>41.1% is the 2011 value; the source has 2022: 35.0%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=SD&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Tajikistan]] || <nowiki>gini</nowiki> || <nowiki>34.0</nowiki> || <nowiki>34.0 is the 2015 value; the source has 2024: 36.1</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=TJ <nowiki>Gini index</nowiki>, <nowiki>Tajikistan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Tanzania]] || <nowiki>increase 82.2% employment rate (2014)</nowiki> || <nowiki>82.2%</nowiki> || <nowiki>82.2% is the 2014 value; the source has 2024: 83.2%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=TZ <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Tanzania</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Thailand]] || <nowiki>increaseNegative 9.9% (2018)</nowiki> || <nowiki>9.9%</nowiki> || <nowiki>9.9% is the 2018 value; the source has 2022: 5.4%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=TH <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Thailand</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Thailand]] || <nowiki>gini</nowiki> || <nowiki>34.9</nowiki> || <nowiki>34.9 is the 2019 value; the source has 2024: 33.3</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=TH <nowiki>Gini index</nowiki>, <nowiki>Thailand</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Thailand]] || <nowiki>increase 67.3% employment rate (2018)</nowiki> || <nowiki>67.3%</nowiki> || <nowiki>67.3% is the 2018 value; the source has 2025: 66.6%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=TH <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Thailand</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Tonga]] || <nowiki>increase $0.591 billion (nominal, 2023)</nowiki> || <nowiki>$0.591 billion</nowiki> || <nowiki>$0.591 billion is the 2023 value; the source has 2025: 0.679 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=TO <nowiki>GDP (current US$)</nowiki>, <nowiki>Tonga</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Tunisia]] || <nowiki>15.2% (2015)</nowiki> || <nowiki>15.2%</nowiki> || <nowiki>15.2% is the 2015 value; the source has 2021: 16.6%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=TN <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Tunisia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Uganda]] || <nowiki>gini</nowiki> || <nowiki>42.8</nowiki> || <nowiki>42.8 is the 2016 value; the source has 2019: 42.7</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=UG&name_desc=false <nowiki>Gini index</nowiki>, <nowiki>Uganda</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ukraine]] || <nowiki>increase 57.1% employment rate (2018)</nowiki> || <nowiki>57.1%</nowiki> || <nowiki>57.1% is the 2018 value; the source has 2021: 49.3%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=UA&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ukraine]] || <nowiki> saturation of the market, which has reached 144 mobile phone subscriptions per 100 people</nowiki> || <nowiki>144</nowiki> || <nowiki>144 is the 2014 value; the source has 2023: 133</nowiki> || [http://data.worldbank.org/indicator/IT.CEL.SETS.P2?locations=UA&view=chart <nowiki>Mobile cellular subscriptions (per 100 people)</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Venezuela]] || <nowiki>population</nowiki> || <nowiki>28,405,543</nowiki> || <nowiki>28,405,543 is the 2024 value; the source has 2025: 28,516,896</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=VE <nowiki>Population, total</nowiki>, <nowiki>Venezuela, RB</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Central African Republic]] || <nowiki>gini</nowiki> || <nowiki>56.2</nowiki> || <nowiki>56.2 is the 2008 value; the source has 2021: 43.0</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=CF <nowiki>Gini index</nowiki>, <nowiki>Central African Republic</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Democratic Republic of the Congo]] || <nowiki>gini</nowiki> || <nowiki>42.1</nowiki> || <nowiki>42.1 is the 2012 value; the source has 2020: 44.7</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=CD <nowiki>Gini index</nowiki>, <nowiki>Congo, Dem. Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Democratic Republic of the Congo]] || <nowiki>63.1% employment rate (2012)</nowiki> || <nowiki>63.1%</nowiki> || <nowiki>63.1% is the 2012 value; the source has 2020: 62.5%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=CD <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Congo, Dem. Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Dominican Republic]] || <nowiki>gini</nowiki> || <nowiki>38.5</nowiki> || <nowiki>38.5 is the 2021 value; the source has 2024: 39.0</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=DO <nowiki>Gini index</nowiki>, <nowiki>Dominican Republic</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Gambia]] || <nowiki>48.6% (2015)</nowiki> || <nowiki>48.6%</nowiki> || <nowiki>48.6% is the 2015 value; the source has 2020: 53.4%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=GM <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Gambia, The</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Gambia]] || <nowiki>gini</nowiki> || <nowiki>35.9</nowiki> || <nowiki>35.9 is the 2015 value; the source has 2020: 38.8</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=GM <nowiki>Gini index</nowiki>, <nowiki>Gambia, The</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Maldives]] || <nowiki>gini</nowiki> || <nowiki>31.3</nowiki> || <nowiki>31.3 is the 2016 value; the source has 2019: 29.3</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=MV&name_desc=false <nowiki>Gini index</nowiki>, <nowiki>Maldives</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the United Arab Emirates]] || <nowiki>78.3% employment rate (2019)</nowiki> || <nowiki>78.3%</nowiki> || <nowiki>78.3% is the 2019 value; the source has 2024: 79.8%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=AE&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>United Arab Emirates</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Education in Peru]] || <nowiki>literacy women</nowiki> || <nowiki>91.7%</nowiki> || <nowiki>91.7% is the 2018 value; the source has 2024: 90.7%</nowiki> || [https://data.worldbank.org/indicator/SE.ADT.LITR.FE.ZS?locations=PE <nowiki>Literacy rate, adult female (% of females ages 15 and above)</nowiki>, <nowiki>Peru</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Education in Saudi Arabia]] || <nowiki>According to the World Bank database, public spending on education was 5.1</nowiki> || <nowiki>5.1</nowiki> || <nowiki>5.1 is the 2008 value; the source has 2023: 4.5</nowiki> || [https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS?locations=SA <nowiki>Government expenditure on education, total (% of GDP)</nowiki>, <nowiki>Saudi Arabia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Energy in Kenya]] || <nowiki>d to the National grid, which is one of the highest connection rates in Sub-Saharan Africa</nowiki> || <nowiki>76.5%</nowiki> || <nowiki>76.5% is the 2021 value; the source has 2024: 77.0%</nowiki> || [https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS?locations=KE <nowiki>Access to electricity (% of population)</nowiki>, <nowiki>Kenya</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Healthcare in Iceland]] || <nowiki>lthcare system is largely paid for by taxes (84%) and to some extent by service fees (16%)</nowiki> || <nowiki>16%</nowiki> || <nowiki>16% is the 2018 value; the source has 2024: 15%</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.OOPC.CH.ZS?locations=IS <nowiki>Out-of-pocket expenditure (% of current health expenditure)</nowiki>, <nowiki>Iceland</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Internet in Thailand]] || <nowiki>As of 2021, Thailand has made significant progress, with an 85% internet penetration rate</nowiki> || <nowiki>85%</nowiki> || <nowiki>85% is the 2021 value; the source has 2024: 91%</nowiki> || [https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=TH <nowiki>Individuals using the Internet (% of population)</nowiki>, <nowiki>Thailand</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Kenya]] || <nowiki>With a per-capita Gross National Income of $2,110</nowiki> || <nowiki>$2,110</nowiki> || <nowiki>$2,110 is the 2023 value; the source has 2025: 2,200</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.CD?locations=KE&year_high_desc=true <nowiki>GNI per capita, Atlas method (current US$)</nowiki>, <nowiki>Kenya</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Kerala model]] || <nowiki>the rate of the U.S. is 11.4</nowiki> || <nowiki>11.4</nowiki> || <nowiki>11.4 is the 2019 value; the source has 2024: 10.6</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.CBRT.IN?locations=US <nowiki>Birth rate, crude (per 1,000 people)</nowiki>, <nowiki>United States</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Kerala model]] || <nowiki>28</nowiki> || <nowiki>28</nowiki> || <nowiki>28 is the 2020 value; the source has 2024: 23</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=IN <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>India</nowiki>] (updated 2026-07-13) || 
+|-
+| [[List of Turkish provinces by life expectancy]] || <nowiki>Estimation of the World Bank Group is similar: 77.2 years (74.5 for male, 79.9 for female)</nowiki> || <nowiki>77.2</nowiki> || <nowiki>77.2 is the 2023 value; the source has 2024: 77.4</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=TR <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>Turkiye</nowiki>] (updated 2026-07-13) || 
+|-
+| [[List of companies of Iraq]] || <nowiki>The lack of development in other sectors has resulted in 13%</nowiki> || <nowiki>13%</nowiki> || <nowiki>13% is the 2017 value; the source has 2021: 16%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=IQ&most_recent_value_desc=true <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Iraq</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Natural resources of India]] || <nowiki>(52.3% of its total land area)</nowiki> || <nowiki>52.3%</nowiki> || <nowiki>52.3% is the 2019 value; the source has 2023: 51.8%</nowiki> || [https://data.worldbank.org/indicator/AG.LND.ARBL.ZS?locations=IN <nowiki>Arable land (% of land area)</nowiki>, <nowiki>India</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Nepal]] || <nowiki>around 1.4% of GDP</nowiki> || <nowiki>1.4%</nowiki> || <nowiki>1.4% is the 2015 value; the source has 2024: 1.0%</nowiki> || [https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=NP <nowiki>Military expenditure (% of GDP)</nowiki>, <nowiki>Nepal</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Obesity in the Pacific]] || <nowiki>Life expectancy in Tonga is 71 and has been steadily rising since the 1960s</nowiki> || <nowiki>71</nowiki> || <nowiki>71 is the 2011 value; the source has 2024: 73</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=TO <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>Tonga</nowiki>] (updated 2026-07-13) || 
+|-
+| [[People's Bank of China]] || <nowiki>reserves</nowiki> || <nowiki>US$3.45 trillion</nowiki> || <nowiki>US$3.45 trillion is the 2023 value; the source has 2025: 3.75 trillion</nowiki> || [https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=CN <nowiki>Total reserves (includes gold, current US$)</nowiki>, <nowiki>China</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Saudi Arabia]] || <nowiki>g only a fraction of GDP (2.5 percent) and employing a similar proportion of the workforce</nowiki> || <nowiki>2.5 percent</nowiki> || <nowiki>2.5 percent is the 2024 value; the source has 2025: 2.6%</nowiki> || [https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=SA <nowiki>Agriculture, forestry, and fishing, value added (% of GDP)</nowiki>, <nowiki>Saudi Arabia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Saudi Arabia]] || <nowiki>hich puts it in the 8th rank among countries with the highest percentage of internet users</nowiki> || <nowiki>98%</nowiki> || <nowiki>98% is the 2020 value; the source has 2024: 100%</nowiki> || [https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=SA <nowiki>Individuals using the Internet (% of population)</nowiki>, <nowiki>Saudi Arabia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Sri Lanka]] || <nowiki>Its youth literacy rate stands at 98.8%</nowiki> || <nowiki>98.8%</nowiki> || <nowiki>98.8% is the 2022 value; the source has 2024: 98.9%</nowiki> || [https://data.worldbank.org/indicator/SE.ADT.1524.LT.ZS?locations=LK <nowiki>Literacy rate, youth total (% of people ages 15-24)</nowiki>, <nowiki>Sri Lanka</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Sudan Memory]] || <nowiki>One of the geographically largest countries in Africa with about 43 million people</nowiki> || <nowiki>43 million</nowiki> || <nowiki>43 million is the 2017 value; the source has 2025: 52 million</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SD <nowiki>Population, total</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Telecommunications in Timor-Leste]] || <nowiki>and the total number of fixed telephone subscriptions is 2,075</nowiki> || <nowiki>2,075</nowiki> || <nowiki>2,075 is the 2019 value; the source has 2024: 1,691</nowiki> || [https://data.worldbank.org/indicator/IT.MLT.MAIN?locations=TL <nowiki>Fixed telephone subscriptions</nowiki>, <nowiki>Timor-Leste</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Telecommunications in Timor-Leste]] || <nowiki>or 0.16% of the population</nowiki> || <nowiki>0.16%</nowiki> || <nowiki>0.16% is the 2019 value; the source has 2024: 0.12%</nowiki> || [https://data.worldbank.org/indicator/IT.MLT.MAIN.P2?locations=TL <nowiki>Fixed telephone subscriptions (per 100 people)</nowiki>, <nowiki>Timor-Leste</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Vietnamese two-child policy]] || <nowiki>ent data is avaible. As of 2020, the total fertility rate of Vietnam was approximately 2.0</nowiki> || <nowiki>2.0</nowiki> || <nowiki>2.0 is the 2020 value; the source has 2024: 1.9</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?end=2020&locations=VN&start=1994&view=chart <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Viet Nam</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Egypt]] || <nowiki>2022 estimates, women's life expectancy in Egypt is 73 years, compared to 68 years for men</nowiki> || <nowiki>73</nowiki> || <nowiki>73 is the 2022 value; the source has 2024: 74</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.FE.IN?locations=EG <nowiki>Life expectancy at birth, female (years)</nowiki>, <nowiki>Egypt, Arab Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Sri Lanka]] || <nowiki>womparl</nowiki> || <nowiki>5%</nowiki> || <nowiki>5% is the 2021 value; the source has 2025: 10%</nowiki> || [https://data.worldbank.org/indicator/SG.GEN.PARL.ZS?locations=LK <nowiki>Proportion of seats held by women in national parliaments (%)</nowiki>, <nowiki>Sri Lanka</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in the United Arab Emirates]] || <nowiki>femed</nowiki> || <nowiki>78.2%</nowiki> || <nowiki>78.2% is the 2018 value; the source has 2024: 87.3%</nowiki> || [https://data.worldbank.org/indicator/SE.SEC.CUAT.LO.FE.ZS?locations=AE&view=chart <nowiki>Educational attainment, at least completed lower secondary, population 25+, female (%) (cumulative)</nowiki>, <nowiki>United Arab Emirates</nowiki>] (updated 2026-07-13) || 
+|}
+
+== The year does not belong to the figure (7) ==
+{| class="wikitable sortable" style="font-size:90%"
+! Article !! Where !! As written !! What the source says !! Series !! Done
+|-
+| [[Balkans]] || <nowiki>increaseNegative 29.0 color green low (2017)</nowiki> || <nowiki>29.0</nowiki> || <nowiki>the text says 2017; 29.0 is the 2012 value, and the source gives 44.2 for 2017</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=XK <nowiki>Gini index</nowiki>, <nowiki>Kosovo</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Kosovo]] || <nowiki>gini</nowiki> || <nowiki>29.0</nowiki> || <nowiki>the text says 2017; 29.0 is the 2012 value, and the source gives 44.2 for 2017</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=XK&name_desc=false <nowiki>Gini index</nowiki>, <nowiki>Kosovo</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Tunisia]] || <nowiki>unemployment</nowiki> || <nowiki>14.9%</nowiki> || <nowiki>the text says 2026; 14.9% is the 2000 value</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=TN <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Tunisia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Industry in Croatia]] || <nowiki>valign</nowiki> || <nowiki>21.5%</nowiki> || <nowiki>the text says 2020; 21.5% is the 2011 value, and the source gives 20.1% for 2020</nowiki> || [https://data.worldbank.org/indicator/NV.IND.TOTL.ZS?locations=HR <nowiki>Industry (including construction), value added (% of GDP)</nowiki>, <nowiki>Croatia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Jamaica and the World Bank]] || <nowiki>er capita of $4,990 (2018), and a lower inequality rate than most nations in Latin America</nowiki> || <nowiki>$4,990</nowiki> || <nowiki>the text says 2018; $4,990 is the 2016 value, and the source gives 5,610 for 2018</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.CD?locations=JM&most_recent_value_desc=false&year_high_desc=true <nowiki>GNI per capita, Atlas method (current US$)</nowiki>, <nowiki>Jamaica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Nigeria]] || <nowiki>about 23.4% of Nigeria's GDP was contributed by agriculture, forestry and fishing combined</nowiki> || <nowiki>23.4%</nowiki> || <nowiki>the text says 2021; 23.4% is the 1988 value, and the source gives 29.4% for 2021</nowiki> || [https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=NG <nowiki>Agriculture, forestry, and fishing, value added (% of GDP)</nowiki>, <nowiki>Nigeria</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Romania]] || <nowiki>ising steadily, reaching 9.33 million foreign tourists in 2016, according to the Worldbank</nowiki> || <nowiki>9.33 million</nowiki> || <nowiki>the text says 2016; 9.33 million is the 2015 value, and the source gives 10.22 million for 2016</nowiki> || [http://data.worldbank.org/indicator/ST.INT.ARVL?locations=RO <nowiki>International tourism, number of arrivals</nowiki>, <nowiki>Romania</nowiki>] (updated 2026-07-13) || 
+|}
+
+== The source now gives a different figure for the stated year (195) ==
+{| class="wikitable sortable" style="font-size:90%"
+! Article !! Where !! As written !! What the source says !! Series !! Done
+|-
+| [[2024 Washington NATO summit]] || <nowiki>Russia significantly outnumbered Ukraine's 38 million in 2022</nowiki> || <nowiki>38 million</nowiki> || <nowiki>the text gives 38 million for 2022; the source now gives 41 million</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=UA <nowiki>Population, total</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Abortion in Yemen]] || <nowiki>ve births, making it one of the highest in the regions of the Middle East and North Africa</nowiki> || <nowiki>164</nowiki> || <nowiki>the text gives 164 for 2017; the source now gives 142</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=YE <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Yemen, Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Armed Forces of the Argentine Republic]] || <nowiki>amount</nowiki> || <nowiki>$2.9 billion</nowiki> || <nowiki>the text gives $2.9 billion for 2022; the source now gives 4.3 billion</nowiki> || [https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=AR <nowiki>Military expenditure (current USD)</nowiki>, <nowiki>Argentina</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bangladesh]] || <nowiki>ives in rural areas, with only 40% of the population living in urban areas as of 2023 lc=y</nowiki> || <nowiki>40%</nowiki> || <nowiki>the text gives 40% for 2023; the source now gives 32%</nowiki> || [https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=BD <nowiki>Urban population (% of total population)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bangladesh]] || <nowiki>As of 2020 , maternal mortality remains high, clocking at 123 per 100,000 live births</nowiki> || <nowiki>123</nowiki> || <nowiki>the text gives 123 for 2020; the source now gives 152</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=BD <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bank of Thailand]] || <nowiki>reserves</nowiki> || <nowiki>US$243.49 billion</nowiki> || <nowiki>the text gives US$243.49 billion for 2023; the source now gives 224.47 billion</nowiki> || [https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=TH <nowiki>Total reserves (includes gold, current US$)</nowiki>, <nowiki>Thailand</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bolivia]] || <nowiki>e infant mortality rate was 40.7 per 1000 in 2006 and was reduced to 21.2 per 1000 in 2019</nowiki> || <nowiki>21.2</nowiki> || <nowiki>the text gives 21.2 for 2019; the source now gives 18.4</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=BO&start=2006 <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Bosnia and Herzegovina]] || <nowiki>lation of 4,369,319, while the 1996 World Bank Group census showed a decrease to 3,764,425</nowiki> || <nowiki>3,764,425</nowiki> || <nowiki>the text gives 3,764,425 for 1996; the source now gives 3,875,246</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?end=1996&locations=BA&name_desc=false&start=1991 <nowiki>Population, total</nowiki>, <nowiki>Bosnia and Herzegovina</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Brazil]] || <nowiki>In 2021, Brazil had 2.1 doctors and 2.5 hospital beds for every 1,000 inhabitants</nowiki> || <nowiki>2.1</nowiki> || <nowiki>the text gives 2.1 for 2021; the source now gives 2.2</nowiki> || [https://data.worldbank.org/indicator/SH.MED.PHYS.ZS?locations=BR <nowiki>Physicians (per 1,000 people)</nowiki>, <nowiki>Brazil</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Brazilian Americans]] || <nowiki>shows that the Brazilian GDP dipped to 1287.6 (USD per capita) at its lowest point in 1985</nowiki> || <nowiki>1287.6</nowiki> || <nowiki>the text gives 1287.6 for 1985; the source now gives 1556.1</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BR. <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Brazil</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Cambodia]] || <nowiki>'s infant mortality rate has decreased from 86 per 1,000 live births in 1998 to 24 in 2018</nowiki> || <nowiki>24</nowiki> || <nowiki>the text gives 24 for 2018; the source now gives 21</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?end=2018&locations=KH&start=1975&view=chart <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Cambodia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Climate change in Nicaragua]] || <nowiki>In 2022, 28% of Nicaragua's workforce was employed in agriculture</nowiki> || <nowiki>28%</nowiki> || <nowiki>the text gives 28% for 2022; the source now gives 31%</nowiki> || [https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS?locations=NI <nowiki>Employment in agriculture (% of total employment) (modeled ILO estimate)</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Colombia]] || <nowiki>The population growth rate for 2016 is estimated to be 0.9%</nowiki> || <nowiki>0.9%</nowiki> || <nowiki>the text gives 0.9% for 2016; the source now gives 1.0%</nowiki> || [http://data.worldbank.org/indicator/SP.POP.GROW?locations=CO <nowiki>Population growth (annual %)</nowiki>, <nowiki>Colombia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Colombia and the World Bank]] || <nowiki>, has decreased from 16.5 percent in 1996 (earliest data available) to 4.5 percent in 2016</nowiki> || <nowiki>16.5 percent</nowiki> || <nowiki>the text gives 16.5 percent for 1996; the source now gives 24.8%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.DDAY?locations=CO <nowiki>Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)</nowiki>, <nowiki>Colombia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Colombia and the World Bank]] || <nowiki>ant 2010 US$), the GINI coefficient decreased from 56.9 to 50.8 during that same timeframe</nowiki> || <nowiki>US$7,531.98</nowiki> || <nowiki>the text gives US$7,531.98 for 2016; the source now gives 6,316.07</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.KD?locations=CO <nowiki>GDP per capita (constant 2015 US$)</nowiki>, <nowiki>Colombia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of Belgium]] || <nowiki> Group, in 2023 life expectancy in Belgium was 82.4 years (80.3 for male, 84.6 for female)</nowiki> || <nowiki>82.4</nowiki> || <nowiki>the text gives 82.4 for 2023; the source now gives 72.0</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=IN <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>India</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of Cambodia]] || <nowiki>birth</nowiki> || <nowiki>19.3</nowiki> || <nowiki>the text gives 19.3 for 2021; the source now gives 21.9</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.CBRT.IN?locations=KH <nowiki>Birth rate, crude (per 1,000 people)</nowiki>, <nowiki>Cambodia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of Cambodia]] || <nowiki>infant_mortality</nowiki> || <nowiki>24</nowiki> || <nowiki>the text gives 24 for 2018; the source now gives 21</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?end=2018&locations=KH&start=1975&view=chart <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Cambodia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of Ethiopia]] || <nowiki>Its total population has grown from 38.1 million in 1983 to 109.5 million in 2018</nowiki> || <nowiki>109.5 million</nowiki> || <nowiki>the text gives 109.5 million for 2018; the source now gives 112.7 million</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?end=2018&locations=ET&start=1982 <nowiki>Population, total</nowiki>, <nowiki>Ethiopia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Demographics of Papua New Guinea]] || <nowiki>e most rural countries, with only 13.25% of its population living in urban centres in 2019</nowiki> || <nowiki>13.25%</nowiki> || <nowiki>the text gives 13.25% for 2019; the source now gives 13.93%</nowiki> || [https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=PG <nowiki>Urban population (% of total population)</nowiki>, <nowiki>Papua New Guinea</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Afghanistan]] || <nowiki>increase 14,450,224 (2019)</nowiki> || <nowiki>14,450,224</nowiki> || <nowiki>the text gives 14,450,224 for 2019; the source now gives 9,192,643</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=AF <nowiki>Labor force, total</nowiki>, <nowiki>Afghanistan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Angola]] || <nowiki>exports</nowiki> || <nowiki>$36.961 billion</nowiki> || <nowiki>the text gives $36.961 billion for 2023; the source now gives 34.643 billion</nowiki> || [https://data.worldbank.org/indicator/NE.EXP.GNFS.CD?locations=AO <nowiki>Exports of goods and services (current US$)</nowiki>, <nowiki>Angola</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Angola]] || <nowiki>imports</nowiki> || <nowiki>$23.676 billion</nowiki> || <nowiki>the text gives $23.676 billion for 2023; the source now gives 22.203 billion</nowiki> || [https://data.worldbank.org/indicator/NE.IMP.GNFS.CD?locations=AO <nowiki>Imports of goods and services (current US$)</nowiki>, <nowiki>Angola</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Azerbaijan]] || <nowiki>increase 5,536,769 (2023)</nowiki> || <nowiki>5,536,769</nowiki> || <nowiki>the text gives 5,536,769 for 2023; the source now gives 5,073,676</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=AZ <nowiki>Labor force, total</nowiki>, <nowiki>Azerbaijan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bangladesh]] || <nowiki>77,355,168 (2024)</nowiki> || <nowiki>77,355,168</nowiki> || <nowiki>the text gives 77,355,168 for 2024; the source now gives 73,619,393</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BD <nowiki>Labor force, total</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bangladesh]] || <nowiki>increase 61.9% employment rate (2024)</nowiki> || <nowiki>61.9%</nowiki> || <nowiki>the text gives 61.9% for 2024; the source now gives 56.8%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS?locations=BD&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (modeled ILO estimate)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Barbados]] || <nowiki>population</nowiki> || <nowiki>286,641</nowiki> || <nowiki>the text gives 286,641 for 2018; the source now gives 280,711</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BB&most_recent_year_desc=true <nowiki>Population, total</nowiki>, <nowiki>Barbados</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Barbados]] || <nowiki>decrease 155,283 (2018)</nowiki> || <nowiki>155,283</nowiki> || <nowiki>the text gives 155,283 for 2018; the source now gives 150,452</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BB&most_recent_year_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Barbados</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Belize]] || <nowiki>increase 184,610 (2019)</nowiki> || <nowiki>184,610</nowiki> || <nowiki>the text gives 184,610 for 2019; the source now gives 189,886</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BZ <nowiki>Labor force, total</nowiki>, <nowiki>Belize</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Benin]] || <nowiki>population</nowiki> || <nowiki>11,485,048</nowiki> || <nowiki>the text gives 11,485,048 for 2018; the source now gives 12,383,347</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BJ&name_desc=false <nowiki>Population, total</nowiki>, <nowiki>Benin</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Benin]] || <nowiki>increase 4,862,455 (2019)</nowiki> || <nowiki>4,862,455</nowiki> || <nowiki>the text gives 4,862,455 for 2019; the source now gives 5,459,336</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BJ <nowiki>Labor force, total</nowiki>, <nowiki>Benin</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bermuda]] || <nowiki>increase $8.980 billion (nominal, 2024)</nowiki> || <nowiki>$8.980 billion</nowiki> || <nowiki>the text gives $8.980 billion for 2024; the source now gives 9.194 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=BM <nowiki>GDP (current US$)</nowiki>, <nowiki>Bermuda</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bermuda]] || <nowiki>decrease -6.8% (2020)</nowiki> || <nowiki>-6.8%</nowiki> || <nowiki>the text gives -6.8% for 2020; the source now gives -7.0%</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BM <nowiki>GDP growth (annual %)</nowiki>, <nowiki>Bermuda</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bermuda]] || <nowiki>increase $138,935 (nominal, 2024)</nowiki> || <nowiki>$138,935</nowiki> || <nowiki>the text gives $138,935 for 2024; the source now gives 142,250</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BM <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Bermuda</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bolivia]] || <nowiki>increase 5,423,333 (2019)</nowiki> || <nowiki>5,423,333</nowiki> || <nowiki>the text gives 5,423,333 for 2019; the source now gives 5,946,418</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BO&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bosnia and Herzegovina]] || <nowiki>In 2020, the unemployment rate should go down to 18.3%</nowiki> || <nowiki>18.3%</nowiki> || <nowiki>the text gives 18.3% for 2020; the source now gives 15.9%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=BA <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Bosnia and Herzegovina</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Botswana]] || <nowiki>population</nowiki> || <nowiki>2,630,296</nowiki> || <nowiki>the text gives 2,630,296 for 2022; the source now gives 2,439,892</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BW <nowiki>Population, total</nowiki>, <nowiki>Botswana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Botswana]] || <nowiki>increase 1,107,235 (2019)</nowiki> || <nowiki>1,107,235</nowiki> || <nowiki>the text gives 1,107,235 for 2019; the source now gives 987,878</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BW <nowiki>Labor force, total</nowiki>, <nowiki>Botswana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Bulgaria]] || <nowiki>3,283,797 (2019)</nowiki> || <nowiki>3,283,797</nowiki> || <nowiki>the text gives 3,283,797 for 2019; the source now gives 3,209,606</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BG&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Bulgaria</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Burkina Faso]] || <nowiki>increase 8,074,705 (2021)</nowiki> || <nowiki>8,074,705</nowiki> || <nowiki>the text gives 8,074,705 for 2021; the source now gives 9,191,515</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=BF <nowiki>Labor force, total</nowiki>, <nowiki>Burkina Faso</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Chile]] || <nowiki>poverty</nowiki> || <nowiki>6.2%</nowiki> || <nowiki>the text gives 6.2% for 2022; the source now gives 6.5%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=CL <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Chile</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Chile]] || <nowiki>decreasePositive 7.2% (2022)</nowiki> || <nowiki>7.2%</nowiki> || <nowiki>the text gives 7.2% for 2022; the source now gives 8.2%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=CL <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Chile</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Chile]] || <nowiki>As of 2017, only 0.7% of Chile's population lived on less than $1.90 per day</nowiki> || <nowiki>0.7%</nowiki> || <nowiki>the text gives 0.7% for 2017; the source now gives 0.5%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.DDAY?locations=CL&name_desc=false <nowiki>Poverty headcount ratio at $3.00 a day (2021 PPP) (% of population)</nowiki>, <nowiki>Chile</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Costa Rica]] || <nowiki>increase 2,407,610 (2023)</nowiki> || <nowiki>2,407,610</nowiki> || <nowiki>the text gives 2,407,610 for 2023; the source now gives 2,340,628</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CR <nowiki>Labor force, total</nowiki>, <nowiki>Costa Rica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Costa Rica]] || <nowiki>stic Product) and moderate inflation, though with a high unemployment rate: 11.49% in 2019</nowiki> || <nowiki>11.49%</nowiki> || <nowiki>the text gives 11.49% for 2019; the source now gives 10.81%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=CR&view=chart <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Costa Rica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Cuba]] || <nowiki>decrease 5,088,527 (2019)</nowiki> || <nowiki>5,088,527</nowiki> || <nowiki>the text gives 5,088,527 for 2019; the source now gives 5,204,593</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CU <nowiki>Labor force, total</nowiki>, <nowiki>Cuba</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Cyprus]] || <nowiki>increase 655,118 (2021)</nowiki> || <nowiki>655,118</nowiki> || <nowiki>the text gives 655,118 for 2021; the source now gives 735,675</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CY&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Cyprus</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>population</nowiki> || <nowiki>18,342,507</nowiki> || <nowiki>the text gives 18,342,507 for 2022; the source now gives 17,823,897</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=EC <nowiki>Population, total</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>increase 8,671,801 (2019)</nowiki> || <nowiki>8,671,801</nowiki> || <nowiki>the text gives 8,671,801 for 2019; the source now gives 8,393,240</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=EC <nowiki>Labor force, total</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>reserves</nowiki> || <nowiki>$8.169 billion</nowiki> || <nowiki>the text gives $8.169 billion for 2022; the source now gives 8.459 billion</nowiki> || [https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=EC&view=chart <nowiki>Total reserves (includes gold, current US$)</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>The total trade amounted to 42% of Ecuador's GDP in 2017</nowiki> || <nowiki>42%</nowiki> || <nowiki>the text gives 42% for 2017; the source now gives 44%</nowiki> || [https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS?locations=EC <nowiki>Trade (% of GDP)</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ecuador]] || <nowiki>GDP growth leveled off to 2.7% in 2002</nowiki> || <nowiki>2.7%</nowiki> || <nowiki>the text gives 2.7% for 2002; the source now gives 4.9%</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=EC <nowiki>GDP growth (annual %)</nowiki>, <nowiki>Ecuador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Egypt]] || <nowiki>increasePositive 33.75 million (2024)</nowiki> || <nowiki>33.75 million</nowiki> || <nowiki>the text gives 33.75 million for 2024; the source now gives 35.34 million</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=EG <nowiki>Labor force, total</nowiki>, <nowiki>Egypt, Arab Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of El Salvador]] || <nowiki>labor</nowiki> || <nowiki>2.89 million</nowiki> || <nowiki>the text gives 2.89 million for 2024; the source now gives 2.95 million</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=SV <nowiki>Labor force, total</nowiki>, <nowiki>El Salvador</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ethiopia]] || <nowiki>increase 61,664,369 (2023)</nowiki> || <nowiki>61,664,369</nowiki> || <nowiki>the text gives 61,664,369 for 2023; the source now gives 53,419,507</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=ET&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Ethiopia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ethiopia]] || <nowiki>increase 78% employment rate (2023)</nowiki> || <nowiki>78%</nowiki> || <nowiki>the text gives 78% for 2023; the source now gives 66%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS?locations=ET&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (modeled ILO estimate)</nowiki>, <nowiki>Ethiopia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ethiopia]] || <nowiki>unemployment</nowiki> || <nowiki>3.5%</nowiki> || <nowiki>the text gives 3.5% for 2022; the source now gives 3.4%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=ET <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Ethiopia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Georgia (country)]] || <nowiki>13.1% in poverty (2023)</nowiki> || <nowiki>13.1%</nowiki> || <nowiki>the text gives 13.1% for 2023; the source now gives 11.8%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=GE <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Georgia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Georgia (country)]] || <nowiki>increase 1,853,718 (2024)</nowiki> || <nowiki>1,853,718</nowiki> || <nowiki>the text gives 1,853,718 for 2024; the source now gives 1,942,937</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=GE&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Georgia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ghana]] || <nowiki>increase 13,927,871 (2024 est.)</nowiki> || <nowiki>13,927,871</nowiki> || <nowiki>the text gives 13,927,871 for 2024; the source now gives 13,049,107</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=GH <nowiki>Labor force, total</nowiki>, <nowiki>Ghana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ghana]] || <nowiki>69% employment rate (2021)</nowiki> || <nowiki>69%</nowiki> || <nowiki>the text gives 69% for 2021; the source now gives 60%</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.CACT.ZS?locations=GH/ <nowiki>Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)</nowiki>, <nowiki>Ghana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ghana]] || <nowiki>unemployment</nowiki> || <nowiki>3.1%</nowiki> || <nowiki>the text gives 3.1% for 2024; the source now gives 2.8%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=GH <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Ghana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Guatemala]] || <nowiki>The labor force participation rate for women in Guatemala was at 41% in 2018</nowiki> || <nowiki>41%</nowiki> || <nowiki>the text gives 41% for 2018; the source now gives 38%</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.CACT.FE.ZS?end=2018&locations=GT&start=1990&view=chart <nowiki>Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)</nowiki>, <nowiki>Guatemala</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Honduras]] || <nowiki>increase 4,376,463 (2019)</nowiki> || <nowiki>4,376,463</nowiki> || <nowiki>the text gives 4,376,463 for 2019; the source now gives 4,231,661</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=HN <nowiki>Labor force, total</nowiki>, <nowiki>Honduras</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Honduras]] || <nowiki>increase 67.7% employment rate (2018)</nowiki> || <nowiki>67.7%</nowiki> || <nowiki>the text gives 67.7% for 2018; the source now gives 62.7%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=HN <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Honduras</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Honduras]] || <nowiki>decreasePositive 7% (2022)</nowiki> || <nowiki>7%</nowiki> || <nowiki>the text gives 7% for 2022; the source now gives 9%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=HN <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Honduras</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Hong Kong]] || <nowiki>decrease 3,385,727 (2024)</nowiki> || <nowiki>3,385,727</nowiki> || <nowiki>the text gives 3,385,727 for 2024; the source now gives 3,827,176</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=HK <nowiki>Labor force, total</nowiki>, <nowiki>Hong Kong SAR, China</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of India]] || <nowiki>consumption</nowiki> || <nowiki>70.7%</nowiki> || <nowiki>the text gives 70.7% for 2023; the source now gives 67.1%</nowiki> || [https://data.worldbank.org/indicator/NE.CON.TOTL.ZS?locations=IN <nowiki>Final consumption expenditure (% of GDP)</nowiki>, <nowiki>India</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of India]] || <nowiki>gfcf</nowiki> || <nowiki>31%</nowiki> || <nowiki>the text gives 31% for 2023; the source now gives 32%</nowiki> || [https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS?locations=IN <nowiki>Gross fixed capital formation (% of GDP)</nowiki>, <nowiki>India</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Indonesia]] || <nowiki>increase 147,800,000 (2023)</nowiki> || <nowiki>147,800,000</nowiki> || <nowiki>the text gives 147,800,000 for 2023; the source now gives 143,318,723</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=ID&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Indonesia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Indonesia]] || <nowiki>75% employment rate (2023)</nowiki> || <nowiki>75%</nowiki> || <nowiki>the text gives 75% for 2023; the source now gives 66%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=ID&most_recent_value_desc=true <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Indonesia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Iran]] || <nowiki>increase 27,358,987 (2019)</nowiki> || <nowiki>27,358,987</nowiki> || <nowiki>the text gives 27,358,987 for 2019; the source now gives 29,161,250</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=IR <nowiki>Labor force, total</nowiki>, <nowiki>Iran, Islamic Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ivory Coast]] || <nowiki>increase 8,583,001 (2019)</nowiki> || <nowiki>8,583,001</nowiki> || <nowiki>the text gives 8,583,001 for 2019; the source now gives 10,522,774</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CI&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Cote d'Ivoire</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Jamaica]] || <nowiki>increase 58.2% employment rate (2018)</nowiki> || <nowiki>58.2%</nowiki> || <nowiki>the text gives 58.2% for 2018; the source now gives 59.7%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=JM <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Jamaica</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Jordan]] || <nowiki>increase 2,631,115 (2019)</nowiki> || <nowiki>2,631,115</nowiki> || <nowiki>the text gives 2,631,115 for 2019; the source now gives 2,794,037</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=JO&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Jordan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Jordan]] || <nowiki>As of 2023, Jordan has a GDP of US$50.85 billion, ranking it 89th worldwide</nowiki> || <nowiki>US$50.85 billion</nowiki> || <nowiki>the text gives US$50.85 billion for 2023; the source now gives 56.12 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=JO <nowiki>GDP (current US$)</nowiki>, <nowiki>Jordan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Kazakhstan]] || <nowiki>increase 9,262,539 (2019)</nowiki> || <nowiki>9,262,539</nowiki> || <nowiki>the text gives 9,262,539 for 2019; the source now gives 9,556,218</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=KZ&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Kazakhstan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Kyrgyzstan]] || <nowiki>youth-unemployment = decreasePositive 14.2% youth unemployment (2018)</nowiki> || <nowiki>14.2%</nowiki> || <nowiki>the text gives 14.2% for 2018; the source now gives 9.6%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.1524.NE.ZS?locations=KG&name_desc=false <nowiki>Unemployment, youth total (% of total labor force ages 15-24) (national estimate)</nowiki>, <nowiki>Kyrgyz Republic</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Lebanon]] || <nowiki>increase 2,399,073 (2019)</nowiki> || <nowiki>2,399,073</nowiki> || <nowiki>the text gives 2,399,073 for 2019; the source now gives 2,042,509</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=LB <nowiki>Labor force, total</nowiki>, <nowiki>Lebanon</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Lithuania]] || <nowiki>ubilius government helped to balance the current account from −15.5 in 2007 to 1.6 in 2009</nowiki> || <nowiki>1.6</nowiki> || <nowiki>the text gives 1.6 for 2009; the source now gives 2.2</nowiki> || [https://data.worldbank.org/indicator/BN.CAB.XOKA.GD.ZS?locations=LT <nowiki>Current account balance (% of GDP)</nowiki>, <nowiki>Lithuania</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Macau]] || <nowiki>increase 388,620 (2019)</nowiki> || <nowiki>388,620</nowiki> || <nowiki>the text gives 388,620 for 2019; the source now gives 402,804</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=MO&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Macao SAR, China</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Malawi]] || <nowiki>increase 8,156,049 (2019)</nowiki> || <nowiki>8,156,049</nowiki> || <nowiki>the text gives 8,156,049 for 2019; the source now gives 6,781,042</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=MW&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Malawi</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Malawi]] || <nowiki>39.1% employment rate (2017)</nowiki> || <nowiki>39.1%</nowiki> || <nowiki>the text gives 39.1% for 2017; the source now gives 61.1%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=MW&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Malawi</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Malaysia]] || <nowiki>increase 17.61 million (2025)</nowiki> || <nowiki>17.61 million</nowiki> || <nowiki>the text gives 17.61 million for 2025; the source now gives 18.72 million</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=MY&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Malaysia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Malta]] || <nowiki>decrease 226,582 (2019)</nowiki> || <nowiki>226,582</nowiki> || <nowiki>the text gives 226,582 for 2019; the source now gives 262,597</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=MT&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Malta</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Mauritius]] || <nowiki>population</nowiki> || <nowiki>1,268,958</nowiki> || <nowiki>the text gives 1,268,958 for 2025; the source now gives 1,243,741</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MU&name_desc=false <nowiki>Population, total</nowiki>, <nowiki>Mauritius</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Montenegro]] || <nowiki>decrease 245,288 (2024)</nowiki> || <nowiki>245,288</nowiki> || <nowiki>the text gives 245,288 for 2024; the source now gives 297,284</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=ME&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Nauru]] || <nowiki>population</nowiki> || <nowiki>12,511</nowiki> || <nowiki>the text gives 12,511 for 2021; the source now gives 11,709</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NR <nowiki>Population, total</nowiki>, <nowiki>Naoero</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Nicaragua]] || <nowiki>increase 3,264,024 (2023)</nowiki> || <nowiki>3,264,024</nowiki> || <nowiki>the text gives 3,264,024 for 2023; the source now gives 3,183,098</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=NI <nowiki>Labor force, total</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Niger]] || <nowiki>labor</nowiki> || <nowiki>9,198,681</nowiki> || <nowiki>the text gives 9,198,681 for 2019; the source now gives 8,590,335</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=NE <nowiki>Labor force, total</nowiki>, <nowiki>Niger</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Pakistan]] || <nowiki>gini</nowiki> || <nowiki>31.6</nowiki> || <nowiki>the text gives 31.6 for 2018; the source now gives 29.6</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=PK <nowiki>Gini index</nowiki>, <nowiki>Pakistan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Palau]] || <nowiki>increase 2.2% (2023)</nowiki> || <nowiki>2.2%</nowiki> || <nowiki>the text gives 2.2% for 2023; the source now gives 1.2%</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=PW <nowiki>GDP growth (annual %)</nowiki>, <nowiki>Palau</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Palestine]] || <nowiki>increase 1,316,023 (2019)</nowiki> || <nowiki>1,316,023</nowiki> || <nowiki>the text gives 1,316,023 for 2019; the source now gives 1,254,417</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=PS&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>West Bank and Gaza</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Panama]] || <nowiki>poverty</nowiki> || <nowiki>13.4%</nowiki> || <nowiki>the text gives 13.4% for 2023; the source now gives 21.7%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=PA <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Panama</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Panama]] || <nowiki>increase 2,063,132 (2019)</nowiki> || <nowiki>2,063,132</nowiki> || <nowiki>the text gives 2,063,132 for 2019; the source now gives 2,125,347</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=PA&name_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Panama</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Papua New Guinea]] || <nowiki>PNG has 42.68 mobile phone users per 100 population, estimated in 2017</nowiki> || <nowiki>42.68</nowiki> || <nowiki>the text gives 42.68 for 2017; the source now gives 43.78</nowiki> || [https://data.worldbank.org/indicator/IT.CEL.SETS.P2?end=2017&locations=PG&start=1960&view=chart <nowiki>Mobile cellular subscriptions (per 100 people)</nowiki>, <nowiki>Papua New Guinea</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Papua New Guinea]] || <nowiki>PNG has a low level of broadband uptake, estimated in 2017 at 0.213 per 100 population</nowiki> || <nowiki>0.213</nowiki> || <nowiki>the text gives 0.213 for 2017; the source now gives 0.196</nowiki> || [https://data.worldbank.org/indicator/IT.NET.BBND.P2?locations=PG&view=chart <nowiki>Fixed broadband subscriptions (per 100 people)</nowiki>, <nowiki>Papua New Guinea</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Paraguay]] || <nowiki>increase 3,530,715 (2019)</nowiki> || <nowiki>3,530,715</nowiki> || <nowiki>the text gives 3,530,715 for 2019; the source now gives 3,334,564</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=PY&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Paraguay</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Peru]] || <nowiki>decrease 65.5% employment rate (2018)</nowiki> || <nowiki>65.5%</nowiki> || <nowiki>the text gives 65.5% for 2018; the source now gives 74.5%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=PE&most_recent_value_desc=true <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Peru</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Qatar]] || <nowiki>labor</nowiki> || <nowiki>2,035,269</nowiki> || <nowiki>the text gives 2,035,269 for 2023; the source now gives 1,972,840</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=QA&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Qatar</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Russia]] || <nowiki>dly changed the percentage, and only sanctions and boycotts in 2022 led to a drop to 15.6%</nowiki> || <nowiki>15.6%</nowiki> || <nowiki>the text gives 15.6% for 2022; the source now gives 15.1%</nowiki> || [https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS?most_recent_value_desc=false&locations=RU <nowiki>Imports of goods and services (% of GDP)</nowiki>, <nowiki>Russian Federation</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Rwanda]] || <nowiki>increase 5,258,826 (2023)</nowiki> || <nowiki>5,258,826</nowiki> || <nowiki>the text gives 5,258,826 for 2023; the source now gives 5,531,930</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=RW&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Rwanda</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Saint Lucia]] || <nowiki>population</nowiki> || <nowiki>185,886</nowiki> || <nowiki>the text gives 185,886 for 2023; the source now gives 179,285</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=LC <nowiki>Population, total</nowiki>, <nowiki>St. Lucia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Saint Lucia]] || <nowiki>decrease 95,790 (2020)</nowiki> || <nowiki>95,790</nowiki> || <nowiki>the text gives 95,790 for 2020; the source now gives 77,845</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=LC <nowiki>Labor force, total</nowiki>, <nowiki>St. Lucia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Senegal]] || <nowiki>increase 5,257,332 (2023)</nowiki> || <nowiki>5,257,332</nowiki> || <nowiki>the text gives 5,257,332 for 2023; the source now gives 5,755,823</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=SN&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Senegal</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Senegal]] || <nowiki>imports</nowiki> || <nowiki>$14.25 billion</nowiki> || <nowiki>the text gives $14.25 billion for 2024; the source now gives 8.20 billion</nowiki> || [https://data.worldbank.org/indicator/NE.EXP.GNFS.CD?end=2024&locations=SN&start=2000&view=chart <nowiki>Exports of goods and services (current US$)</nowiki>, <nowiki>Senegal</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Serbia]] || <nowiki>in most European economies, with output declining 0.9% in 2020 and rebounding 7.5% in 2021</nowiki> || <nowiki>7.5%</nowiki> || <nowiki>the text gives 7.5% for 2021; the source now gives 7.9%</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=RS <nowiki>GDP growth (annual %)</nowiki>, <nowiki>Serbia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Sierra Leone]] || <nowiki>52.9% (2011)</nowiki> || <nowiki>52.9%</nowiki> || <nowiki>the text gives 52.9% for 2011; the source now gives 62.4%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.NAHC?locations=SL <nowiki>Poverty headcount ratio at national poverty lines (% of population)</nowiki>, <nowiki>Sierra Leone</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Singapore]] || <nowiki>As of 2017 Singapore's GDP reached $323.907 billion</nowiki> || <nowiki>$323.907 billion</nowiki> || <nowiki>the text gives $323.907 billion for 2017; the source now gives 344.795 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=SG <nowiki>GDP (current US$)</nowiki>, <nowiki>Singapore</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Somalia]] || <nowiki>labor</nowiki> || <nowiki>3,924,554</nowiki> || <nowiki>the text gives 3,924,554 for 2019; the source now gives 2,883,798</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=SO <nowiki>Labor force, total</nowiki>, <nowiki>Somalia, Fed. Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Somalia]] || <nowiki>unemployment</nowiki> || <nowiki>11.4%</nowiki> || <nowiki>the text gives 11.4% for 2019; the source now gives 18.8%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=SO <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Somalia, Fed. Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Somalia]] || <nowiki>k estimated an annual GDP of $6.2 billion, similar in size to Guam and the Kyrgyz Republic</nowiki> || <nowiki>$6.2 billion</nowiki> || <nowiki>the text gives $6.2 billion for 2018; the source now gives 7.9 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=SO <nowiki>GDP (current US$)</nowiki>, <nowiki>Somalia, Fed. Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Sudan]] || <nowiki>population</nowiki> || <nowiki>48,109,006</nowiki> || <nowiki>the text gives 48,109,006 for 2023; the source now gives 50,042,791</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SD&name_desc=false <nowiki>Population, total</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Sudan]] || <nowiki>increase 12,064,673 (2019)</nowiki> || <nowiki>12,064,673</nowiki> || <nowiki>the text gives 12,064,673 for 2019; the source now gives 10,724,574</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=SD&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Thailand]] || <nowiki>increase 38,917,441 (2019)</nowiki> || <nowiki>38,917,441</nowiki> || <nowiki>the text gives 38,917,441 for 2019; the source now gives 39,952,678</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=TH <nowiki>Labor force, total</nowiki>, <nowiki>Thailand</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Tunisia]] || <nowiki>Decrease 36% employment rate (2024)</nowiki> || <nowiki>36%</nowiki> || <nowiki>the text gives 36% for 2024; the source now gives 39%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.ZS?locations=TN <nowiki>Employment to population ratio, 15+, total (%) (modeled ILO estimate)</nowiki>, <nowiki>Tunisia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Uganda]] || <nowiki>increase 16,833,878 (2019)</nowiki> || <nowiki>16,833,878</nowiki> || <nowiki>the text gives 16,833,878 for 2019; the source now gives 18,014,065</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=UG&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Uganda</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Uganda]] || <nowiki>48.0% employment rate (2017)</nowiki> || <nowiki>48.0%</nowiki> || <nowiki>the text gives 48.0% for 2017; the source now gives 69.6%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=UG&name_desc=false <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Uganda</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Ukraine]] || <nowiki>decrease 20,203,893 (2019)</nowiki> || <nowiki>20,203,893</nowiki> || <nowiki>the text gives 20,203,893 for 2019; the source now gives 21,427,188</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=UA&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of Zimbabwe]] || <nowiki>gini</nowiki> || <nowiki>45.5</nowiki> || <nowiki>the text gives 45.5 for 2019; the source now gives 50.3</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=ZW <nowiki>Gini index</nowiki>, <nowiki>Zimbabwe</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Central African Republic]] || <nowiki>labor</nowiki> || <nowiki>1,919,063</nowiki> || <nowiki>the text gives 1,919,063 for 2019; the source now gives 1,850,874</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CF <nowiki>Labor force, total</nowiki>, <nowiki>Central African Republic</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Central African Republic]] || <nowiki>unemployment</nowiki> || <nowiki>6.5%</nowiki> || <nowiki>the text gives 6.5% for 2019; the source now gives 5.9%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=CF <nowiki>Unemployment, total (% of total labor force) (modeled ILO estimate)</nowiki>, <nowiki>Central African Republic</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Democratic Republic of the Congo]] || <nowiki>population</nowiki> || <nowiki>95,894,118</nowiki> || <nowiki>the text gives 95,894,118 for 2021; the source now gives 99,148,932</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=CD <nowiki>Population, total</nowiki>, <nowiki>Congo, Dem. Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Democratic Republic of the Congo]] || <nowiki>increase 29,699,289 (2019)</nowiki> || <nowiki>29,699,289</nowiki> || <nowiki>the text gives 29,699,289 for 2019; the source now gives 32,284,525</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CD <nowiki>Labor force, total</nowiki>, <nowiki>Congo, Dem. Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Gambia]] || <nowiki>population</nowiki> || <nowiki>2,468,569</nowiki> || <nowiki>the text gives 2,468,569 for 2023; the source now gives 2,697,845</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=GM <nowiki>Population, total</nowiki>, <nowiki>Gambia, The</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Gambia]] || <nowiki>increase 781,558 (2019)</nowiki> || <nowiki>781,558</nowiki> || <nowiki>the text gives 781,558 for 2019; the source now gives 675,484</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=GM <nowiki>Labor force, total</nowiki>, <nowiki>Gambia, The</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Gambia]] || <nowiki>53.4% employment rate (2012)</nowiki> || <nowiki>53.4%</nowiki> || <nowiki>the text gives 53.4% for 2012; the source now gives 56.4%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=GM <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Gambia, The</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Maldives]] || <nowiki>increase 278,813 (2019)</nowiki> || <nowiki>278,813</nowiki> || <nowiki>the text gives 278,813 for 2019; the source now gives 243,098</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=MV&name_desc=false <nowiki>Labor force, total</nowiki>, <nowiki>Maldives</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Netherlands]] || <nowiki>9,181,373 (2019)</nowiki> || <nowiki>9,181,373</nowiki> || <nowiki>the text gives 9,181,373 for 2019; the source now gives 9,742,856</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=NL&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Netherlands</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Republic of the Congo]] || <nowiki>population</nowiki> || <nowiki>5,244,363</nowiki> || <nowiki>the text gives 5,244,363 for 2018; the source now gives 5,483,118</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=CG <nowiki>Population, total</nowiki>, <nowiki>Congo, Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Republic of the Congo]] || <nowiki>increase 2,173,950 (2019)</nowiki> || <nowiki>2,173,950</nowiki> || <nowiki>the text gives 2,173,950 for 2019; the source now gives 2,221,302</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=CG <nowiki>Labor force, total</nowiki>, <nowiki>Congo, Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the Republic of the Congo]] || <nowiki>48.4% employment rate (2009)</nowiki> || <nowiki>48.4%</nowiki> || <nowiki>the text gives 48.4% for 2009; the source now gives 36.0%</nowiki> || [https://data.worldbank.org/indicator/SL.EMP.TOTL.SP.NE.ZS?locations=CG <nowiki>Employment to population ratio, 15+, total (%) (national estimate)</nowiki>, <nowiki>Congo, Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the United Arab Emirates]] || <nowiki>population</nowiki> || <nowiki>9,441,129</nowiki> || <nowiki>the text gives 9,441,129 for 2022; the source now gives 10,074,977</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=AE&name_desc=false <nowiki>Population, total</nowiki>, <nowiki>United Arab Emirates</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Economy of the United Arab Emirates]] || <nowiki>increase 6,668,172 (2023)</nowiki> || <nowiki>6,668,172</nowiki> || <nowiki>the text gives 6,668,172 for 2023; the source now gives 6,873,426</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=AE <nowiki>Labor force, total</nowiki>, <nowiki>United Arab Emirates</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Education in Benin]] || <nowiki>2000 to 59 percent in 2016, 67.1 percent in the case of males and 50.7 percent for females</nowiki> || <nowiki>59 percent</nowiki> || <nowiki>the text gives 59 percent for 2016; the source now gives 55%</nowiki> || [https://data.worldbank.org/indicator/SE.SEC.ENRR?locations=BJ <nowiki>School enrollment, secondary (% gross)</nowiki>, <nowiki>Benin</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Education in China]] || <nowiki>The gross rate of enrollment in schools of higher learning reached 58.42 percent in 2020</nowiki> || <nowiki>58.42 percent</nowiki> || <nowiki>the text gives 58.42 percent for 2020; the source now gives 61.61%</nowiki> || [https://data.worldbank.org/indicator/SE.TER.ENRR?end=2020&locations=CN&start=1986 <nowiki>School enrollment, tertiary (% gross)</nowiki>, <nowiki>China</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Education in Equatorial Guinea]] || <nowiki>dollars, its educational outcomes fall behind those of the rest of West and Central Africa</nowiki> || <nowiki>18,170</nowiki> || <nowiki>the text gives 18,170 for 2018; the source now gives 16,230</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.PP.CD?locations=GQ&most_recent_value_desc=true <nowiki>GNI per capita, PPP (current international $)</nowiki>, <nowiki>Equatorial Guinea</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Educational inequality in Ghana]] || <nowiki>or tertiary school enrollment experienced the most growth, from 0.17 (1971) to 0.85 (2019)</nowiki> || <nowiki>0.85</nowiki> || <nowiki>the text gives 0.85 for 2019; the source now gives 0.82</nowiki> || [https://data.worldbank.org/indicator/SE.ENR.TERT.FM.ZS?locations=GH <nowiki>School enrollment, tertiary (gross), gender parity index (GPI)</nowiki>, <nowiki>Ghana</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Evo Morales]] || <nowiki>Infant mortality was 21.2 in 2019, approximately half of what it was in 2006</nowiki> || <nowiki>21.2</nowiki> || <nowiki>the text gives 21.2 for 2019; the source now gives 18.4</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=BO&start=2006 <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Federated States of Micronesia]] || <nowiki>Life expectancy was 66 for men and 69 for women in 2018</nowiki> || <nowiki>66</nowiki> || <nowiki>the text gives 66 for 2018; the source now gives 63</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.MA.IN?locations=FM&most_recent_value_desc=true <nowiki>Life expectancy at birth, male (years)</nowiki>, <nowiki>Micronesia, Fed. Sts.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Geography of China]] || <nowiki>he World Bank, as of 2015, China's total arable land was estimated at 119,000,000 hectares</nowiki> || <nowiki>119,000,000</nowiki> || <nowiki>the text gives 119,000,000 for 2015; the source now gives 114,870,800</nowiki> || [https://data.worldbank.org/indicator/AG.LND.ARBL.HA?end=2015&locations=CN&start=1961&view=chart <nowiki>Arable land (hectares)</nowiki>, <nowiki>China</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Geography of Denmark]] || <nowiki>x years later to 2015, Denmark has decreased its amount of Agricultural land down to 62.1%</nowiki> || <nowiki>62.1%</nowiki> || <nowiki>the text gives 62.1% for 2015; the source now gives 65.8%</nowiki> || [https://data.worldbank.org/indicator/AG.LND.AGRI.ZS?locations=DK <nowiki>Agricultural land (% of land area)</nowiki>, <nowiki>Denmark</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Georgia (country)]] || <nowiki>epresenting 59.4 per cent of GDP), moving away from the agricultural sector (6.1 per cent)</nowiki> || <nowiki>59.4 per cent</nowiki> || <nowiki>the text gives 59.4 per cent for 2016; the source now gives 60.7%</nowiki> || [https://data.worldbank.org/indicator/NV.SRV.TOTL.ZS?locations=GE <nowiki>Services, value added (% of GDP)</nowiki>, <nowiki>Georgia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Bangladesh]] || <nowiki>The total expenditure on healthcare as a percentage of Bangladesh's GDP was 2.48% in 2019</nowiki> || <nowiki>2.48%</nowiki> || <nowiki>the text gives 2.48% for 2019; the source now gives 2.13%</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=BD <nowiki>Current health expenditure (% of GDP)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Bolivia]] || <nowiki>Infant mortality was 21.2 in 2019, approximately half of what it was in 2006</nowiki> || <nowiki>21.2</nowiki> || <nowiki>the text gives 21.2 for 2019; the source now gives 18.4</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=BO&start=2006 <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Gabon]] || <nowiki>Even though the HIV/AIDS prevalence in Gabon is estimated to be down to 3.0% in 2021</nowiki> || <nowiki>3.0%</nowiki> || <nowiki>the text gives 3.0% for 2021; the source now gives 3.2%</nowiki> || [https://data.worldbank.org/indicator/SH.DYN.AIDS.ZS?locations=GA <nowiki>Prevalence of HIV, total (% of population ages 15-49)</nowiki>, <nowiki>Gabon</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Lesotho]] || <nowiki>In 2019, the Crude Death Rate in Lesotho (per 1,000 people) were 13.936 people</nowiki> || <nowiki>13.936</nowiki> || <nowiki>the text gives 13.936 for 2019; the source now gives 11.830</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.CDRT.IN?locations=LS <nowiki>Death rate, crude (per 1,000 people)</nowiki>, <nowiki>Lesotho</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Lesotho]] || <nowiki>In 2005 life expectancy was 42.5, giving an increase of 11 years over the past 13 years</nowiki> || <nowiki>42.5</nowiki> || <nowiki>the text gives 42.5 for 2005; the source now gives 43.6</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=LS <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>Lesotho</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Montenegro]] || <nowiki>The rural population of Montenegro declined to 35.78% in 2016, compared to 81.21% in 1960</nowiki> || <nowiki>81.21%</nowiki> || <nowiki>the text gives 81.21% for 1960; the source now gives 75.43%</nowiki> || [https://data.worldbank.org/indicator/SP.RUR.TOTL.ZS?locations=ME&display=graph--%3E <nowiki>Rural population (% of total population)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Montenegro]] || <nowiki>5.094, which has decreased as can be seen through comparing to 2010 when it was at 147.104</nowiki> || <nowiki>125.094</nowiki> || <nowiki>the text gives 125.094 for 2018; the source now gives 132.977</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.AMRT.MA?locations=ME <nowiki>Mortality rate, adult, male (per 1,000 male adults)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Montenegro]] || <nowiki>0 adults) was 65.97, which has also decreased when compared to 2010, when it was at 82.022</nowiki> || <nowiki>65.97</nowiki> || <nowiki>the text gives 65.97 for 2018; the source now gives 73.03</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.AMRT.FE?locations=ME <nowiki>Mortality rate, adult, female (per 1,000 female adults)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Myanmar]] || <nowiki>0,000 live births, a 2.04% increase from 2016 which was 245 deaths per 100,000 live births</nowiki> || <nowiki>245</nowiki> || <nowiki>the text gives 245 for 2016; the source now gives 215</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=MM <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Myanmar</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Syria]] || <nowiki>n was an estimated 17,500,657 decreasing from the pre-war population of 21,326,541 in 2010</nowiki> || <nowiki>21,326,541</nowiki> || <nowiki>the text gives 21,326,541 for 2010; the source now gives 22,482,421</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SY <nowiki>Population, total</nowiki>, <nowiki>Syrian Arab Republic</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Zimbabwe]] || <nowiki>91% of the people living with HIV were on antiretroviral therapy in 2021</nowiki> || <nowiki>91%</nowiki> || <nowiki>the text gives 91% for 2021; the source now gives 89%</nowiki> || [https://data.worldbank.org/indicator/SH.HIV.ARTC.ZS?locations=ZW <nowiki>Antiretroviral therapy coverage (% of people living with HIV)</nowiki>, <nowiki>Zimbabwe</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Health in Zimbabwe]] || <nowiki>ell from 83% in 2018 to 55% in 2020 which is the least Zimbabwe has experienced since 2000</nowiki> || <nowiki>83%</nowiki> || <nowiki>the text gives 83% for 2018; the source now gives 80%</nowiki> || [https://data.worldbank.org/indicator/SH.TBS.DTEC.ZS?locations=ZW <nowiki>Tuberculosis case detection rate (%, all forms)</nowiki>, <nowiki>Zimbabwe</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Healthcare in Madagascar]] || <nowiki>In 2020, the maternal mortality ratio in Madagascar was 392 deaths per 100,000 live births</nowiki> || <nowiki>392</nowiki> || <nowiki>the text gives 392 for 2020; the source now gives 447</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=MG <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Madagascar</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Healthcare in Madagascar]] || <nowiki>In 2022, the number of infant deaths was 40,388</nowiki> || <nowiki>40,388</nowiki> || <nowiki>the text gives 40,388 for 2022; the source now gives 43,083</nowiki> || [https://data.worldbank.org/indicator/SH.DTH.IMRT?locations=MG <nowiki>Number of infant deaths</nowiki>, <nowiki>Madagascar</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Iranian Revolution]] || <nowiki> since then, it has not yet reached its 1979 level and has only recovered to $6751 in 2016</nowiki> || <nowiki>$6751</nowiki> || <nowiki>the text gives $6751 for 2016; the source now gives 5330</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.KD?locations=IR <nowiki>GNI per capita (constant 2015 US$)</nowiki>, <nowiki>Iran, Islamic Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Japan]] || <nowiki>Its exports amounted to 22.8% of its total GDP in 2024</nowiki> || <nowiki>22.8%</nowiki> || <nowiki>the text gives 22.8% for 2024; the source now gives 22.0%</nowiki> || [https://data.worldbank.org/indicator/NE.EXP.GNFS.ZS?locations=JP <nowiki>Exports of goods and services (% of GDP)</nowiki>, <nowiki>Japan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Japan]] || <nowiki>Japan spent 11.42% of its total GDP on healthcare in 2022</nowiki> || <nowiki>11.42%</nowiki> || <nowiki>the text gives 11.42% for 2022; the source now gives 12.32%</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=JP <nowiki>Current health expenditure (% of GDP)</nowiki>, <nowiki>Japan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Lesotho]] || <nowiki>I.V./A.I.D.S. prevalence rate of 23.6% was the second-highest in the world, after Eswatini</nowiki> || <nowiki>23.6%</nowiki> || <nowiki>the text gives 23.6% for 2018; the source now gives 22.3%</nowiki> || [https://data.worldbank.org/indicator/SH.DYN.AIDS.ZS?locations=LS&most_recent_value_desc=true&view=chart <nowiki>Prevalence of HIV, total (% of population ages 15-49)</nowiki>, <nowiki>Lesotho</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Liberia]] || <nowiki>Life expectancy in Liberia is estimated to be 64.4 years in 2020</nowiki> || <nowiki>64.4</nowiki> || <nowiki>the text gives 64.4 for 2020; the source now gives 61.3</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2020&locations=LR&start=2020&view=bar <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>Liberia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Malaysia]] || <nowiki>ad a total fertility rate of 2.0 in 2020, which is just below the replacement level of 2.1</nowiki> || <nowiki>2.1</nowiki> || <nowiki>the text gives 2.1 for 2020; the source now gives 1.7</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=MY <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Malaysia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Malaysia]] || <nowiki>'s crude birth rate was 16 per 1000 people, and the crude death rate was 5 per 1000 people</nowiki> || <nowiki>16</nowiki> || <nowiki>the text gives 16 for 2020; the source now gives 13</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.CBRT.IN?locations=MY <nowiki>Birth rate, crude (per 1,000 people)</nowiki>, <nowiki>Malaysia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Mali]] || <nowiki>mated million UN Population Mali 1 , UN Population ref which grew from 7.7 million in 1982</nowiki> || <nowiki>7.7 million</nowiki> || <nowiki>the text gives 7.7 million for 1982; the source now gives 7.9 million</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?end=2018&locations=ML&name_desc=true&start=1982 <nowiki>Population, total</nowiki>, <nowiki>Mali</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Morocco]] || <nowiki>In 2014, spending on healthcare accounted for 5.9% of the country's GDP</nowiki> || <nowiki>5.9%</nowiki> || <nowiki>the text gives 5.9% for 2014; the source now gives 5.4%</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=MA <nowiki>Current health expenditure (% of GDP)</nowiki>, <nowiki>Morocco</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Morocco]] || <nowiki>In 2015, the Moroccan health expenditure was $435.29 per capita</nowiki> || <nowiki>$435.29</nowiki> || <nowiki>the text gives $435.29 for 2015; the source now gives 403.69</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.CHEX.PP.CD?locations=MA <nowiki>Current health expenditure per capita, PPP (current international $)</nowiki>, <nowiki>Morocco</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Nepal]] || <nowiki>The military expenditure for 2018 was $398.5 million</nowiki> || <nowiki>$398.5 million</nowiki> || <nowiki>the text gives $398.5 million for 2018; the source now gives 429.4 million</nowiki> || [https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=NP <nowiki>Military expenditure (current USD)</nowiki>, <nowiki>Nepal</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Netherlands]] || <nowiki>The fertility rate in the Netherlands is 1.39 children per woman (2024)</nowiki> || <nowiki>1.39</nowiki> || <nowiki>the text gives 1.39 for 2024; the source now gives 1.43</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=NL <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Netherlands</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Nicaragua]] || <nowiki>primarily an agricultural country; 29% of its workforce is employed in agriculture in 2020</nowiki> || <nowiki>29%</nowiki> || <nowiki>the text gives 29% for 2020; the source now gives 32%</nowiki> || [https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS?locations=NI <nowiki>Employment in agriculture (% of total employment) (modeled ILO estimate)</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Niger]] || <nowiki>and 38% (46% male and 30% female) according to the World Bank, both as of 2022</nowiki> || <nowiki>38%</nowiki> || <nowiki>the text gives 38% for 2022; the source now gives 36%</nowiki> || [https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=NE <nowiki>Literacy rate, adult total (% of people ages 15 and above)</nowiki>, <nowiki>Niger</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Nigeria]] || <nowiki>As of 2019 , the infant mortality is 74.2 deaths per 1,000 live births</nowiki> || <nowiki>74.2</nowiki> || <nowiki>the text gives 74.2 for 2019; the source now gives 69.1</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=NG <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Nigeria</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Oman]] || <nowiki>d to be 2.8 children born per woman; this rate has been rapidly decreasing in recent years</nowiki> || <nowiki>2.8</nowiki> || <nowiki>the text gives 2.8 for 2020; the source now gives 2.6</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=OM <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Oman</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Open defecation]] || <nowiki> 2018, 12% or 26 million people in Pakistan practiced open defecation, according to UNICEF</nowiki> || <nowiki>12%</nowiki> || <nowiki>the text gives 12% for 2018; the source now gives 14%</nowiki> || [https://data.worldbank.org/indicator/SH.STA.ODFC.ZS?end=2018&locations=PK <nowiki>People practicing open defecation (% of population)</nowiki>, <nowiki>Pakistan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Papua New Guinea]] || <nowiki>e most rural countries, with only 14% of its population living in urban centres as of 2023</nowiki> || <nowiki>14%</nowiki> || <nowiki>the text gives 14% for 2023; the source now gives 15%</nowiki> || [https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=PG <nowiki>Urban population (% of total population)</nowiki>, <nowiki>Papua New Guinea</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Phantom aid in Afghanistan]] || <nowiki>Afghanistan is a low-income country with GDP per capita of US$507 in 2019</nowiki> || <nowiki>US$507</nowiki> || <nowiki>the text gives US$507 for 2019; the source now gives 497</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=AF <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Afghanistan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Poverty in Algeria]] || <nowiki>which has improved significantly from 40.2% in 1988</nowiki> || <nowiki>40.2%</nowiki> || <nowiki>the text gives 40.2% for 1988; the source now gives 37.4%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=DZ <nowiki>Gini index</nowiki>, <nowiki>Algeria</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Puerto Rico]] || <nowiki>cording to World Bank, gross national income per capita in Puerto Rico in 2020 was $21,740</nowiki> || <nowiki>$21,740</nowiki> || <nowiki>the text gives $21,740 for 2020; the source now gives 21,200</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.CD?locations=PR <nowiki>GNI per capita, Atlas method (current US$)</nowiki>, <nowiki>Puerto Rico (US)</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Russia]] || <nowiki>Russia spent 7.39% of its GDP on healthcare in 2021</nowiki> || <nowiki>7.39%</nowiki> || <nowiki>the text gives 7.39% for 2021; the source now gives 7.03%</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=RU <nowiki>Current health expenditure (% of GDP)</nowiki>, <nowiki>Russian Federation</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Seychelles]] || <nowiki>least populated sovereign African country, with an estimated population of 100,600 in 2022</nowiki> || <nowiki>100,600</nowiki> || <nowiki>the text gives 100,600 for 2022; the source now gives 119,878</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SC <nowiki>Population, total</nowiki>, <nowiki>Seychelles</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Sudan]] || <nowiki>Sudan's GDP fell from US$123.053 billion in 2017 to US$40.852 billion in 2018</nowiki> || <nowiki>US$40.852 billion</nowiki> || <nowiki>the text gives US$40.852 billion for 2018; the source now gives 32.334 billion</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=SD&view=chart <nowiki>GDP (current US$)</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Sudan]] || <nowiki>In 2014, 45% of the population lives on less than US$3.20 per day, up from 43% in 2009</nowiki> || <nowiki>43%</nowiki> || <nowiki>the text gives 43% for 2009; the source now gives 28%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.LMIC?locations=SD <nowiki>Poverty headcount ratio at $4.20 a day (2021 PPP) (% of population)</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Sudan]] || <nowiki>Infant mortality in 2016 was 44.8 per 1,000</nowiki> || <nowiki>44.8</nowiki> || <nowiki>the text gives 44.8 for 2016; the source now gives 47.2</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=SD&year_high_desc=true <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Suicide in Romania]] || <nowiki>cide mortality rate has dropped from 13.2 per 100,000 in 2000, to 10.4 per 100,000 in 2016</nowiki> || <nowiki>13.2</nowiki> || <nowiki>the text gives 13.2 for 2000; the source now gives 12.8</nowiki> || [https://data.worldbank.org/indicator/SH.STA.SUIC.P5?locations=RO <nowiki>Suicide mortality rate (per 100,000 population)</nowiki>, <nowiki>Romania</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Telecommunications in Timor-Leste]] || <nowiki>, according to the World Bank, in 2015, 23% of the population is connected to the Internet</nowiki> || <nowiki>23%</nowiki> || <nowiki>the text gives 23% for 2015; the source now gives 19%</nowiki> || [https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=TL <nowiki>Individuals using the Internet (% of population)</nowiki>, <nowiki>Timor-Leste</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Telecommunications in Ukraine]] || <nowiki>band dominates access; fixed broadband subscriptions stood at 19.68 per 100 people in 2023</nowiki> || <nowiki>19.68</nowiki> || <nowiki>the text gives 19.68 for 2023; the source now gives 21.38</nowiki> || [https://data.worldbank.org/indicator/IT.NET.BBND.P2?locations=UA <nowiki>Fixed broadband subscriptions (per 100 people)</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Ukraine]] || <nowiki>Unemployment in Ukraine was 4.5% in 2019</nowiki> || <nowiki>4.5%</nowiki> || <nowiki>the text gives 4.5% for 2019; the source now gives 8.2%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=UA <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Violeta Chamorro]] || <nowiki>000 live births and went down to 37 per 1,000 live births in 1998 during Chamorro's tenure</nowiki> || <nowiki>37</nowiki> || <nowiki>the text gives 37 for 1998; the source now gives 38</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=NI <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Visa policy of Turkmenistan]] || <nowiki>center 1995 increase 218,000</nowiki> || <nowiki>218,000</nowiki> || <nowiki>the text gives 218,000 for 1995; the source now gives 233,000</nowiki> || [https://data.worldbank.org/indicator/ST.INT.ARVL?locations=TM <nowiki>International tourism, number of arrivals</nowiki>, <nowiki>Turkmenistan</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Egypt]] || <nowiki>which is lower than that of men which is 80% (data from 2022)</nowiki> || <nowiki>80%</nowiki> || <nowiki>the text gives 80% for 2022; the source now gives 85%</nowiki> || [https://data.worldbank.org/indicator/SE.ADT.LITR.MA.ZS?locations=EG <nowiki>Literacy rate, adult male (% of males ages 15 and above)</nowiki>, <nowiki>Egypt, Arab Rep.</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Iraq]] || <nowiki>matdeath</nowiki> || <nowiki>76</nowiki> || <nowiki>the text gives 76 for 2020; the source now gives 63</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=IQ <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Iraq</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Iraq]] || <nowiki>womlab</nowiki> || <nowiki>13.885%</nowiki> || <nowiki>the text gives 13.885% for 2023; the source now gives 13.230%</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.FE.ZS?locations=IQ <nowiki>Labor force, female (% of total labor force)</nowiki>, <nowiki>Iraq</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Namibia]] || <nowiki>f 195 deaths per 100,000 live births, down from 358 deaths per 100,000 live births in 2004</nowiki> || <nowiki>358</nowiki> || <nowiki>the text gives 358 for 2004; the source now gives 282</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?end=2017&locations=NA&start=2000&view=chart <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Namibia</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Sri Lanka]] || <nowiki>elected in Sri Lanka in 1960. gii=0.383 (2021) gii_rank=90th out of 162 matdeath=36 (2017)</nowiki> || <nowiki>36</nowiki> || <nowiki>the text gives 36 for 2017; the source now gives 21</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=LK <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Sri Lanka</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Women in Syria]] || <nowiki>womlab</nowiki> || <nowiki>18.9%</nowiki> || <nowiki>the text gives 18.9% for 2021; the source now gives 17.9%</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.FE.ZS?locations=SY <nowiki>Labor force, female (% of total labor force)</nowiki>, <nowiki>Syrian Arab Republic</nowiki>] (updated 2026-07-13) || 
+|}
+

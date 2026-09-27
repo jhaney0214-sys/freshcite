@@ -26,18 +26,23 @@ editor can decide in one look.
 
 ## What it found
 
-**The first full scan, 2026-09-26:** every English Wikipedia article linking to
+**The latest full scan, 2026-09-27:** every English Wikipedia article linking to
 `data.worldbank.org/indicator`, **1,270 articles and 2,730 citations. With
-the current rules it reports 358 findings in 206 articles**: 155 figures with
-a newer year available, 196 where the source now gives a different value for
-the stated year, and 7 where the year does not belong to the figure. (The first
-run of the day reported 383; the difference is the fixes described below.)
-Every article was read. The whole report is in
-[`reports/2026-09-26-worldbank.md`](reports/2026-09-26-worldbank.md), the same
+the current rules it reports 356 findings in 204 articles**: 154 figures with
+a newer year available, 195 where the source now gives a different value for
+the stated year, and 7 where the year does not belong to the figure. Every
+article was read. The whole report is in
+[`reports/2026-09-27-worldbank.md`](reports/2026-09-27-worldbank.md), the same
 findings as a page for a Wikipedia userspace in
-[`reports/2026-09-26-worldbank.wiki`](reports/2026-09-26-worldbank.wiki), and
+[`reports/2026-09-27-worldbank.wiki`](reports/2026-09-27-worldbank.wiki), and
 every field of every citation in
-[`reports/2026-09-26-worldbank.json`](reports/2026-09-26-worldbank.json).
+[`reports/2026-09-27-worldbank.json`](reports/2026-09-27-worldbank.json).
+
+**What was posted to Wikipedia** on 2026-09-27 is the list from the scan of
+2026-09-26, [`reports/2026-09-26-worldbank.wiki`](reports/2026-09-26-worldbank.wiki):
+358 findings in 206 articles, before the fifth sample's two fixes. Its two extra
+rows (Health in Finland, Hurricane Norma) are the two the fifth sample found
+wrong. The 30-day re-scan counts from that posted list.
 
 | Article | As written | What the World Bank says now |
 | --- | --- | --- |
@@ -50,7 +55,7 @@ every field of every citation in
 | Economy of Moldova | poverty rate "26.8% (2020)" | 31.6% in 2023 |
 | Jamaica and the World Bank | GNI per capita "$4,990 (2018)" | that is the 2016 value; 2018 was 5,610 |
 
-**How often it is right.** Measured four times on 2026-09-26 and 27, each time on 40
+**How often it is right.** Measured five times on 2026-09-26 and 27, each time on 40
 findings drawn at random from articles that were not test fixtures and had not
 been read while the rules were written:
 
@@ -60,6 +65,7 @@ been read while the rules were written:
 | [second](reports/2026-09-26-accuracy-sample-2.md) | after them, on unseen articles | **36 of 40, 90%** |
 | [third](reports/2026-09-26-accuracy-sample-3.md) | after the second sample's fixes, on unseen articles | **36 of 40, 90%** |
 | [fourth](reports/2026-09-27-accuracy-sample-4.md) | after the third sample's fixes, on unseen articles | **34 of 40, 85%** |
+| [fifth](reports/2026-09-27-accuracy-sample-5.md) | after the fourth sample's fixes, on unseen articles | **38 of 40, 95%** |
 
 The first sample's seven errors fell into six patterns, and each now has a rule
 and a test built from the real sentence. Re-scanning showed two of those rules
@@ -87,9 +93,16 @@ something other than the cited series: a decade read as a year ("since the
 judged against the Philippines, a figure followed by a census citation, and a
 figure in euros or of GNI judged against a dollar or GDP series. All are fixed;
 re-scanning changed eight rows and left 358.
+The fifth sample found two: "Among males the life expectancy was 79", where the
+sex opens the clause rather than sitting beside the figure, judged against the
+total; and "285 million pesos (US$16 million)", a correct conversion read as a
+revision of the conversion factor its footnote cites. Both are fixed. A full
+re-scan from live pages removed exactly those two rows and changed no other,
+leaving 356.
 
-**Measured: 90%, 90% and 85% on the last three samples.** The latest fixes came
-after the last of them, so the current rules are unmeasured; quote 85–90%.
+**Measured: 90%, 90%, 85% and 95% on the last four samples.** The latest fixes
+came after the last of them, so the current rules are unmeasured; quote about
+90% (85–95%).
 
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
@@ -178,7 +191,7 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests       # 92 tests
+python -m unittest discover -s tests       # 93 tests
 docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 

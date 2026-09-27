@@ -224,6 +224,16 @@ class Figures(unittest.TestCase):
         text = "and 38% (46% male and 30% female) according to the World Bank, both as of 2022"
         self.assertEqual([f.raw for f in freshcite.figures(text)], ["38%"])
 
+    def test_a_sex_that_opens_the_clause_labels_its_figure(self):
+        """Fifth 2026-09-27 sample: Finland's male 79 judged against the total."""
+        text = ("Life expectancy at birth was 81.5 in Finland in 2021. Among males the life "
+                "expectancy was 79 and among females 84.1.")
+        self.assertEqual([f.raw for f in freshcite.figures(text)], ["81.5"])
+        # A male series keeps the unlabelled total and the male figure, and drops the female one.
+        self.assertEqual([f.raw for f in freshcite.figures(text, by_sex="MA")], ["81.5", "79"])
+        # A possessive is not a label: "women's health" says nothing about the figure's sex.
+        self.assertEqual([f.raw for f in freshcite.figures("In women's health the national rate was 79")], ["79"])
+
     def test_a_rates_denominator_does_not_take_the_year(self):
         """Third 2026-09-26 sample: Bolivia's 21.2 was given 2006, not 2019."""
         text = "The infant mortality rate was 40.7 per 1000 in 2006 and was reduced to 21.2 per 1000 in 2019"
@@ -455,7 +465,11 @@ class Verdicts(unittest.TestCase):
         self.assertEqual(f.kind, freshcite.DIFFERS, "a GDP figure against a GDP series is still judged")
 
     def test_an_exchange_rate_is_never_a_revision_either(self):
-        """2026-09-26 sample: "dropped to 165 yen per dollar in 1986" against the 1986 average."""
+        """2026-09-26 sample: "dropped to 165 yen per dollar in 1986" against the 1986 average.
+        Fifth 2026-09-27 sample: an amount converted with the DEC factor, the same."""
+        f = self.judge("Damage across the state amounted to 285 million pesos (US$16 million)",
+                       {2023: 17.758717, 2025: 19.2}, indicator="PA.NUS.ATLS")
+        self.assertEqual(f.kind, freshcite.HISTORICAL)
         f = self.judge("the exchange rate dropped to 165 yen per dollar in 1986",
                        {1986: 168.5, 2025: 149.7}, indicator="PA.NUS.FCRF")
         self.assertNotIn(f.kind, freshcite.REPORTED)
