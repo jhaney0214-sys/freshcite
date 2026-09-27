@@ -1,4 +1,4 @@
-This page lists figures in English Wikipedia articles that cite a [https://data.worldbank.org World Bank] series, where the series now says something different. It was generated 2026-09-26 by [https://github.com/jhaney0214-sys/freshcite freshcite] 0.1.0, which read 1270 articles and 2730 World Bank citations, and reported 360.
+This page lists figures in English Wikipedia articles that cite a [https://data.worldbank.org World Bank] series, where the series now says something different. It was generated 2026-09-26 by [https://github.com/jhaney0214-sys/freshcite freshcite] 0.1.0, which read 1270 articles and 2730 World Bank citations, and reported 364.
 
 '''Nothing here has been edited.''' Each row gives the sentence as it reads, the figure as written, and what the cited series says today; each is for an editor to judge. A figure that is right for the year it states is never listed, and neither is anything the tool could not match to one year of the series. Please note in the last column what you did, or why the row is wrong.
 
@@ -336,7 +336,7 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 | [[Romania]] || <nowiki>ising steadily, reaching 9.33 million foreign tourists in 2016, according to the Worldbank</nowiki> || <nowiki>9.33 million</nowiki> || <nowiki>the text says 2016; 9.33 million is the 2015 value, and the source gives 10.22 million for 2016</nowiki> || [http://data.worldbank.org/indicator/ST.INT.ARVL?locations=RO <nowiki>International tourism, number of arrivals</nowiki>, <nowiki>Romania</nowiki>] (updated 2026-07-13) || 
 |}
 
-== The source now gives a different figure for the stated year (199) ==
+== The source now gives a different figure for the stated year (203) ==
 {| class="wikitable sortable" style="font-size:90%"
 ! Article !! Where !! As written !! What the source says !! Series !! Done
 |-
@@ -354,13 +354,15 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Bank of Thailand]] || <nowiki>reserves</nowiki> || <nowiki>US$243.49 billion</nowiki> || <nowiki>the text gives US$243.49 billion for 2023; the source now gives 224.47 billion</nowiki> || [https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=TH <nowiki>Total reserves (includes gold, current US$)</nowiki>, <nowiki>Thailand</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Bolivia]] || <nowiki>e infant mortality rate was 40.7 per 1000 in 2006 and was reduced to 21.2 per 1000 in 2019</nowiki> || <nowiki>21.2</nowiki> || <nowiki>the text gives 21.2 for 2006; the source now gives 40.1</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=BO&start=2006 <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
+| [[Bolivia]] || <nowiki>e infant mortality rate was 40.7 per 1000 in 2006 and was reduced to 21.2 per 1000 in 2019</nowiki> || <nowiki>21.2</nowiki> || <nowiki>the text gives 21.2 for 2019; the source now gives 18.4</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=BO&start=2006 <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Bosnia and Herzegovina]] || <nowiki>lation of 4,369,319, while the 1996 World Bank Group census showed a decrease to 3,764,425</nowiki> || <nowiki>3,764,425</nowiki> || <nowiki>the text gives 3,764,425 for 1996; the source now gives 3,875,246</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?end=1996&locations=BA&name_desc=false&start=1991 <nowiki>Population, total</nowiki>, <nowiki>Bosnia and Herzegovina</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Brazil]] || <nowiki>In 2021, Brazil had 2.1 doctors and 2.5 hospital beds for every 1,000 inhabitants</nowiki> || <nowiki>2.1</nowiki> || <nowiki>the text gives 2.1 for 2021; the source now gives 2.2</nowiki> || [https://data.worldbank.org/indicator/SH.MED.PHYS.ZS?locations=BR <nowiki>Physicians (per 1,000 people)</nowiki>, <nowiki>Brazil</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Brazilian Americans]] || <nowiki>shows that the Brazilian GDP dipped to 1287.6 (USD per capita) at its lowest point in 1985</nowiki> || <nowiki>1287.6</nowiki> || <nowiki>the text gives 1287.6 for 1985; the source now gives 1556.1</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BR. <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Brazil</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Cambodia]] || <nowiki>'s infant mortality rate has decreased from 86 per 1,000 live births in 1998 to 24 in 2018</nowiki> || <nowiki>24</nowiki> || <nowiki>the text gives 24 for 2018; the source now gives 21</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?end=2018&locations=KH&start=1975&view=chart <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Cambodia</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Climate change in Nicaragua]] || <nowiki>In 2022, 28% of Nicaragua's workforce was employed in agriculture</nowiki> || <nowiki>28%</nowiki> || <nowiki>the text gives 28% for 2022; the source now gives 31%</nowiki> || [https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS?locations=NI <nowiki>Employment in agriculture (% of total employment) (modeled ILO estimate)</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
 |-
@@ -530,6 +532,8 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Economy of Panama]] || <nowiki>increase 2,063,132 (2019)</nowiki> || <nowiki>2,063,132</nowiki> || <nowiki>the text gives 2,063,132 for 2019; the source now gives 2,125,347</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=PA&name_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Panama</nowiki>] (updated 2026-07-13) || 
 |-
+| [[Economy of Papua New Guinea]] || <nowiki>PNG has 42.68 mobile phone users per 100 population, estimated in 2017</nowiki> || <nowiki>42.68</nowiki> || <nowiki>the text gives 42.68 for 2017; the source now gives 43.78</nowiki> || [https://data.worldbank.org/indicator/IT.CEL.SETS.P2?end=2017&locations=PG&start=1960&view=chart <nowiki>Mobile cellular subscriptions (per 100 people)</nowiki>, <nowiki>Papua New Guinea</nowiki>] (updated 2026-07-13) || 
+|-
 | [[Economy of Papua New Guinea]] || <nowiki>PNG has a low level of broadband uptake, estimated in 2017 at 0.213 per 100 population</nowiki> || <nowiki>0.213</nowiki> || <nowiki>the text gives 0.213 for 2017; the source now gives 0.196</nowiki> || [https://data.worldbank.org/indicator/IT.NET.BBND.P2?locations=PG&view=chart <nowiki>Fixed broadband subscriptions (per 100 people)</nowiki>, <nowiki>Papua New Guinea</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Economy of Paraguay]] || <nowiki>increase 3,530,715 (2019)</nowiki> || <nowiki>3,530,715</nowiki> || <nowiki>the text gives 3,530,715 for 2019; the source now gives 3,334,564</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.IN?locations=PY&most_recent_value_desc=true <nowiki>Labor force, total</nowiki>, <nowiki>Paraguay</nowiki>] (updated 2026-07-13) || 
@@ -638,9 +642,9 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Health in Montenegro]] || <nowiki>The rural population of Montenegro declined to 35.78% in 2016, compared to 81.21% in 1960</nowiki> || <nowiki>81.21%</nowiki> || <nowiki>the text gives 81.21% for 1960; the source now gives 75.43%</nowiki> || [https://data.worldbank.org/indicator/SP.RUR.TOTL.ZS?locations=ME&display=graph--%3E <nowiki>Rural population (% of total population)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Health in Montenegro]] || <nowiki>5.094, which has decreased as can be seen through comparing to 2010 when it was at 147.104</nowiki> || <nowiki>125.094</nowiki> || <nowiki>the text gives 125.094 for 2010; the source now gives 148.174</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.AMRT.MA?locations=ME <nowiki>Mortality rate, adult, male (per 1,000 male adults)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
+| [[Health in Montenegro]] || <nowiki>5.094, which has decreased as can be seen through comparing to 2010 when it was at 147.104</nowiki> || <nowiki>125.094</nowiki> || <nowiki>the text gives 125.094 for 2018; the source now gives 132.977</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.AMRT.MA?locations=ME <nowiki>Mortality rate, adult, male (per 1,000 male adults)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Health in Montenegro]] || <nowiki>0 adults) was 65.97, which has also decreased when compared to 2010, when it was at 82.022</nowiki> || <nowiki>65.97</nowiki> || <nowiki>the text gives 65.97 for 2010; the source now gives 80.64</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.AMRT.FE?locations=ME <nowiki>Mortality rate, adult, female (per 1,000 female adults)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
+| [[Health in Montenegro]] || <nowiki>0 adults) was 65.97, which has also decreased when compared to 2010, when it was at 82.022</nowiki> || <nowiki>65.97</nowiki> || <nowiki>the text gives 65.97 for 2018; the source now gives 73.03</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.AMRT.FE?locations=ME <nowiki>Mortality rate, adult, female (per 1,000 female adults)</nowiki>, <nowiki>Montenegro</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Health in Myanmar]] || <nowiki>0,000 live births, a 2.04% increase from 2016 which was 245 deaths per 100,000 live births</nowiki> || <nowiki>245</nowiki> || <nowiki>the text gives 245 for 2016; the source now gives 215</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=MM <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Myanmar</nowiki>] (updated 2026-07-13) || 
 |-
@@ -718,11 +722,15 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Sudan]] || <nowiki>Infant mortality in 2016 was 44.8 per 1,000</nowiki> || <nowiki>44.8</nowiki> || <nowiki>the text gives 44.8 for 2016; the source now gives 47.2</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=SD&year_high_desc=true <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Sudan</nowiki>] (updated 2026-07-13) || 
 |-
+| [[Suicide in Romania]] || <nowiki>cide mortality rate has dropped from 13.2 per 100,000 in 2000, to 10.4 per 100,000 in 2016</nowiki> || <nowiki>13.2</nowiki> || <nowiki>the text gives 13.2 for 2000; the source now gives 12.8</nowiki> || [https://data.worldbank.org/indicator/SH.STA.SUIC.P5?locations=RO <nowiki>Suicide mortality rate (per 100,000 population)</nowiki>, <nowiki>Romania</nowiki>] (updated 2026-07-13) || 
+|-
 | [[Telecommunications in Timor-Leste]] || <nowiki>, according to the World Bank, in 2015, 23% of the population is connected to the Internet</nowiki> || <nowiki>23%</nowiki> || <nowiki>the text gives 23% for 2015; the source now gives 19%</nowiki> || [https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=TL <nowiki>Individuals using the Internet (% of population)</nowiki>, <nowiki>Timor-Leste</nowiki>] (updated 2026-07-13) || 
+|-
+| [[Telecommunications in Ukraine]] || <nowiki>band dominates access; fixed broadband subscriptions stood at 19.68 per 100 people in 2023</nowiki> || <nowiki>19.68</nowiki> || <nowiki>the text gives 19.68 for 2023; the source now gives 21.38</nowiki> || [https://data.worldbank.org/indicator/IT.NET.BBND.P2?locations=UA <nowiki>Fixed broadband subscriptions (per 100 people)</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Ukraine]] || <nowiki>Unemployment in Ukraine was 4.5% in 2019</nowiki> || <nowiki>4.5%</nowiki> || <nowiki>the text gives 4.5% for 2019; the source now gives 8.2%</nowiki> || [https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?locations=UA <nowiki>Unemployment, total (% of total labor force) (national estimate)</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Violeta Chamorro]] || <nowiki>000 live births and went down to 37 per 1,000 live births in 1998 during Chamorro's tenure</nowiki> || <nowiki>37</nowiki> || <nowiki>the text gives 37 for 1990; the source now gives 57</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=NI <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
+| [[Violeta Chamorro]] || <nowiki>000 live births and went down to 37 per 1,000 live births in 1998 during Chamorro's tenure</nowiki> || <nowiki>37</nowiki> || <nowiki>the text gives 37 for 1998; the source now gives 38</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=NI <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Visa policy of Turkmenistan]] || <nowiki>center 1995 increase 218,000</nowiki> || <nowiki>218,000</nowiki> || <nowiki>the text gives 218,000 for 1995; the source now gives 233,000</nowiki> || [https://data.worldbank.org/indicator/ST.INT.ARVL?locations=TM <nowiki>International tourism, number of arrivals</nowiki>, <nowiki>Turkmenistan</nowiki>] (updated 2026-07-13) || 
 |-
@@ -732,7 +740,7 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Women in Iraq]] || <nowiki>womlab</nowiki> || <nowiki>13.885%</nowiki> || <nowiki>the text gives 13.885% for 2023; the source now gives 13.230%</nowiki> || [https://data.worldbank.org/indicator/SL.TLF.TOTL.FE.ZS?locations=IQ <nowiki>Labor force, female (% of total labor force)</nowiki>, <nowiki>Iraq</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Women in Namibia]] || <nowiki>f 195 deaths per 100,000 live births, down from 358 deaths per 100,000 live births in 2004</nowiki> || <nowiki>358</nowiki> || <nowiki>the text gives 358 for 2017; the source now gives 213</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?end=2017&locations=NA&start=2000&view=chart <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Namibia</nowiki>] (updated 2026-07-13) || 
+| [[Women in Namibia]] || <nowiki>f 195 deaths per 100,000 live births, down from 358 deaths per 100,000 live births in 2004</nowiki> || <nowiki>358</nowiki> || <nowiki>the text gives 358 for 2004; the source now gives 282</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?end=2017&locations=NA&start=2000&view=chart <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Namibia</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Women in Sri Lanka]] || <nowiki>elected in Sri Lanka in 1960. gii=0.383 (2021) gii_rank=90th out of 162 matdeath=36 (2017)</nowiki> || <nowiki>36</nowiki> || <nowiki>the text gives 36 for 2017; the source now gives 21</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=LK <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Sri Lanka</nowiki>] (updated 2026-07-13) || 
 |-

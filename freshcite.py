@@ -336,6 +336,11 @@ def figures(text, by_sex=None):
             continue
         if AGE.search(before) or re.match(r"\s*(?:years?[ -]old|-year-olds?)\b", text[match.end():], re.I):
             continue
+        # "21.2 per 1000 in 2019": the 1000 is the rate's denominator, not a
+        # figure, and counting it kept 2019 from 21.2. Found in the third
+        # 2026-09-26 sample (Bolivia, Violeta Chamorro).
+        if re.search(r"\b(?:per|for every)\s*$", before, re.I):
+            continue
         label = SEX_AFTER.match(text[match.end():]) or SEX_BEFORE.search(before)
         if label and _sex(label.group("sex")) != by_sex:
             continue
@@ -361,8 +366,16 @@ def stated_year(text, figure):
     # recording consistent trade surpluses since 1998".
     years = [(m.start(), int(m.group(1))) for m in YEAR.finditer(text)
              if not re.search(r"\bsince\s*$", text[max(0, m.start() - 8):m.start()], re.I)]
+    end = figure.position + len(figure.raw)
     for at, year in years:
         if at > figure.position and not [p for p in others if figure.position < p < at]:
+            # "was 125.094, which has decreased ... comparing to 2010 when it
+            # was at 147.104": a year far from the figure and nearer the next
+            # one is that one's. Found in the third 2026-09-26 sample
+            # (Health in Montenegro), where 2010 was given to the 2018 figure.
+            later = [p for p in others if p > at]
+            if at - end > 30 and later and min(later) - (at + 4) < at - end:
+                break
             return year
     before = [(figure.position - at, year) for at, year in years if at < figure.position]
     return min(before)[1] if before else None

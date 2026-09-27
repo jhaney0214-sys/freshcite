@@ -213,6 +213,23 @@ class Figures(unittest.TestCase):
         self.assertEqual((freshcite.stated_year(text, first), freshcite.stated_year(text, second)),
                          (2018, 2020))
 
+    def test_a_rates_denominator_does_not_take_the_year(self):
+        """Third 2026-09-26 sample: Bolivia's 21.2 was given 2006, not 2019."""
+        text = "The infant mortality rate was 40.7 per 1000 in 2006 and was reduced to 21.2 per 1000 in 2019"
+        found = freshcite.figures(text)
+        self.assertEqual([f.raw for f in found], ["40.7", "21.2"])
+        self.assertEqual([freshcite.stated_year(text, f) for f in found], [2006, 2019])
+
+    def test_a_distant_year_beside_another_figure_is_that_figures(self):
+        """Third 2026-09-26 sample: Montenegro's 2018 figure was given 2010."""
+        text = ("As of 2018, mortality rate for adult males (per 1000 adults) was 125.094, which has "
+                "decreased as can be seen through comparing to 2010 when it was at 147.104")
+        first, second = freshcite.figures(text)
+        self.assertEqual((freshcite.stated_year(text, first), freshcite.stated_year(text, second)),
+                         (2018, 2010))
+        text = "In 2018 it was 4.5%, rising to 5.0% in 2020"
+        self.assertEqual(freshcite.stated_year(text, freshcite.figures(text)[0]), 2018)
+
     def test_a_year_before_the_figure_counts_when_none_follows(self):
         text = "In 2016, unsafe water accounted for 68.6 deaths per 100,000 people"
         self.assertEqual(freshcite.stated_year(text, freshcite.figures(text)[0]), 2016)
@@ -326,7 +343,8 @@ class Verdicts(unittest.TestCase):
     def test_a_decimal_comma_is_not_read_as_an_integer(self):
         """Second 2026-09-26 sample: Panama's "14,9 per 1,000" was read as 14."""
         claim = "the under-five mortality rate was 14,9 per 1,000 live births"
-        self.assertEqual([f.raw for f in freshcite.figures(claim)], ["1,000"])
+        # Nothing: the 14,9 is skipped, and "per 1,000" is a denominator.
+        self.assertEqual([f.raw for f in freshcite.figures(claim)], [])
         self.assertEqual([f.raw for f in freshcite.figures("12,345 people")], ["12,345"])
 
     def test_since_dates_another_clause(self):

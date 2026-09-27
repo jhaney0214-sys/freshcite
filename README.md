@@ -26,8 +26,8 @@ editor can decide in one look.
 
 **The first full scan, 2026-09-26:** every English Wikipedia article linking to
 `data.worldbank.org/indicator`, **1,270 articles and 2,730 citations. With
-the current rules it reports 360 findings in 208 articles**: 154 figures with
-a newer year available, 199 where the source now gives a different value for
+the current rules it reports 364 findings in 211 articles**: 154 figures with
+a newer year available, 203 where the source now gives a different value for
 the stated year, and 7 where the year does not belong to the figure. (The first
 run of the day reported 383; the difference is the fixes described below.)
 Every article was read. The whole report is in
@@ -48,7 +48,7 @@ every field of every citation in
 | Economy of Moldova | poverty rate "26.8% (2020)" | 31.6% in 2023 |
 | Jamaica and the World Bank | GNI per capita "$4,990 (2018)" | that is the 2016 value; 2018 was 5,610 |
 
-**How often it is right.** Measured twice on 2026-09-26, each time on 40
+**How often it is right.** Measured three times on 2026-09-26, each time on 40
 findings drawn at random from articles that were not test fixtures and had not
 been read while the rules were written:
 
@@ -56,6 +56,7 @@ been read while the rules were written:
 | --- | --- | --- |
 | [first](reports/2026-09-26-accuracy-sample.md) | before this round of fixes | 33 of 40, 82.5% |
 | [second](reports/2026-09-26-accuracy-sample-2.md) | after them, on unseen articles | **36 of 40, 90%** |
+| [third](reports/2026-09-26-accuracy-sample-3.md) | after the second sample's fixes, on unseen articles | **36 of 40, 90%** |
 
 The first sample's seven errors fell into six patterns, and each now has a rule
 and a test built from the real sentence. Re-scanning showed two of those rules
@@ -69,8 +70,15 @@ are fixed since: former states are now read from the article's infobox, and
 two figures that each say what they count are judged by which one names the
 series. Re-scanning with those fixes removed exactly the five rows they were
 meant to (the two former states and the National Reorganization Process, whose
-infobox also ends) and changed nothing else. **90% is the measured figure; the
-fixes came after it, so the current rules are unmeasured.**
+infobox also ends) and changed nothing else.
+
+The third sample's four errors were two patterns, both about which year a
+figure is given. In "21.2 per 1000 in 2019" the denominator was read as a
+figure standing between 21.2 and its year; and in "As of 2018 ... was 125.094,
+... comparing to 2010 when it was at 147.104", 2010 was given to the 2018
+figure. Both are fixed. Re-scanning corrected all four and reported five more
+true figures the denominator had hidden, 364 in all, and changed nothing else.
+**90% is the measured figure, twice; the latest fixes came after it.**
 
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
