@@ -1,18 +1,18 @@
 articles read              1270
 World Bank citations       2730
-reported                    364  (13.3% of citations)
-  newer                     154
+reported                    358  (13.1% of citations)
+  newer                     155
   mislabeled                  7
-  differs                   203
-articles with a finding     211
+  differs                   196
+articles with a finding     206
 silent, by reason:
   no country in link        984
-  unmatched                 501
-  no figure                 368
+  unmatched                 505
+  no figure                 369
   historical                266
-  current                   233
+  current                   234
   no data                    14
-newer: years behind the latest, median 4, 5 or more 71 of 154, most 17
+newer: years behind the latest, median 4, 5 or more 72 of 155, most 17
 series most often reported:
    55  Labor force, total
    38  Employment to population ratio, 15+, total (%) (national estimate)

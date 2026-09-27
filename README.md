@@ -28,8 +28,8 @@ editor can decide in one look.
 
 **The first full scan, 2026-09-26:** every English Wikipedia article linking to
 `data.worldbank.org/indicator`, **1,270 articles and 2,730 citations. With
-the current rules it reports 364 findings in 211 articles**: 154 figures with
-a newer year available, 203 where the source now gives a different value for
+the current rules it reports 358 findings in 206 articles**: 155 figures with
+a newer year available, 196 where the source now gives a different value for
 the stated year, and 7 where the year does not belong to the figure. (The first
 run of the day reported 383; the difference is the fixes described below.)
 Every article was read. The whole report is in
@@ -50,7 +50,7 @@ every field of every citation in
 | Economy of Moldova | poverty rate "26.8% (2020)" | 31.6% in 2023 |
 | Jamaica and the World Bank | GNI per capita "$4,990 (2018)" | that is the 2016 value; 2018 was 5,610 |
 
-**How often it is right.** Measured three times on 2026-09-26, each time on 40
+**How often it is right.** Measured four times on 2026-09-26 and 27, each time on 40
 findings drawn at random from articles that were not test fixtures and had not
 been read while the rules were written:
 
@@ -59,6 +59,7 @@ been read while the rules were written:
 | [first](reports/2026-09-26-accuracy-sample.md) | before this round of fixes | 33 of 40, 82.5% |
 | [second](reports/2026-09-26-accuracy-sample-2.md) | after them, on unseen articles | **36 of 40, 90%** |
 | [third](reports/2026-09-26-accuracy-sample-3.md) | after the second sample's fixes, on unseen articles | **36 of 40, 90%** |
+| [fourth](reports/2026-09-27-accuracy-sample-4.md) | after the third sample's fixes, on unseen articles | **34 of 40, 85%** |
 
 The first sample's seven errors fell into six patterns, and each now has a rule
 and a test built from the real sentence. Re-scanning showed two of those rules
@@ -80,7 +81,15 @@ figure standing between 21.2 and its year; and in "As of 2018 ... was 125.094,
 ... comparing to 2010 when it was at 147.104", 2010 was given to the 2018
 figure. Both are fixed. Re-scanning corrected all four and reported five more
 true figures the denominator had hidden, 364 in all, and changed nothing else.
-**90% is the measured figure, twice; the latest fixes came after it.**
+The fourth sample found five more patterns, each a figure that belongs to
+something other than the cited series: a decade read as a year ("since the
+1960s"), a bare "30% female" judged against the total, a figure "in Indonesia"
+judged against the Philippines, a figure followed by a census citation, and a
+figure in euros or of GNI judged against a dollar or GDP series. All are fixed;
+re-scanning changed eight rows and left 358.
+
+**Measured: 90%, 90% and 85% on the last three samples.** The latest fixes came
+after the last of them, so the current rules are unmeasured; quote 85–90%.
 
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
@@ -169,7 +178,7 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests       # 87 tests
+python -m unittest discover -s tests       # 92 tests
 docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 

@@ -1,10 +1,10 @@
-This page lists figures in English Wikipedia articles that cite a [https://data.worldbank.org World Bank] series, where the series now says something different. It was generated 2026-09-26 by [https://github.com/jhaney0214-sys/freshcite freshcite] 0.1.0, which read 1270 articles and 2730 World Bank citations, and reported 364.
+This page lists figures in English Wikipedia articles that cite a [https://data.worldbank.org World Bank] series, where the series now says something different. It was generated 2026-09-26 by [https://github.com/jhaney0214-sys/freshcite freshcite] 0.1.0, which read 1270 articles and 2730 World Bank citations, and reported 358.
 
 '''Nothing here has been edited.''' Each row gives the sentence as it reads, the figure as written, and what the cited series says today; each is for an editor to judge. A figure that is right for the year it states is never listed, and neither is anything the tool could not match to one year of the series. Please note in the last column what you did, or why the row is wrong.
 
 World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets CC BY 4.0].
 
-== A newer figure is available (154) ==
+== A newer figure is available (155) ==
 {| class="wikitable sortable" style="font-size:90%"
 ! Article !! Where !! As written !! What the source says !! Series !! Done
 |-
@@ -294,6 +294,8 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Nepal]] || <nowiki>around 1.4% of GDP</nowiki> || <nowiki>1.4%</nowiki> || <nowiki>1.4% is the 2015 value; the source has 2024: 1.0%</nowiki> || [https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=NP <nowiki>Military expenditure (% of GDP)</nowiki>, <nowiki>Nepal</nowiki>] (updated 2026-07-13) || 
 |-
+| [[Obesity in the Pacific]] || <nowiki>Life expectancy in Tonga is 71 and has been steadily rising since the 1960s</nowiki> || <nowiki>71</nowiki> || <nowiki>71 is the 2011 value; the source has 2024: 73</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=TO <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>Tonga</nowiki>] (updated 2026-07-13) || 
+|-
 | [[People's Bank of China]] || <nowiki>reserves</nowiki> || <nowiki>US$3.45 trillion</nowiki> || <nowiki>US$3.45 trillion is the 2023 value; the source has 2025: 3.75 trillion</nowiki> || [https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=CN <nowiki>Total reserves (includes gold, current US$)</nowiki>, <nowiki>China</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Saudi Arabia]] || <nowiki>g only a fraction of GDP (2.5 percent) and employing a similar proportion of the workforce</nowiki> || <nowiki>2.5 percent</nowiki> || <nowiki>2.5 percent is the 2024 value; the source has 2025: 2.6%</nowiki> || [https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=SA <nowiki>Agriculture, forestry, and fishing, value added (% of GDP)</nowiki>, <nowiki>Saudi Arabia</nowiki>] (updated 2026-07-13) || 
@@ -336,15 +338,13 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 | [[Romania]] || <nowiki>ising steadily, reaching 9.33 million foreign tourists in 2016, according to the Worldbank</nowiki> || <nowiki>9.33 million</nowiki> || <nowiki>the text says 2016; 9.33 million is the 2015 value, and the source gives 10.22 million for 2016</nowiki> || [http://data.worldbank.org/indicator/ST.INT.ARVL?locations=RO <nowiki>International tourism, number of arrivals</nowiki>, <nowiki>Romania</nowiki>] (updated 2026-07-13) || 
 |}
 
-== The source now gives a different figure for the stated year (203) ==
+== The source now gives a different figure for the stated year (196) ==
 {| class="wikitable sortable" style="font-size:90%"
 ! Article !! Where !! As written !! What the source says !! Series !! Done
 |-
 | [[2024 Washington NATO summit]] || <nowiki>Russia significantly outnumbered Ukraine's 38 million in 2022</nowiki> || <nowiki>38 million</nowiki> || <nowiki>the text gives 38 million for 2022; the source now gives 41 million</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=UA <nowiki>Population, total</nowiki>, <nowiki>Ukraine</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Abortion in Yemen]] || <nowiki>ve births, making it one of the highest in the regions of the Middle East and North Africa</nowiki> || <nowiki>164</nowiki> || <nowiki>the text gives 164 for 2017; the source now gives 142</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=YE <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Yemen, Rep.</nowiki>] (updated 2026-07-13) || 
-|-
-| [[Albania]] || <nowiki>001 to 65% in 2023. sfn 2023 Albanian census 2024 p=114 sfn 2011 Albanian census 2012 p=10</nowiki> || <nowiki>65%</nowiki> || <nowiki>the text gives 65% for 2023; the source now gives 58%</nowiki> || [https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=AL&most_recent_value_desc=true <nowiki>Urban population (% of total population)</nowiki>, <nowiki>Albania</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Armed Forces of the Argentine Republic]] || <nowiki>amount</nowiki> || <nowiki>$2.9 billion</nowiki> || <nowiki>the text gives $2.9 billion for 2022; the source now gives 4.3 billion</nowiki> || [https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=AR <nowiki>Military expenditure (current USD)</nowiki>, <nowiki>Argentina</nowiki>] (updated 2026-07-13) || 
 |-
@@ -628,8 +628,6 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Georgia (country)]] || <nowiki>epresenting 59.4 per cent of GDP), moving away from the agricultural sector (6.1 per cent)</nowiki> || <nowiki>59.4 per cent</nowiki> || <nowiki>the text gives 59.4 per cent for 2016; the source now gives 60.7%</nowiki> || [https://data.worldbank.org/indicator/NV.SRV.TOTL.ZS?locations=GE <nowiki>Services, value added (% of GDP)</nowiki>, <nowiki>Georgia</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Gross national income in the European Union]] || <nowiki>the European Union of 27 Member States (GNI) amounted to EUR 44,778 per inhabitant in 2020</nowiki> || <nowiki>44,778</nowiki> || <nowiki>the text gives 44,778 for 2020; the source now gives 47,506</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.PP.CD?locations=EU <nowiki>GNI per capita, PPP (current international $)</nowiki>, <nowiki>European Union</nowiki>] (updated 2026-07-13) || 
-|-
 | [[Health in Bangladesh]] || <nowiki>The total expenditure on healthcare as a percentage of Bangladesh's GDP was 2.48% in 2019</nowiki> || <nowiki>2.48%</nowiki> || <nowiki>the text gives 2.48% for 2019; the source now gives 2.13%</nowiki> || [https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS?locations=BD <nowiki>Current health expenditure (% of GDP)</nowiki>, <nowiki>Bangladesh</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Health in Bolivia]] || <nowiki>Infant mortality was 21.2 in 2019, approximately half of what it was in 2006</nowiki> || <nowiki>21.2</nowiki> || <nowiki>the text gives 21.2 for 2019; the source now gives 18.4</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=BO&start=2006 <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Bolivia</nowiki>] (updated 2026-07-13) || 
@@ -648,8 +646,6 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Health in Myanmar]] || <nowiki>0,000 live births, a 2.04% increase from 2016 which was 245 deaths per 100,000 live births</nowiki> || <nowiki>245</nowiki> || <nowiki>the text gives 245 for 2016; the source now gives 215</nowiki> || [https://data.worldbank.org/indicator/SH.STA.MMRT?locations=MM <nowiki>Maternal mortality ratio (modeled estimate, per 100,000 live births)</nowiki>, <nowiki>Myanmar</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Health in Norway]] || <nowiki>Gross national income per capita was $81,807 (2018)</nowiki> || <nowiki>$81,807</nowiki> || <nowiki>the text gives $81,807 for 2018; the source now gives 85,579</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=NO&view=chart <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Norway</nowiki>] (updated 2026-07-13) || 
-|-
 | [[Health in Syria]] || <nowiki>n was an estimated 17,500,657 decreasing from the pre-war population of 21,326,541 in 2010</nowiki> || <nowiki>21,326,541</nowiki> || <nowiki>the text gives 21,326,541 for 2010; the source now gives 22,482,421</nowiki> || [https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SY <nowiki>Population, total</nowiki>, <nowiki>Syrian Arab Republic</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Health in Zimbabwe]] || <nowiki>91% of the people living with HIV were on antiretroviral therapy in 2021</nowiki> || <nowiki>91%</nowiki> || <nowiki>the text gives 91% for 2021; the source now gives 89%</nowiki> || [https://data.worldbank.org/indicator/SH.HIV.ARTC.ZS?locations=ZW <nowiki>Antiretroviral therapy coverage (% of people living with HIV)</nowiki>, <nowiki>Zimbabwe</nowiki>] (updated 2026-07-13) || 
@@ -660,11 +656,7 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Healthcare in Madagascar]] || <nowiki>In 2022, the number of infant deaths was 40,388</nowiki> || <nowiki>40,388</nowiki> || <nowiki>the text gives 40,388 for 2022; the source now gives 43,083</nowiki> || [https://data.worldbank.org/indicator/SH.DTH.IMRT?locations=MG <nowiki>Number of infant deaths</nowiki>, <nowiki>Madagascar</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Healthcare in Pakistan]] || <nowiki>Pakistan's gross national income per capita in 2021 was 1,506 USD</nowiki> || <nowiki>1,506</nowiki> || <nowiki>the text gives 1,506 for 2021; the source now gives 1,455</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=PK <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Pakistan</nowiki>] (updated 2026-07-13) || 
-|-
 | [[Hurricane Norma (2023)]] || <nowiki>States dollars using data from the International Monetary Fund published by the World Bank</nowiki> || <nowiki>US$16</nowiki> || <nowiki>the text gives US$16 for 2023; the source now gives 18</nowiki> || [https://data.worldbank.org/indicator/PA.NUS.ATLS?locations=MX <nowiki>DEC alternative conversion factor (LCU per US$)</nowiki>, <nowiki>Mexico</nowiki>] (updated 2026-07-13) || 
-|-
-| [[Iranian Revolution]] || <nowiki>GDP per capita (nominal) has grown from $2290 in 1979 to $5470 in 2016</nowiki> || <nowiki>$2290</nowiki> || <nowiki>the text gives $2290 for 1979; the source now gives 2160</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.CD?locations=IR <nowiki>GNI per capita, Atlas method (current US$)</nowiki>, <nowiki>Iran, Islamic Rep.</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Iranian Revolution]] || <nowiki> since then, it has not yet reached its 1979 level and has only recovered to $6751 in 2016</nowiki> || <nowiki>$6751</nowiki> || <nowiki>the text gives $6751 for 2016; the source now gives 5330</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.KD?locations=IR <nowiki>GNI per capita (constant 2015 US$)</nowiki>, <nowiki>Iran, Islamic Rep.</nowiki>] (updated 2026-07-13) || 
 |-
@@ -692,11 +684,9 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 |-
 | [[Nicaragua]] || <nowiki>primarily an agricultural country; 29% of its workforce is employed in agriculture in 2020</nowiki> || <nowiki>29%</nowiki> || <nowiki>the text gives 29% for 2020; the source now gives 32%</nowiki> || [https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS?locations=NI <nowiki>Employment in agriculture (% of total employment) (modeled ILO estimate)</nowiki>, <nowiki>Nicaragua</nowiki>] (updated 2026-07-13) || 
 |-
-| [[Niger]] || <nowiki>and 38% (46% male and 30% female) according to the World Bank, both as of 2022</nowiki> || <nowiki>30%</nowiki> || <nowiki>the text gives 30% for 2022; the source now gives 36%</nowiki> || [https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=NE <nowiki>Literacy rate, adult total (% of people ages 15 and above)</nowiki>, <nowiki>Niger</nowiki>] (updated 2026-07-13) || 
+| [[Niger]] || <nowiki>and 38% (46% male and 30% female) according to the World Bank, both as of 2022</nowiki> || <nowiki>38%</nowiki> || <nowiki>the text gives 38% for 2022; the source now gives 36%</nowiki> || [https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=NE <nowiki>Literacy rate, adult total (% of people ages 15 and above)</nowiki>, <nowiki>Niger</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Nigeria]] || <nowiki>As of 2019 , the infant mortality is 74.2 deaths per 1,000 live births</nowiki> || <nowiki>74.2</nowiki> || <nowiki>the text gives 74.2 for 2019; the source now gives 69.1</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=NG <nowiki>Mortality rate, infant (per 1,000 live births)</nowiki>, <nowiki>Nigeria</nowiki>] (updated 2026-07-13) || 
-|-
-| [[Obesity in the Pacific]] || <nowiki>Life expectancy in Tonga is 71 and has been steadily rising since the 1960s</nowiki> || <nowiki>71</nowiki> || <nowiki>the text gives 71 for 1960; the source now gives 58</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=TO <nowiki>Life expectancy at birth, total (years)</nowiki>, <nowiki>Tonga</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Oman]] || <nowiki>d to be 2.8 children born per woman; this rate has been rapidly decreasing in recent years</nowiki> || <nowiki>2.8</nowiki> || <nowiki>the text gives 2.8 for 2020; the source now gives 2.6</nowiki> || [https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=OM <nowiki>Fertility rate, total (births per woman)</nowiki>, <nowiki>Oman</nowiki>] (updated 2026-07-13) || 
 |-
@@ -707,8 +697,6 @@ World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-da
 | [[Phantom aid in Afghanistan]] || <nowiki>Afghanistan is a low-income country with GDP per capita of US$507 in 2019</nowiki> || <nowiki>US$507</nowiki> || <nowiki>the text gives US$507 for 2019; the source now gives 497</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=AF <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Afghanistan</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Poverty in Algeria]] || <nowiki>which has improved significantly from 40.2% in 1988</nowiki> || <nowiki>40.2%</nowiki> || <nowiki>the text gives 40.2% for 1988; the source now gives 37.4%</nowiki> || [https://data.worldbank.org/indicator/SI.POV.GINI?locations=DZ <nowiki>Gini index</nowiki>, <nowiki>Algeria</nowiki>] (updated 2026-07-13) || 
-|-
-| [[Poverty in the Philippines]] || <nowiki>P per capita in 2021 was $3,548.8 compared to 3,694.0 in Vietnam, and 4,291.8 in Indonesia</nowiki> || <nowiki>4,291.8</nowiki> || <nowiki>the text gives 4,291.8 for 2021; the source now gives 3,484.4</nowiki> || [https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=PH <nowiki>GDP per capita (current US$)</nowiki>, <nowiki>Philippines</nowiki>] (updated 2026-07-13) || 
 |-
 | [[Puerto Rico]] || <nowiki>cording to World Bank, gross national income per capita in Puerto Rico in 2020 was $21,740</nowiki> || <nowiki>$21,740</nowiki> || <nowiki>the text gives $21,740 for 2020; the source now gives 21,200</nowiki> || [https://data.worldbank.org/indicator/NY.GNP.PCAP.CD?locations=PR <nowiki>GNI per capita, Atlas method (current US$)</nowiki>, <nowiki>Puerto Rico (US)</nowiki>] (updated 2026-07-13) || 
 |-

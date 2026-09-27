@@ -213,6 +213,17 @@ class Figures(unittest.TestCase):
         self.assertEqual((freshcite.stated_year(text, first), freshcite.stated_year(text, second)),
                          (2018, 2020))
 
+    def test_a_decade_is_not_a_year(self):
+        """Fourth 2026-09-27 sample: Tonga's 71 was judged against 1960."""
+        text = "Life expectancy in Tonga is 71 and has been steadily rising since the 1960s"
+        self.assertIsNone(freshcite.stated_year(text, freshcite.figures(text)[0]))
+        self.assertEqual([m.group(1) for m in freshcite.YEAR.finditer("in the 1990's, and in 2016")], ["2016"])
+
+    def test_a_bare_sex_word_labels_the_figure(self):
+        """Fourth sample: Niger's "30% female" judged against total literacy."""
+        text = "and 38% (46% male and 30% female) according to the World Bank, both as of 2022"
+        self.assertEqual([f.raw for f in freshcite.figures(text)], ["38%"])
+
     def test_a_rates_denominator_does_not_take_the_year(self):
         """Third 2026-09-26 sample: Bolivia's 21.2 was given 2006, not 2019."""
         text = "The infant mortality rate was 40.7 per 1000 in 2006 and was reduced to 21.2 per 1000 in 2019"
@@ -410,6 +421,38 @@ class Verdicts(unittest.TestCase):
         other.name = "Current health expenditure (% of GDP)"
         f = freshcite.judge("Brazil", cite("SH.XPD.CHEX.GD.ZS", "BR"), None, claim, other)
         self.assertEqual(f.kind, freshcite.UNMATCHED, "neither figure names the series")
+
+    def judged(self, claim, values, name, place, indicator="NY.GDP.PCAP.CD"):
+        s = freshcite.Series(indicator, "XX", values, name, place, "2026-07-13")
+        return freshcite.judge(place, cite(indicator), None, claim, s)
+
+    def test_another_places_figure_is_not_judged(self):
+        """Fourth sample: Indonesia's figure judged against the Philippines."""
+        claim = ("the Philippine GDP per capita in 2021 was $3,548.8 compared to 3,694.0 in Vietnam, "
+                 "and 4,291.8 in Indonesia")
+        f = self.judged(claim, {2021: 3484.4, 2022: 3548.0}, "GDP per capita (current US$)", "Philippines")
+        self.assertNotEqual(f.figure.raw if f.figure else None, "4,291.8")
+        self.assertNotIn(f.kind, freshcite.REPORTED)
+
+    def test_a_figure_cited_elsewhere_is_not_judged(self):
+        """Fourth sample: Albania's census figure, then a World Bank link."""
+        claim = ("the proportion of the urban demographic has consistently progressed from 47% in 2001 "
+                 "to 65% in 2023. sfn 2023 Albanian census 2024 p=114")
+        f = self.judged(claim, {2001: 42.0, 2023: 58.21}, "Urban population (% of total population)",
+                        "Albania", "SP.URB.TOTL.IN.ZS")
+        self.assertNotIn(f.kind, freshcite.REPORTED)
+
+    def test_another_currency_or_aggregate_is_not_judged(self):
+        """Fourth sample: the EU's euros against dollars, Norway's GNI against GDP."""
+        f = self.judged("GNI amounted to EUR 44,778 per inhabitant in 2020", {2020: 47506.0},
+                        "GNI per capita, PPP (current international $)", "European Union")
+        self.assertNotIn(f.kind, freshcite.REPORTED)
+        f = self.judged("Gross national income per capita was $81,807 (2018)", {2018: 85579.0},
+                        "GDP per capita (current US$)", "Norway")
+        self.assertEqual(f.kind, freshcite.UNMATCHED)
+        f = self.judged("GDP per capita was $81,807 (2018)", {2018: 85579.0},
+                        "GDP per capita (current US$)", "Norway")
+        self.assertEqual(f.kind, freshcite.DIFFERS, "a GDP figure against a GDP series is still judged")
 
     def test_an_exchange_rate_is_never_a_revision_either(self):
         """2026-09-26 sample: "dropped to 165 yen per dollar in 1986" against the 1986 average."""

@@ -239,7 +239,9 @@ FIGURE = re.compile(
 AGE = re.compile(r"\bage[ds]?\s+(?:of\s+)?(?:under\s+|over\s+)?$", re.I)
 #: "(72.4 for males and 77.7 for females)": one sex, never the total series.
 #: Found in the 2026-09-26 sample, judged against Peru's total life expectancy.
-SEX_AFTER = re.compile(r"\s*(?:years?\s+)?(?:for|among|in|of|in the case of)\s+(?:the\s+)?"
+#: The preposition is optional: "(46% male and 30% female)" labels as surely as
+#: "for females". Found in the fourth 2026-09-27 sample (Niger).
+SEX_AFTER = re.compile(r"\s*(?:years?\s+)?(?:(?:for|among|in|of|in the case of)\s+(?:the\s+)?)?"
                        r"(?P<sex>males?|females?|men|women|boys|girls)\b", re.I)
 SEX_BEFORE = re.compile(r"\b(?P<sex>males?|females?|men|women|boys|girls)\s*[:=]?\s*$", re.I)
 
@@ -252,7 +254,9 @@ BOUND = re.compile(r"(?:exceed(?:s|ed|ing)?|over|more than|above|under|below|les
                    r"greater than|at least|at most|up to|nearly|almost)\s*(?:US\$|\$)?\s*$", re.I)
 APPROXIMATE = re.compile(r"(?:about|around|approximately|roughly|circa|some|an estimated|estimated)"
                          r"\s*(?:US\$|\$)?\s*$", re.I)
-YEAR = re.compile(r"(?<!\d)(?<!\d[.,])(19\d\d|20\d\d)(?![\d%]|[.,]\d)")
+#: "since the 1960s" is a decade, not a year. Found in the fourth 2026-09-27
+#: sample: Tonga's life expectancy of 71 was judged against 1960.
+YEAR = re.compile(r"(?<!\d)(?<!\d[.,])(19\d\d|20\d\d)(?![\d%]|[.,]\d|'?s\b)")
 
 
 class Figure(object):
@@ -515,6 +519,52 @@ class Finding(object):
         return out
 
 
+#: A figure followed by another citation belongs to that source, not to the
+#: World Bank link after it. Found in the fourth 2026-09-27 sample: Albania's
+#: urban share "65% in 2023", cited to its census, then a World Bank link.
+OTHER_CITATION = re.compile(r"\bsfn\b|\bcite (?:web|book|news|journal|report)\b|\bharvnb\b", re.I)
+#: A figure in another currency cannot be checked against a dollar series.
+#: Found in the fourth sample: the EU's GNI "EUR 44,778" against a PPP-dollar series.
+OTHER_CURRENCY_BEFORE = re.compile(r"(?:EUR|€|euros?|£|GBP|¥|JPY|yen|INR|Rs\.?|rupees?|CHF)\s*$", re.I)
+OTHER_CURRENCY_AFTER = re.compile(r"\s*(?:euros?|EUR|pounds|yen|rupees?|francs?)\b", re.I)
+#: "compared to 3,694.0 in Vietnam": a figure for a named place other than the
+#: series' own. Found in the fourth sample (the Philippines against Indonesia).
+PLACE_AFTER = re.compile(r"\s*(?:in|for)\s+(?:the\s+)?([A-Z][A-Za-z'.-]+(?:\s+[A-Z][A-Za-z'.-]+)*)")
+MONTHS = frozenset("January February March April May June July August September October "
+                   "November December".split())
+#: The sentence names one aggregate and the series is the other. Found in the
+#: fourth sample: Norway's "gross national income per capita" against GDP per capita.
+AGGREGATES = (("GNI", re.compile(r"\bGNI\b|gross national income", re.I)),
+              ("GDP", re.compile(r"\bGDP\b|gross domestic product", re.I)))
+
+
+def belongs_elsewhere(claim, figure, series, several):
+    """Whether this figure is plainly another source's, currency's or place's."""
+    after = claim[figure.position + len(figure.raw):]
+    if OTHER_CITATION.search(after):
+        return True
+    if "$" in (series.name or "") and (
+            OTHER_CURRENCY_BEFORE.search(claim[max(0, figure.position - 12):figure.position])
+            or OTHER_CURRENCY_AFTER.match(after)):
+        return True
+    # Only in a sentence with several figures: "5% in England" alone is
+    # usually the series' own place written another way.
+    place = PLACE_AFTER.match(after)
+    if several and place and place.group(1) not in MONTHS:
+        return place.group(1).split()[0] not in (series.country_name or "")
+    return False
+
+
+def names_other_aggregate(claim, series):
+    """The claim names GNI and the series is GDP, or the reverse."""
+    name = series.name or ""
+    for tag, pattern in AGGREGATES:
+        other = [p for t, p in AGGREGATES if t != tag][0]
+        if tag in name and other.search(claim) and not pattern.search(claim):
+            return True
+    return False
+
+
 def counts(claim, figure):
     """The word after a figure when it names what the figure counts, lower
     case, or None: "2.1 doctors" gives "doctors", "3.6% as of" gives None."""
@@ -564,7 +614,10 @@ def judge(article, citation, key, claim, series, row=False, former=False):
     # A series for one sex (SP.DYN.LE00.MA.IN) is cited for that sex's figure,
     # so the breakdown is kept. Found re-scanning: Japan's "82 years for men".
     sex = re.search(r"\.(MA|FE)\.", citation.indicator)
+    if names_other_aggregate(claim, series):
+        return Finding(kind=UNMATCHED, **base)
     found = figures(claim, by_sex=sex.group(1) if sex else None)
+    found = [f for f in found if not belongs_elsewhere(claim, f, series, len(found) > 1)]
     if not found:
         return Finding(kind=NO_FIGURE, **base)
     ordered = sorted(found, key=lambda f: -f.position)

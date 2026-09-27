@@ -4,7 +4,7 @@
     {
       "id": "test_count",
       "claim": "Tests in the suite",
-      "value": "87 tests",
+      "value": "92 tests",
       "format": "%d tests",
       "derive": {
         "files": [
@@ -14,7 +14,7 @@
       },
       "status": "measured",
       "anchor": "test methods in tests/, counted by parsing",
-      "checked_on": "2026-09-26",
+      "checked_on": "2026-09-27",
       "durable": "read from source on every verify",
       "appears_in": [
         "README.md"
@@ -76,7 +76,7 @@
     {
       "id": "reported",
       "claim": "Findings the scan reports",
-      "value": "364 findings",
+      "value": "358 findings",
       "format": "%d findings",
       "derive": {
         "files": [
@@ -86,7 +86,7 @@
       },
       "status": "measured",
       "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
-      "checked_on": "2026-09-26",
+      "checked_on": "2026-09-27",
       "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
       "appears_in": [
         "README.md"
@@ -99,7 +99,7 @@
     {
       "id": "articles_with_finding",
       "claim": "Articles with at least one finding",
-      "value": "211 articles",
+      "value": "206 articles",
       "format": "%d articles",
       "derive": {
         "files": [
@@ -109,7 +109,7 @@
       },
       "status": "measured",
       "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
-      "checked_on": "2026-09-26",
+      "checked_on": "2026-09-27",
       "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
       "appears_in": [
         "README.md",
@@ -117,14 +117,14 @@
       ],
       "near": [
         "findings in",
-        "in 211"
+        "in 206"
       ],
       "window": 40
     },
     {
       "id": "newer",
       "claim": "Figures with a newer year available",
-      "value": "154 figures",
+      "value": "155 figures",
       "format": "%d figures",
       "derive": {
         "files": [
@@ -134,7 +134,7 @@
       },
       "status": "measured",
       "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
-      "checked_on": "2026-09-26",
+      "checked_on": "2026-09-27",
       "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
       "appears_in": [
         "README.md"
@@ -148,7 +148,7 @@
     {
       "id": "differs",
       "claim": "Figures where the source now gives a different value for the stated year",
-      "value": "203 where",
+      "value": "196 where",
       "format": "%d where",
       "derive": {
         "files": [
@@ -158,7 +158,7 @@
       },
       "status": "measured",
       "anchor": "reports/2026-09-26-summary.txt, printed by tools/findings.py from reports/2026-09-26-worldbank.json",
-      "checked_on": "2026-09-26",
+      "checked_on": "2026-09-27",
       "durable": "read from the committed summary on every verify; a test keeps the summary equal to what the findings print",
       "appears_in": [
         "README.md"
@@ -196,23 +196,26 @@
     },
     {
       "id": "accuracy",
-      "claim": "Findings right on the third hand-checked random sample of 40",
-      "value": "36 of 40, 90%",
+      "claim": "Findings right on the fourth hand-checked random sample of 40",
+      "value": "34 of 40, 85%",
       "status": "measured",
-      "anchor": "reports/2026-09-26-accuracy-sample-3.md, each of the 40 judged against its series",
-      "checked_on": "2026-09-26",
+      "anchor": "reports/2026-09-27-accuracy-sample-4.md, each of the 40 judged against its series",
+      "checked_on": "2026-09-27",
       "recheck_by": "2026-12-31",
       "notes": "Measured before the third sample's fixes; recheck with a fresh sample when the rules change again.",
       "evidence": {
-        "file": "reports/2026-09-26-accuracy-sample-3.md",
-        "line": "**36 right, 4 wrong: 90%**"
+        "file": "reports/2026-09-27-accuracy-sample-4.md",
+        "line": "**34 right, 6 wrong: 85%**"
       },
       "appears_in": [
         "README.md"
       ],
       "near": [
-        "third]"
-      ]
+        "fourth]"
+      ],
+      "allow": {
+        "36 of 40, 90%": "the second and third samples: earlier measurements in the same table, each linked to its own report"
+      }
     }
   ]
 }
