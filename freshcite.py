@@ -431,6 +431,22 @@ DATED_BY_USE = ("PA.NUS.FCRF",)
 #: Found in the 2026-09-26 sample: the Ukrainian SSR's 1990 GDP and the
 #: Republic of Belarus (1991-1995)'s 1993 GDP reported as "newer".
 FORMER_STATE = re.compile(r"Soviet Socialist Republic|\(\s*(?:19|20)\d\d\s*[\u2013-]\s*(?:19|20)\d\d\s*\)")
+#: The same, read from the article rather than its title: an infobox for a
+#: former country, or one that gives the state an end. Found in the second
+#: 2026-09-26 sample: Pahlavi Iran and the Russian SFSR, which no title rule
+#: caught, and in the same scan the National Reorganization Process.
+ENDED_STATE = re.compile(r"\{\{\s*Infobox former country"
+                         r"|^\s*\|\s*(?:year_end|date_end|life_span)\s*=\s*[^|\n]*\d", re.I | re.M)
+#: A figure followed by what it counts ("2.1 doctors and 2.5 hospital beds").
+COUNTED = re.compile(r"\s+([a-z]+)", re.I)
+#: Words after a figure that say nothing about which statistic it is.
+NOT_COUNTED = frozenset("""a an the and or of in on at to for as per by from with was were is are
+    had has have it its this that which who while about around out each every percent cent
+    thousand million billion trillion mn bn year years than more less over under""".split())
+#: What a sentence calls a series in other words. Found in the second
+#: 2026-09-26 sample: Brazil's "doctors", cited to the physicians series.
+SYNONYMS = {"doctor": "physician", "doctors": "physicians",
+            "people": "population", "inhabitants": "population", "residents": "population"}
 #: A figure the page computes (`#expr`, `formatnum`) is not one a person wrote.
 COMPUTED_MARK = re.compile(r"#expr|formatnum|\bround\s+\d", re.I)
 RESPECTIVELY = re.compile(r"\brespectively\b", re.I)
@@ -486,7 +502,25 @@ class Finding(object):
         return out
 
 
-def judge(article, citation, key, claim, series, row=False):
+def counts(claim, figure):
+    """The word after a figure when it names what the figure counts, lower
+    case, or None: "2.1 doctors" gives "doctors", "3.6% as of" gives None."""
+    if figure.unit or "$" in figure.raw:
+        return None
+    match = COUNTED.match(claim, figure.position + len(figure.raw))
+    if not match or re.search(r"\b(?:every|per)\s*$", claim[:figure.position], re.I):
+        return None
+    word = match.group(1).lower()
+    return None if word in NOT_COUNTED else word
+
+
+def names_series(word, series):
+    """Does `word` name the series? Compared on five-letter stems."""
+    stems = {w[:5] for w in re.findall(r"[a-z]+", (series.name or "").lower())}
+    return any(w[:5] in stems for w in (word, SYNONYMS.get(word, word)))
+
+
+def judge(article, citation, key, claim, series, row=False, former=False):
     """What the source says about the figure beside `citation`.
 
     Figures are tried nearest-the-citation first, because the number a ref
@@ -521,6 +555,15 @@ def judge(article, citation, key, claim, series, row=False):
     if not found:
         return Finding(kind=NO_FIGURE, **base)
     ordered = sorted(found, key=lambda f: -f.position)
+    # "2.1 doctors and 2.5 hospital beds", cited to the physicians series: two
+    # figures that each say what they count. Judge only one whose words name
+    # the series, and say nothing if none does. Found in the second 2026-09-26
+    # sample (Brazil), which was judged on the beds.
+    counted = [(f, counts(claim, f)) for f in ordered]
+    if len({word for _f, word in counted if word}) >= 2:
+        ordered = [f for f, word in counted if word and names_series(word, series)]
+        if not ordered:
+            return Finding(kind=UNMATCHED, **base)
     presents_current = row or bool(CURRENT_WORDS.search(claim))
     # Prose that names any year, or describes a change "from X to Y", is
     # about a period and stays true of it. Found in the unseen sample:
@@ -577,7 +620,7 @@ def judge(article, citation, key, claim, series, row=False):
             year_keyed = (row and stated is not None and any(
                 int(m.group(1)) == stated and m.start() < figure.position
                 for m in YEAR.finditer(claim)))
-            if (not dated_prose and not year_keyed and not FORMER_STATE.search(article)
+            if (not dated_prose and not year_keyed and not former and not FORMER_STATE.search(article)
                     and (presents_current or stated is None)):
                 return Finding(kind=NEWER, figure=figure, year=stated, matched_year=matched,
                                note="%s is the %d value; the source has %d: %s" % (
@@ -614,6 +657,7 @@ def raw_url(title):
 def check_wikitext(title, wikitext, fetch):
     """Every World Bank citation in one article, judged."""
     findings, cache = [], {}
+    former = bool(ENDED_STATE.search(wikitext))
     for citation in citations(wikitext):
         if not citation.country:
             findings.append(Finding(title, citation, NO_COUNTRY))
@@ -628,7 +672,7 @@ def check_wikitext(title, wikitext, fetch):
         if cache[pair] is None:
             findings.append(Finding(title, citation, NO_DATA, claim=claim, key=key))
             continue
-        findings.append(judge(title, citation, key, claim, cache[pair], row))
+        findings.append(judge(title, citation, key, claim, cache[pair], row, former))
     return findings
 
 
@@ -726,6 +770,52 @@ def markdown(findings, checked, when, unread=()):
     return "\n".join(out)
 
 
+def _nowiki(text):
+    return "<nowiki>%s</nowiki>" % str(text).replace("<", "&lt;").replace("\n", " ")
+
+
+def wikitext(rows, when, checked):
+    """The report as a Wikipedia page, for a user's own space: one sortable
+    table per kind of finding, from `findings.json`'s rows.
+
+    Everything quoted is in <nowiki>, so a sentence's own markup is shown
+    rather than run, and each row has an empty last cell where an editor can
+    note what they did. A re-scan, not that column, is what counts fixes.
+    """
+    reported = [r for r in rows if r["kind"] in REPORTED]
+    out = ["This page lists figures in English Wikipedia articles that cite a "
+           "[https://data.worldbank.org World Bank] series, where the series now says "
+           "something different. It was generated %s by "
+           "[https://github.com/jhaney0214-sys/freshcite freshcite] %s, which read "
+           "%d articles and %d World Bank citations, and reported %d." % (
+               when, __version__, checked, len(rows), len(reported)),
+           "",
+           "'''Nothing here has been edited.''' Each row gives the sentence as it reads, "
+           "the figure as written, and what the cited series says today; each is for "
+           "an editor to judge. A figure that is right for the year it states is never "
+           "listed, and neither is anything the tool could not match to one year of the "
+           "series. Please note in the last column what you did, or why the row is wrong.",
+           "",
+           "World Bank data is [https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets "
+           "CC BY 4.0].", ""]
+    for kind in REPORTED:
+        these = sorted((r for r in rows if r["kind"] == kind), key=lambda r: r["article"])
+        out += ["== %s (%d) ==" % (HEADINGS[kind], len(these))]
+        if not these:
+            out += ["None.", ""]
+            continue
+        out += ['{| class="wikitable sortable" style="font-size:90%"',
+                "! Article !! Where !! As written !! What the source says !! Series !! Done"]
+        for r in these:
+            out += ["|-",
+                    "| [[%s]] || %s || %s || %s || [%s %s, %s] (updated %s) || " % (
+                        r["article"], _nowiki(r["key"] or r["claim"][-90:]),
+                        _nowiki(r["figure"]), _nowiki(r["note"]), r["citation"],
+                        _nowiki(r["series"]), _nowiki(r["place"]), r["source_updated"])]
+        out += ["|}", ""]
+    return "\n".join(out)
+
+
 # --------------------------------------------------------------- command line
 
 def print_findings(findings, stream=sys.stdout):
@@ -748,11 +838,20 @@ def main(argv=None):
     one.add_argument("title")
     many = sub.add_parser("scan", help="check the articles that cite the World Bank")
     many.add_argument("--limit", type=int, default=None, help="stop after this many articles")
-    many.add_argument("--out", default="report", help="directory for report.md and findings.json")
+    many.add_argument("--out", default="report",
+                      help="directory for report.md, report.wiki and findings.json")
+    wiki = sub.add_parser("wiki", help="write a scan's findings.json as a Wikipedia page")
+    wiki.add_argument("findings", help="findings.json from a scan")
+    wiki.add_argument("--articles", type=int, required=True, help="how many articles the scan read")
+    wiki.add_argument("--date", required=True, help="the day the scan ran, YYYY-MM-DD")
     args = parser.parse_args(argv)
     if not args.command:
         parser.print_help()
         return 2
+    if args.command == "wiki":
+        rows = json.loads(pathlib.Path(args.findings).read_text(encoding="utf-8"))
+        sys.stdout.write(wikitext(rows, args.date, args.articles) + "\n")
+        return 0
 
     fetch = Fetcher(cache_dir=args.cache, log=lambda m: sys.stderr.write(m + "\n"))
     if args.command == "check":
@@ -780,8 +879,11 @@ def main(argv=None):
     when = datetime.date.today().isoformat()
     (out / "report.md").write_text(markdown(findings, len(titles) - len(unread), when, unread),
                                    encoding="utf-8")
-    (out / "findings.json").write_text(json.dumps(
-        [f.as_dict() for f in findings], indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    rows = [f.as_dict() for f in findings]
+    (out / "findings.json").write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n",
+                                       encoding="utf-8")
+    (out / "report.wiki").write_text(wikitext(rows, when, len(titles) - len(unread)) + "\n",
+                                     encoding="utf-8")
     print("%d articles read, %d not, %d citations, %d reported -> %s" % (
         len(titles) - len(unread), len(unread), len(findings),
         sum(1 for f in findings if f.kind in REPORTED), out))

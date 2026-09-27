@@ -367,6 +367,32 @@ class Verdicts(unittest.TestCase):
                                 series({1990: 395.12e9, 2025: 690.4e9}, "NY.GDP.MKTP.PP.CD"), True)
             self.assertEqual(f.kind, freshcite.HISTORICAL, title)
 
+    def test_a_former_state_is_known_by_its_infobox(self):
+        """Second 2026-09-26 sample: Pahlavi Iran and the Russian SFSR, missed by the title rule."""
+        wikitext = ("{{Infobox former country\n| year_end = 1979\n| GDP_nominal = $77.99 billion"
+                    "<ref>{{cite web |url=https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=IR}}</ref>\n}}")
+        values = {1978: 77.99e9, 2025: 362.68e9}
+        fetch = lambda url: json.dumps([{"page": 1, "pages": 1, "lastupdated": "2026-07-13"}, [
+            {"date": str(y), "value": v, "indicator": {"value": "GDP (current US$)"},
+             "country": {"value": "Iran"}} for y, v in values.items()]])
+        kinds = [f.kind for f in freshcite.check_wikitext("Pahlavi Iran", wikitext, fetch)]
+        self.assertEqual(kinds, [freshcite.HISTORICAL])
+        for infobox in ("{{Infobox country\n| year_end = 1983\n", "{{Infobox country\n| life_span = 1917–1991\n"):
+            self.assertTrue(freshcite.ENDED_STATE.search(infobox), infobox)
+        self.assertFalse(freshcite.ENDED_STATE.search("{{Infobox country\n| date_end = \n| established = 1963\n"))
+
+    def test_two_figures_are_judged_by_what_they_count(self):
+        """Second 2026-09-26 sample: Brazil's physicians judged on its hospital beds."""
+        claim = "In 2021, Brazil had 2.1 doctors and 2.5 hospital beds for every 1,000 inhabitants"
+        physicians = series({2021: 2.2, 2024: 2.3}, "SH.MED.PHYS.ZS")
+        physicians.name = "Physicians (per 1,000 people)"
+        f = freshcite.judge("Brazil", cite("SH.MED.PHYS.ZS", "BR"), None, claim, physicians)
+        self.assertEqual((f.kind, f.figure.raw), (freshcite.DIFFERS, "2.1"))
+        other = series({2021: 2.2}, "SH.XPD.CHEX.GD.ZS")
+        other.name = "Current health expenditure (% of GDP)"
+        f = freshcite.judge("Brazil", cite("SH.XPD.CHEX.GD.ZS", "BR"), None, claim, other)
+        self.assertEqual(f.kind, freshcite.UNMATCHED, "neither figure names the series")
+
     def test_an_exchange_rate_is_never_a_revision_either(self):
         """2026-09-26 sample: "dropped to 165 yen per dollar in 1986" against the 1986 average."""
         f = self.judge("the exchange rate dropped to 165 yen per dollar in 1986",
@@ -598,6 +624,19 @@ class TheReport(unittest.TestCase):
         self.assertIn("[Economy of Romania](https://en.wikipedia.org/wiki/Economy_of_Romania)", text)
         self.assertLess(text.index("A newer figure"), text.index("Not reported, and why"))
         self.assertIn("| The link names no single country |", text)
+
+    def test_the_wiki_page_shows_markup_rather_than_running_it(self):
+        found = freshcite.check_wikitext("Economy of Romania", wikitext("Economy_of_Romania"), offline)
+        rows = [f.as_dict() for f in found] * 2
+        rows[-1] = dict(next(r for r in rows if r["kind"] == "newer"))
+        rows[-1].update(kind="differs", key=None, claim="{{convert|1|km}} a || b [[x]]",
+                       figure="4.3%", note="n")
+        text = freshcite.wikitext(rows, "2026-09-26", 1)
+        self.assertIn("== A newer figure is available (", text)
+        self.assertIn("[[Economy of Romania]]", text)
+        self.assertIn("<nowiki>{{convert|1|km}} a || b [[x]]</nowiki>", text)
+        self.assertEqual(text.count("{|"), text.count("|}"))
+        self.assertIn("read 1 articles and %d World Bank citations" % len(rows), text)
 
     def test_a_pipe_in_a_claim_cannot_break_the_table(self):
         f = freshcite.judge("A", cite(), None, "a | b 42.1 (2012)", series({2012: 42.1, 2020: 44.7}), True)
