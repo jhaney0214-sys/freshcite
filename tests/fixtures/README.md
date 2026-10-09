@@ -1,7 +1,9 @@
 # Fixtures
 
 Captured on 2026-09-26 from the live sites, so the tests run against what the
-sites actually serve. Nothing in the suite touches the network.
+sites actually serve, except the three Nepal files (`wikitext/Nepal.wiki` and
+the two `NP_` series), captured on 2026-10-09. Nothing in the suite touches
+the network.
 
 - `wikitext/` — excerpts of English Wikipedia articles: the lines around each
   World Bank citation. **Text is CC BY-SA 4.0 by Wikipedia contributors**; each
