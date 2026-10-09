@@ -107,6 +107,14 @@ came after the last of them, so the current rules are unmeasured; quote about
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
 
+**Known error, found 2026-10-09, not yet fixed.** In *Nepal*: "The military
+expenditure for 2018 was $398.5 million, around 1.4% of GDP." The report
+lists 1.4% as an old value with a newer one available, but the sentence states
+its year before the figure. The World Bank gives 1.35% for 2018
+(`api.worldbank.org/v2/country/NP/indicator/MS.MIL.XPND.GD.ZS`), so the text is
+right. The rule that reads a figure's year needs to look earlier in the
+sentence than it does.
+
 ## Running it
 
 ```bash
