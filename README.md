@@ -107,13 +107,22 @@ came after the last of them, so the current rules are unmeasured; quote about
 Every rule that keeps a finding out of the report came from reading findings
 like these, and each has a test built from the real sentence behind it.
 
-**Known error, found 2026-10-09, not yet fixed.** In *Nepal*: "The military
-expenditure for 2018 was $398.5 million, around 1.4% of GDP." The report
-lists 1.4% as an old value with a newer one available, but the sentence states
-its year before the figure. The World Bank gives 1.35% for 2018
-(`api.worldbank.org/v2/country/NP/indicator/MS.MIL.XPND.GD.ZS`), so the text is
-right. The rule that reads a figure's year needs to look earlier in the
-sentence than it does.
+**Found 2026-10-09 and fixed the same day: a year stated before an earlier
+ref.** In *Nepal*: "The military expenditure for 2018 was $398.5 million,
+around 1.4% of GDP." Each figure has its own ref, so the second claim read
+"around 1.4% of GDP" with no year, and was listed as an old value with a newer
+one available. The World Bank gives 1.35% for 2018, so the text is right. A
+claim cut at an earlier ref in its own sentence now takes that part's year,
+unless the part runs over a span ("from 2015 to 2018"). Run over every
+article with the old and new rules on the same fetched pages, it changed ten
+rows, each checked by hand against the API. Three posted rows were the same
+tool error (Nepal and two in *Telecommunications in Timor-Leste*, which say
+"In 2019" and give 2019's values). Two posted rows went silent where the
+stated year's value is within 5% of the figure, the rule already applied when
+the year sits beside it (Bangladesh's 73%, Azerbaijan's 12.7%; both are older
+years' values). Two rows were added, and three unlisted rows changed kind.
+A first version of the rule also added a wrong row, a percentage decrease read
+as a birth rate (*Uyghurs*), which is why spans lend no year.
 
 ## Running it
 
@@ -128,6 +137,10 @@ userspace, and `report/findings.json` for anything else.
 `python freshcite.py wiki findings.json --articles N --date YYYY-MM-DD` makes
 the page again from an earlier scan, and `python tools/findings.py
 findings.json --articles N` prints the summary figures a written piece quotes.
+`python tools/rescan.py findings.json` says what became of each posted row:
+resolved only when the sentence was edited and its figure is no longer listed,
+with rows that dropped out through a World Bank revision, with no edit, counted
+apart. `--acted ARTICLE` splits out the articles an editor was asked about.
 One file, standard library only, Python 3.8 or later. MIT licensed.
 
 ## When it says nothing
@@ -199,7 +212,7 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests       # 93 tests
+python -m unittest discover -s tests       # 104 tests
 docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 

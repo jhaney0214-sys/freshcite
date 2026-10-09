@@ -214,7 +214,7 @@ def claim_before(wikitext, ref_start, reach=400):
         window = window[max(ends):]
     body = window.rstrip(" .,;:")
     sentence_end = None
-    for match in re.finditer(r"[.!?](?:\s|&nbsp;)+(?=[A-Z\[\'\"])", body):
+    for match in SENTENCE_END.finditer(body):
         sentence_end = match.end()
     if sentence_end is not None:
         body = body[sentence_end:]
@@ -224,6 +224,41 @@ def claim_before(wikitext, ref_start, reach=400):
     if field:
         key, body = field.group(1).strip(), field.group(2)
     return key, flatten(body.lstrip("*| ")), is_row
+
+
+SENTENCE_END = re.compile(r"[.!?](?:\s|&nbsp;)+(?=[A-Z\[\'\"])")
+
+
+def sentence_lead(wikitext, ref_start, reach=400, depth=3):
+    """The same sentence's words before an earlier ref, when the claim was cut there.
+
+    "The military expenditure for 2018 was $398.5 million<ref/>, around 1.4%
+    of GDP<ref/>": the second claim is "around 1.4% of GDP", and its year is
+    in the first. Found 2026-10-09 in the posted list (Nepal), reported as
+    newer. Only a year is read from this, never a figure: the figures before
+    an earlier ref are that ref's to support.
+    """
+    if depth == 0:
+        return ""
+    offset = max(0, ref_start - reach)
+    window = wikitext[offset:ref_start]
+    cuts = [(window.rfind(mark) + len(mark), mark) for mark in ("</ref>", "/>", "\n")
+            if window.rfind(mark) >= 0]
+    if not cuts:
+        return ""
+    cut, mark = max(cuts)
+    if mark == "\n" or SENTENCE_END.search(window[cut:]):
+        return ""
+    head = wikitext[:offset + cut]
+    opener = head.rfind("<ref")
+    if opener < 0 or not re.fullmatch(r"<ref\b[^>]*/>|<ref\b.*</ref>", head[opener:], re.S | re.I):
+        return ""
+    if re.search(r"[.!?][\'\"]*\s*$", wikitext[:opener]):
+        return ""
+    _key, claim, row = claim_before(wikitext, opener, reach)
+    if row:
+        return ""
+    return (sentence_lead(wikitext, opener, reach, depth - 1) + " " + claim).strip()
 
 
 # --------------------------------------------------------------- figures
@@ -593,7 +628,7 @@ def names_series(word, series):
     return any(w[:5] in stems for w in (word, SYNONYMS.get(word, word)))
 
 
-def judge(article, citation, key, claim, series, row=False, former=False):
+def judge(article, citation, key, claim, series, row=False, former=False, lead=""):
     """What the source says about the figure beside `citation`.
 
     Figures are tried nearest-the-citation first, because the number a ref
@@ -640,11 +675,26 @@ def judge(article, citation, key, claim, series, row=False, former=False):
         ordered = [f for f, word in counted if word and names_series(word, series)]
         if not ordered:
             return Finding(kind=UNMATCHED, **base)
+    # A claim cut at an earlier ref in its own sentence takes that part's
+    # last year when it states none itself (see `sentence_lead`).
+    # A lead that runs over a span ("from 2015 to 2018") or pairs years by
+    # order gives no single year to lend. Found checking the fix against the
+    # full scan: Uyghurs' "a decrease by 9.69%" was judged as 2018's rate.
+    lead_years = [] if SPAN.search(lead) or RESPECTIVELY.search(lead) else [
+        int(m.group(1)) for m in YEAR.finditer(lead)
+        if not re.search(r"\bsince\s*$", lead[max(0, m.start() - 8):m.start()], re.I)]
+    lead_year = lead_years[-1] if lead_years else None
+
+    def year_of(figure):
+        stated = stated_year(claim, figure)
+        return lead_year if stated is None else stated
+
     presents_current = row or bool(CURRENT_WORDS.search(claim))
     # Prose that names any year, or describes a change "from X to Y", is
     # about a period and stays true of it. Found in the unseen sample:
     # "$2.6 billion (28% of GDP) in 2022" and "from 12.07 to 10.9".
-    dated_prose = not presents_current and bool(YEAR.search(claim) or CHANGE.search(claim))
+    dated_prose = not presents_current and bool(YEAR.search(claim) or CHANGE.search(claim)
+                                                or lead_year)
     # A sentence that already states the latest value is current, whatever
     # else it says. Found in the full report: "life expectancy of 83 years
     # (81 years for males...)" was judged on the 81, which is the 2008 total.
@@ -653,15 +703,15 @@ def judge(article, citation, key, claim, series, row=False, former=False):
         # "about 72 million" is current if the latest value is about that, even
         # when an old year rounds to it more exactly. Found in the 2026-09-26
         # sample: Russia's labour force matched to 2001, while 2025 is 72.8M.
-        near = (figure.approximate and stated_year(claim, figure) is None
+        near = (figure.approximate and year_of(figure) is None
                 and relative(latest_value, figure.value) <= SAME_YEAR_WITHIN)
         if not figure.bound and figure.significant >= 2 and (near or figure.matches(latest_value)):
-            return Finding(kind=CURRENT, figure=figure, year=stated_year(claim, figure),
+            return Finding(kind=CURRENT, figure=figure, year=year_of(figure),
                            matched_year=series.latest, **base)
     for figure in ordered:
         if figure.bound:
             continue
-        stated = stated_year(claim, figure)
+        stated = year_of(figure)
         years = [y for y, v in series.values.items() if figure.matches(v)]
         if not years:
             continue
@@ -713,7 +763,7 @@ def judge(article, citation, key, claim, series, row=False, former=False):
     for figure in ordered:
         if figure.bound or figure.approximate:
             continue
-        stated = stated_year(claim, figure)
+        stated = year_of(figure)
         if stated in series.values:
             source = series.values[stated]
             if (source and 0.5 <= figure.value / source <= 2.0
@@ -739,6 +789,7 @@ def check_wikitext(title, wikitext, fetch):
             findings.append(Finding(title, citation, NO_COUNTRY))
             continue
         key, claim, row = claim_before(wikitext, citation.ref_start)
+        lead = "" if row else sentence_lead(wikitext, citation.ref_start)
         pair = (citation.indicator, citation.country)
         if pair not in cache:
             try:
@@ -748,7 +799,7 @@ def check_wikitext(title, wikitext, fetch):
         if cache[pair] is None:
             findings.append(Finding(title, citation, NO_DATA, claim=claim, key=key))
             continue
-        findings.append(judge(title, citation, key, claim, cache[pair], row, former))
+        findings.append(judge(title, citation, key, claim, cache[pair], row, former, lead))
     return findings
 
 

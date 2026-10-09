@@ -76,6 +76,31 @@ class TheRealArticles(unittest.TestCase):
         self.assertEqual((senegal.kind, senegal.matched_year), (freshcite.NEWER, 2015))
         self.assertEqual((tanzania.kind, tanzania.matched_year), (freshcite.NEWER, 2014))
 
+    def test_nepal_military_spending_takes_its_year_from_the_sentence(self):
+        """Posted 2026-09-27 as "1.4% is the 2015 value"; the sentence says
+        "for 2018" before an earlier ref, and 2018's value is 1.35%. Found
+        2026-10-09. Series captured that day."""
+        found = {f.citation.indicator: f for f in
+                 freshcite.check_wikitext("Nepal", wikitext("Nepal"), offline)}
+        share = found["MS.MIL.XPND.GD.ZS"]
+        # 1.4% is not 2018's 1.35% within its 0.05, nor a precise enough
+        # figure to call mislabeled, so nothing is said about it.
+        self.assertEqual(share.kind, freshcite.UNMATCHED)
+        # The dollar figure states its own year and is still a revision of it.
+        self.assertEqual(found["MS.MIL.XPND.CD"].kind, freshcite.DIFFERS)
+
+    def test_a_lead_over_a_span_lends_no_year(self):
+        """Uyghurs: "from 2015 to 2018, birth rates ... fell by more than 60%",
+        then "compared to a decrease by 9.69% in the whole country". The first
+        version of the lead rule read 9.69% as 2018's birth rate and reported
+        it as differing from 10.86. Found 2026-10-09 in the full re-scan."""
+        lead = ("Associated Press reported that from 2015 to 2018, birth rates in the "
+                "mostly Uyghur regions of Hotan and Kashgar fell by more than 60%")
+        f = freshcite.judge("Uyghurs", cite("SP.DYN.CBRT.IN", "CN"), None,
+                            "compared to a decrease by 9.69% in the whole country",
+                            series({2015: 11.99, 2018: 10.86}, "SP.DYN.CBRT.IN", "CN"), lead=lead)
+        self.assertNotIn(f.kind, freshcite.REPORTED)
+
     def test_the_congo_gini_is_from_2012(self):
         f = self.one("Economy of the Democratic Republic of the Congo")
         self.assertEqual((f.kind, f.figure.raw, f.matched_year), (freshcite.NEWER, "42.1", 2012))
@@ -162,6 +187,25 @@ class Claims(unittest.TestCase):
         text = "First 10%.<ref>a</ref> Second 20%<ref>b</ref>"
         _, claim, _ = freshcite.claim_before(text, text.rindex("<ref>"))
         self.assertEqual(claim, "Second 20%")
+
+    def test_a_claim_cut_at_an_earlier_ref_keeps_its_sentences_lead(self):
+        text = wikitext("Nepal")
+        second = text.index("<ref>", text.index("around 1.4%"))
+        self.assertEqual(freshcite.claim_before(text, second)[1], "around 1.4% of GDP")
+        self.assertEqual(freshcite.sentence_lead(text, second),
+                         "The military expenditure for 2018 was $398.5 million")
+
+    def test_an_earlier_sentence_is_not_a_lead(self):
+        text = "Growth was 3% in 1999.<ref>a</ref> Agriculture is 4.3% of GDP.<ref>b</ref>"
+        self.assertEqual(freshcite.sentence_lead(text, text.rindex("<ref>")), "")
+        text = "Growth was 3% in 1999<ref>a</ref>. Agriculture is 4.3% of GDP<ref>b</ref>"
+        self.assertEqual(freshcite.sentence_lead(text, text.rindex("<ref>")), "")
+
+    def test_a_line_or_a_tag_that_is_not_a_ref_is_not_a_lead(self):
+        text = "| gdp = 2018 figure<ref>a</ref>\n| gini = 42.1<ref>b</ref>"
+        self.assertEqual(freshcite.sentence_lead(text, text.rindex("<ref>")), "")
+        text = "In 2018 it was 3%<ref>a</ref> and<br/> then 4.3%<ref>b</ref>"
+        self.assertEqual(freshcite.sentence_lead(text, text.rindex("<ref>")), "")
 
     def test_flatten_keeps_what_a_reader_sees(self):
         self.assertEqual(freshcite.flatten("[[World Bank|the Bank]] gave {{US$|4,990}}&nbsp;(2018)"),
@@ -735,6 +779,65 @@ class TheCommittedSummary(unittest.TestCase):
                 summary.main([str(data), "--articles", articles])
             # read_text turns a Windows checkout's CRLF back into LF.
             self.assertEqual(out.getvalue(), path.read_text(encoding="utf-8"), path.name)
+
+
+class TheRescan(unittest.TestCase):
+    """tools/rescan.py: what became of each posted row."""
+
+    def setUp(self):
+        sys.path.insert(0, str(FIX.parent.parent / "tools"))
+        import rescan
+        self.rescan = rescan
+
+    def row(self, article="A", url="u1", kind="newer", claim="42.1 (2012)", figure="42.1",
+            indicator="SI.POV.GINI"):
+        return dict(article=article, citation=url, kind=kind, claim=claim, figure=figure,
+                    indicator=indicator)
+
+    def outcomes(self, baseline, fresh):
+        return [o for _r, _n, o in self.rescan.compare(baseline, fresh)]
+
+    def test_each_way_a_row_can_end(self):
+        r = self.rescan
+        old = [self.row(url="same"), self.row(url="drift"), self.row(url="fixed"),
+               self.row(url="vague"), self.row(url="still"), self.row(url="cut"),
+               self.row(article="Gone")]
+        new = [self.row(url="same"),
+               self.row(url="drift", kind="historical"),
+               self.row(url="fixed", kind="current", claim="44.7 (2020)", figure="44.7"),
+               self.row(url="vague", kind="unmatched", claim="about 44 lately", figure=None),
+               self.row(url="still", claim="42.1 (2012), still", figure="42.1"),
+               self.row(url="other")]
+        self.assertEqual(self.outcomes(old, new), [r.UNCHANGED, r.DRIFTED, r.RESOLVED,
+                                                   r.UNREADABLE, r.STILL, r.REMOVED, r.GONE])
+
+    def test_an_edit_that_leaves_the_figure_is_not_a_fix(self):
+        old = [self.row()]
+        new = [self.row(kind="historical", claim="In 2012 it was 42.1 (2012)")]
+        self.assertEqual(self.outcomes(old, new), [self.rescan.UNREADABLE])
+
+    def test_a_url_cited_twice_pairs_in_order(self):
+        old = [self.row(claim="first 1.5", figure="1.5"), self.row(claim="second 2.5", figure="2.5")]
+        new = [self.row(claim="first 1.5", figure="1.5"),
+               self.row(kind="current", claim="second 3.5", figure="3.5")]
+        self.assertEqual(self.outcomes(old, new), [self.rescan.UNCHANGED, self.rescan.RESOLVED])
+
+    def test_unlisted_rows_and_tool_errors_are_not_posted_rows(self):
+        old = [self.row(kind="current"), self.row(article="Nepal", indicator="MS.MIL.XPND.GD.ZS"),
+               self.row(url="kept")]
+        self.assertEqual(self.outcomes(old, [self.row(url="kept")]), [self.rescan.UNCHANGED])
+
+    def test_acted_names_an_article_or_one_of_its_series(self):
+        row = self.row(article="Sudan", indicator="NY.GDP.MKTP.CD")
+        self.assertTrue(self.rescan.acted_on(row, {"Sudan"}))
+        self.assertTrue(self.rescan.acted_on(row, {"Sudan::NY.GDP.MKTP.CD"}))
+        self.assertFalse(self.rescan.acted_on(row, {"Sudan::SP.POP.TOTL"}))
+
+    def test_the_committed_baseline_against_itself_is_all_unchanged(self):
+        rows = json.loads(self.rescan.BASELINE.read_text(encoding="utf-8"))
+        result = self.outcomes(rows, rows)
+        self.assertEqual(len(result), 353)
+        self.assertEqual(set(result), {self.rescan.UNCHANGED})
 
 
 if __name__ == "__main__":
