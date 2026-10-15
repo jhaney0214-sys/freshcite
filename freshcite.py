@@ -965,6 +965,9 @@ def main(argv=None):
     one.add_argument("title")
     many = sub.add_parser("scan", help="check the articles that cite the World Bank")
     many.add_argument("--limit", type=int, default=None, help="stop after this many articles")
+    many.add_argument("--title", action="append", default=[],
+                      help="scan this article instead of every linking one (repeatable); "
+                           "for a dry run of a few articles")
     many.add_argument("--out", default="report",
                       help="directory for report.md, report.wiki and findings.json")
     wiki = sub.add_parser("wiki", help="write a scan's findings.json as a Wikipedia page")
@@ -988,7 +991,7 @@ def main(argv=None):
         print_findings(findings)
         return 0
 
-    titles = linked_articles(fetch, most=args.limit)
+    titles = args.title[:args.limit] if args.title else linked_articles(fetch, most=args.limit)
     findings, unread = [], []
     for n, title in enumerate(titles, 1):
         try:

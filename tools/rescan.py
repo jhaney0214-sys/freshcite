@@ -4,6 +4,11 @@
     python tools/rescan.py report/findings.json
     python tools/rescan.py report/findings.json --acted "Economy of Laos::SI.POV.DDAY" --rows
 
+A dry run on a few articles (`--sample` counts only the articles the fresh
+findings read, instead of calling the rest gone):
+
+    python tools/rescan.py sample/findings.json --sample --rows
+
 The baseline is `reports/2026-09-26-worldbank.json`: the 358 rows posted to
 User:Jorn3333/World Bank figures on 2026-09-27, less the rows since found to be
 the tool's errors. Rows are paired by article and citation URL, in
@@ -103,9 +108,20 @@ def main(argv=None):
                         help='a row the author fixed or raised, as "Article::INDICATOR" '
                              '(or "Article" for all its rows); counted apart')
     parser.add_argument("--rows", action="store_true", help="print every row that moved")
+    parser.add_argument("--sample", action="store_true",
+                        help="a dry run on a partial scan: count only the posted rows of "
+                             "articles the fresh findings read, not the rest as gone")
     args = parser.parse_args(argv)
+    # Claims quote minus signs and dashes that a Windows code page cannot
+    # encode; printed to a file or a pipe, --rows died on the first one
+    # (found by the dry run of 2026-10-15).
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     baseline = json.loads(pathlib.Path(args.baseline).read_text(encoding="utf-8"))
     fresh = json.loads(pathlib.Path(args.findings).read_text(encoding="utf-8"))
+    if args.sample:
+        read = {r["article"] for r in fresh}
+        baseline = [r for r in baseline if r["article"] in read]
     result = compare(baseline, fresh)
     acted = set(args.acted)
     missing = {a for a in acted if not any(acted_on(r, {a}) for r, _n, _o in result)}
@@ -118,8 +134,10 @@ def main(argv=None):
                    ("the rest", [x for x in result if not acted_on(x[0], acted)])]
     errors = sum(1 for r in baseline if r["kind"] in freshcite.REPORTED
                  and (r["article"], r["indicator"]) in TOOL_ERRORS)
-    print("baseline  %s, %d rows (%d known tool errors left out)" % (
-        pathlib.Path(args.baseline).name, len(result), errors))
+    print("baseline  %s, %d rows (%d known tool errors left out)%s" % (
+        pathlib.Path(args.baseline).name, len(result), errors,
+        "\nSAMPLE: only the %d articles this partial scan read; not the re-scan" % len(
+            {r["article"] for r in fresh}) if args.sample else ""))
     for name, rows in groups:
         counts = collections.Counter(o for _r, _n, o in rows)
         n = len(rows)

@@ -733,6 +733,21 @@ class TheScan(unittest.TestCase):
         self.assertIn("Generated", report)
         self.assertEqual([f["article"] for f in findings if f["kind"] == "newer"], ["Economy of Romania"])
 
+    def test_named_titles_scan_without_the_link_search(self):
+        romania = wikitext("Economy_of_Romania")
+        def fetch(url):
+            if "LinkSearch" in url:
+                raise AssertionError("a named-title scan must not list every article")
+            if "action=raw" in url:
+                return romania
+            return offline(url)
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(freshcite, "Fetcher", return_value=fetch), \
+                mock.patch("sys.stderr", io.StringIO()), mock.patch("sys.stdout", io.StringIO()):
+            self.assertEqual(freshcite.main(["scan", "--title", "Economy of Romania", "--out", tmp]), 0)
+            findings = json.loads((pathlib.Path(tmp) / "findings.json").read_text(encoding="utf-8"))
+        self.assertEqual({f["article"] for f in findings}, {"Economy of Romania"})
+
 
 class TheReport(unittest.TestCase):
 
@@ -838,6 +853,36 @@ class TheRescan(unittest.TestCase):
         result = self.outcomes(rows, rows)
         self.assertEqual(len(result), 353)
         self.assertEqual(set(result), {self.rescan.UNCHANGED})
+
+    def run_cli(self, fresh, *args, encoding="cp1252"):
+        import os
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            path = pathlib.Path(tmp) / "findings.json"
+            path.write_text(json.dumps(fresh), encoding="utf-8")
+            env = dict(os.environ, PYTHONIOENCODING=encoding)
+            return subprocess.run([sys.executable, str(pathlib.Path(self.rescan.__file__)),
+                                   str(path)] + list(args),
+                                  capture_output=True, env=env)
+
+    def test_rows_print_to_a_file_on_a_windows_code_page(self):
+        # Every posted row is gone from an empty scan, so --rows prints all of
+        # them, Economy of Lithuania's minus sign included.
+        done = self.run_cli([], "--rows")
+        self.assertEqual(done.returncode, 0, done.stderr.decode("utf-8", "replace"))
+        self.assertIn("−", done.stdout.decode("utf-8"))
+
+    def test_sample_counts_only_the_articles_read(self):
+        rows = json.loads(self.rescan.BASELINE.read_text(encoding="utf-8"))
+        laos = [r for r in rows if r["article"] == "Economy of Laos"]
+        done = self.run_cli(laos, "--sample", "--acted", "Economy of Laos::SI.POV.DDAY")
+        out = done.stdout.decode("utf-8")
+        self.assertEqual(done.returncode, 0, done.stderr.decode("utf-8", "replace"))
+        self.assertIn("SAMPLE: only the 1 articles", out)
+        self.assertNotRegex(out, r"article gone from the scan\s+[1-9]")
+        posted = len(self.rescan.posted(laos))
+        self.assertRegex(out, r"all posted rows: %d\r?\n" % posted)
+        self.assertRegex(out, r"unchanged\s+%d" % posted)
 
 
 if __name__ == "__main__":
