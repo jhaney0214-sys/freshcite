@@ -4,7 +4,7 @@
   {
    "id": "test_count",
    "claim": "Tests in the suite",
-   "value": "104 tests",
+   "value": "107 tests",
    "format": "%d tests",
    "derive": {
     "files": [
@@ -14,7 +14,7 @@
    },
    "status": "measured",
    "anchor": "test methods in tests/, counted by parsing",
-   "checked_on": "2026-10-09",
+   "checked_on": "2026-10-18",
    "durable": "read from source on every verify",
    "appears_in": [
     "README.md"

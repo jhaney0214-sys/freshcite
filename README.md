@@ -212,7 +212,7 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests       # 104 tests
+python -m unittest discover -s tests       # 107 tests
 docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 
