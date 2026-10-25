@@ -818,6 +818,68 @@ class TheCommittedSummary(unittest.TestCase):
             self.assertEqual(out.getvalue(), path.read_text(encoding="utf-8"), path.name)
 
 
+class ReusedRefs(unittest.TestCase):
+    """--reused: which reuses of a named ref are judged. From the 27 rows reuses
+    added to the 2026-09-27 scan, judged by hand 2026-10-24 (17 right)."""
+
+    def check(self, wikitext, name, values, title="A"):
+        fetch = lambda url: json.dumps([{"page": 1, "pages": 1, "lastupdated": "2026-07-13"}, [
+            {"date": str(y), "value": v, "indicator": {"value": name},
+             "country": {"value": "Somewhere"}} for y, v in values.items()]])
+        return [f for f in freshcite.check_wikitext(title, wikitext, fetch, reused=True)
+                if f.citation.reused]
+
+    def define(self, name, indicator, country):
+        return ('<ref name="%s">{{cite web |url=https://data.worldbank.org/indicator/%s?locations=%s}}'
+                '</ref>' % (name, indicator, country))
+
+    def test_subject_words(self):
+        self.assertEqual(freshcite.subject_words("Fertility rate, total (births per woman)"), {"fertil"})
+        self.assertEqual(freshcite.subject_words("GDP growth (annual %)"), {"gdp", "growth"})
+        self.assertEqual(freshcite.subject_words(None), set())
+
+    def test_a_sentence_about_another_statistic_is_not_judged(self):
+        """Netherlands: a migration rate cited to a fertility series."""
+        text = ("The fertility rate is 1.4.%s\n\nThe country has a [[Human migration|migration]] rate of "
+                "1.9 migrants per 1,000 inhabitants per year.<ref name=\"wb\"/>"
+                % self.define("wb", "SP.DYN.TFRT.IN", "NL"))
+        [f] = self.check(text, "Fertility rate, total (births per woman)", {1973: 1.9, 2024: 1.4})
+        self.assertEqual(f.kind, freshcite.REUSED_ELSEWHERE)
+
+    def test_a_sentence_naming_the_series_is_judged(self):
+        """Health in Montenegro: right, and listed."""
+        text = ("Life expectancy at birth is 76.%s Life expectancy for men is 74 years"
+                "<ref name=\"wb\"/>." % self.define("wb", "SP.DYN.LE00.MA.IN", "ME"))
+        [f] = self.check(text, "Life expectancy at birth, male (years)", {2022: 74.0, 2024: 76.0})
+        self.assertEqual(f.kind, freshcite.NEWER)
+
+    def test_one_series_cited_in_several_cells_of_a_row_is_not_judged(self):
+        """List of countries by literacy rate: a year, a rate and a gender gap, one ref."""
+        text = ("|-\n| Palestine || 99%s || 2020 || 97<ref name=\"PS\"/> || 2019 || 63.9 || 2016 || "
+                "1.13<ref name=\"PS\"/>\n" % self.define("PS", "SE.ADT.1524.LT.ZS", "PS"))
+        found = self.check(text, "Literacy rate, youth total (% of people ages 15-24)",
+                           {2016: 99.2, 2020: 99.0, 2024: 99.4})
+        self.assertEqual([f.kind for f in found], [freshcite.REUSED_ELSEWHERE] * 2)
+
+    def test_a_row_per_line_and_a_paragraph_citing_twice_are_judged(self):
+        """Economy of Bermuda's list, and Abortion in Uganda's paragraph: both right."""
+        rows = ("* -6.8% (2020)" + self.define("wb", "NY.GDP.MKTP.KD.ZG", "BM")
+                + "\n* 4.6% (2021)<ref name=\"wb\"/>\n")
+        [f] = self.check(rows, "GDP growth (annual %)", {2020: -7.0, 2021: 4.8, 2024: 1.9})
+        self.assertEqual(f.kind, freshcite.DIFFERS)
+        prose = ("The total fertility rate was 7.1.%s As of 2018, Uganda's total fertility rate "
+                 "stands at 5.5 children<ref name=\"wb\"/>." % self.define("wb", "SP.DYN.TFRT.IN", "UG"))
+        [f] = self.check(prose, "Fertility rate, total (births per woman)", {2018: 4.9, 2024: 4.2})
+        self.assertEqual(f.kind, freshcite.DIFFERS)
+
+    def test_the_report_counts_them_only_when_there_are_any(self):
+        citation = freshcite.Citation(0, "u", "X.Y", "BM", reused=True)
+        rows = [freshcite.Finding("A", citation, freshcite.REUSED_ELSEWHERE)]
+        self.assertIn("A reused ref, but the sentence is about something else | 1 |",
+                      freshcite.markdown(rows, 1, "2026-10-25"))
+        self.assertNotIn("A reused ref", freshcite.markdown([], 1, "2026-10-25"))
+
+
 class TheRescan(unittest.TestCase):
     """tools/rescan.py: what became of each posted row."""
 

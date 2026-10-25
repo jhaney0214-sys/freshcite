@@ -195,12 +195,17 @@ That keeps a poverty line of "$8.30 a day" from being read as a revision of a
 - **A named reference reused elsewhere** (`<ref name="x"/>`) is checked only
   where it is defined unless `--reused` is given. Measured 2026-10-24 on the
   pages the 2026-09-27 scan read: the 2,730 citations are reused at 651 more
-  places, and reading them adds 27 rows, of which 17 were right by hand. Most
-  of the ten wrong ones are a reused ref placed after a sentence about another
-  statistic (debt on a poverty series, a migration rate on a fertility
-  series), which editors do more freely with a ref they did not write out.
-  At 63% against about 90%, it stays off by default, and
-  `tools/rescan.py` ignores any row it adds.
+  places, and reading them added 27 rows, of which 17 were right by hand.
+  Most of the ten wrong ones were a reused ref placed after a sentence about
+  another statistic (debt on a poverty series, a migration rate on a
+  fertility series), or one series cited in several cells of a table row.
+  Since 2026-10-25 a reuse is judged only when its sentence names what the
+  series counts, and, in a table, when the ref is cited once on its line.
+  On the same pages that lists 20 rows, 17 right (85%): every right row
+  kept, seven wrong ones gone. The three left are errors of the default
+  rules, not of reuse. Those 85% are measured on the rows the rules were
+  written from, so they are not yet a measurement; it stays off by default,
+  and `tools/rescan.py` ignores any row it adds.
 - **A link without `locations=`** is skipped, even when the article's subject
   makes the country obvious. Guessing it would be right most of the time, and
   "most of the time" is the standard this tool exists to refuse.
@@ -219,7 +224,7 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests       # 110 tests
+python -m unittest discover -s tests       # 116 tests
 docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 

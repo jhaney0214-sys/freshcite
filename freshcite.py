@@ -127,12 +127,13 @@ REF_BLOCK = re.compile(r"<ref\b[^>/]*>(?P<body>.*?)</ref\s*>", re.I | re.S)
 class Citation(object):
     """One World Bank citation: where its ref starts, and what it names."""
 
-    def __init__(self, ref_start, url, indicator, country, reused=False):
+    def __init__(self, ref_start, url, indicator, country, reused=False, name=""):
         self.ref_start = ref_start
         self.url = url
         self.indicator = indicator
         self.country = country
         self.reused = reused
+        self.name = name
 
     def __repr__(self):
         return "Citation(%s, %s)" % (self.indicator, self.country)
@@ -188,11 +189,58 @@ def citations(wikitext, reused=False):
             break
     if reused and named:
         for match in REF_REUSE.finditer(wikitext):
-            source = named.get(ref_name(match.group("attrs")))
+            name = ref_name(match.group("attrs"))
+            source = named.get(name)
             if source:
                 found.append(Citation(match.start(), source.url, source.indicator,
-                                      source.country, reused=True))
+                                      source.country, reused=True, name=name))
     return found
+
+
+#: Words in a series name too common to say what a sentence is about.
+VAGUE_SUBJECT = frozenset("total rate ratio number annual current constant people percent "
+                          "using ages level national international lines male female "
+                          "share value".split())
+
+
+def subject_words(series_name):
+    """What a series counts, as word stems: "Fertility rate, total (births per
+    woman)" is about fertility. Acronyms such as GDP count; filler does not."""
+    head = (series_name or "").split("(")[0]
+    words = re.findall(r"[A-Za-z]+", head)
+    return {w[:6].lower() for w in words
+            if (len(w) >= 4 or (len(w) >= 3 and w.isupper())) and w.lower() not in VAGUE_SUBJECT}
+
+
+def reuse_is_other(wikitext, citation, claim, lead, row, series):
+    """Why a reused ref cannot be this sentence's source, or "" if it can.
+
+    Measured 2026-10-24 on the 27 rows reuses added to the 2026-09-27 scan, 10
+    of them wrong. An editor reusing a ref by name cites it more freely than
+    one writing it out, so two things are asked of a reuse first:
+
+    - the sentence, unless it is a table or list row, names what the series
+      counts (a debt figure cited to a poverty series, Senegal; a migration
+      rate cited to a fertility series, Netherlands);
+    - in a table, it is the only use of that ref on its line: a row citing one
+      series in several cells (List of countries by literacy rate, a year, a
+      rate and a gender gap) cannot say which cell is the series. Not in
+      prose, where a whole paragraph is one line and citing a ref twice in it
+      is ordinary (Abortion in Uganda, right).
+    """
+    start = wikitext.rfind("\n", 0, citation.ref_start) + 1
+    end = wikitext.find("\n", citation.ref_start)
+    line = wikitext[start:end if end >= 0 else len(wikitext)]
+    uses = sum(1 for m in re.finditer(r"<ref\b([^>]*)>", line, re.I)
+               if ref_name(m.group(1)) == citation.name)
+    if uses > 1 and line.lstrip().startswith(("|", "!")):
+        return "the same ref is cited %d times on this line" % uses
+    if not row:
+        words = subject_words(series.name)
+        text = (lead + " " + claim).lower()
+        if words and not any(w in text for w in words):
+            return "the sentence does not name what %s counts" % series.name
+    return ""
 
 
 # --------------------------------------------------------------- the claim
@@ -500,6 +548,8 @@ NEWER, MISLABELED, DIFFERS = "newer", "mislabeled", "differs"
 CURRENT, HISTORICAL, UNMATCHED, NO_FIGURE, COMPUTED, NO_COUNTRY, NO_DATA = (
     "current", "historical", "unmatched", "no figure", "computed", "no country in link",
     "no data")
+#: Only with --reused: a reused ref that cannot be this sentence's source.
+REUSED_ELSEWHERE = "reuse not about this series"
 
 #: An exchange rate is cited to convert an amount at a date, so a newer rate
 #: never makes the sentence stale. Found in the first scan: film articles
@@ -822,6 +872,12 @@ def check_wikitext(title, wikitext, fetch, reused=False):
         if cache[pair] is None:
             findings.append(Finding(title, citation, NO_DATA, claim=claim, key=key))
             continue
+        other = citation.reused and reuse_is_other(wikitext, citation, claim, lead, row,
+                                                   cache[pair])
+        if other:
+            findings.append(Finding(title, citation, REUSED_ELSEWHERE, claim=claim, key=key,
+                                    note=other))
+            continue
         findings.append(judge(title, citation, key, claim, cache[pair], row, former, lead))
     return findings
 
@@ -907,7 +963,10 @@ def markdown(findings, checked, when, unread=()):
                         (NO_FIGURE, "No figure in the sentence"),
                         (COMPUTED, "The figure is computed by the page"),
                         (NO_COUNTRY, "The link names no single country"),
-                        (NO_DATA, "The World Bank has no data for the link's indicator and country")):
+                        (NO_DATA, "The World Bank has no data for the link's indicator and country"),
+                        (REUSED_ELSEWHERE, "A reused ref, but the sentence is about something else")):
+        if kind == REUSED_ELSEWHERE and not counts.get(kind):
+            continue
         out.append("| %s | %d |" % (label, counts.get(kind, 0)))
     out += ["", "A citation lands here when the tool cannot say something true about "
             "it. That is most of them, and it is the intended behaviour.", ""]
@@ -990,7 +1049,8 @@ def main(argv=None):
     for each in (one, many):
         each.add_argument("--reused", action="store_true",
                           help="also check each place a named World Bank ref is reused; "
-                               "17 of 27 such rows were right when measured, so it is off by default")
+                               "17 of 20 such rows were right, on the rows its rules were written "
+                               "from, so it is off by default")
     many.add_argument("--limit", type=int, default=None, help="stop after this many articles")
     many.add_argument("--title", action="append", default=[],
                       help="scan this article instead of every linking one (repeatable); "
