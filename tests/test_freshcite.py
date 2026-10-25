@@ -163,6 +163,28 @@ class Links(unittest.TestCase):
                 ' and again<ref name="a"/>.')
         self.assertEqual(len(freshcite.citations(text)), 1)
 
+    def test_reused_refs_are_read_only_when_asked_and_after_every_definition(self):
+        # Economy of Bermuda, 2026-09-27: one definition, then a list of
+        # year-by-year rows each citing it by name.
+        text = ('* -6.8% (2020)<ref name="WBGR">https://data.worldbank.org/indicator/'
+                'NY.GDP.MKTP.KD.ZG?locations=BM</ref>\n* 4.6% (2021)<ref name="WBGR"/>\n'
+                '* 2.0%<ref name=other>https://data.worldbank.org/indicator/X.Y?locations=BM</ref>\n'
+                "* 6.5% (2022)<ref name = 'WBGR' />\n* 1%<ref name=\"elsewhere\"/>")
+        plain = freshcite.citations(text)
+        both = freshcite.citations(text, reused=True)
+        self.assertEqual([c.ref_start for c in both[:2]], [c.ref_start for c in plain])
+        reuses = both[2:]
+        self.assertEqual([(c.indicator, c.country, c.reused) for c in reuses],
+                         [("NY.GDP.MKTP.KD.ZG", "BM", True)] * 2)
+        self.assertEqual([text[c.ref_start - 6:c.ref_start] for c in reuses], ["(2021)", "(2022)"])
+        self.assertFalse(any(c.reused for c in plain))
+
+    def test_a_reused_row_says_so(self):
+        citation = freshcite.Citation(0, "u", "X.Y", "BM", reused=True)
+        self.assertTrue(freshcite.Finding("A", citation, freshcite.NO_FIGURE).as_dict()["reused"])
+        citation.reused = False
+        self.assertNotIn("reused", freshcite.Finding("A", citation, freshcite.NO_FIGURE).as_dict())
+
 
 class Claims(unittest.TestCase):
 
@@ -836,6 +858,17 @@ class TheRescan(unittest.TestCase):
         new = [self.row(claim="first 1.5", figure="1.5"),
                self.row(kind="current", claim="second 3.5", figure="3.5")]
         self.assertEqual(self.outcomes(old, new), [self.rescan.UNCHANGED, self.rescan.RESOLVED])
+
+    def test_reused_rows_from_a_scan_with_reused_do_not_shift_the_pairing(self):
+        old = [self.row(claim="first 1.5", figure="1.5"), self.row(claim="second 2.5", figure="2.5")]
+        reuse = dict(self.row(kind="current", claim="third 3.5", figure="3.5"), reused=True)
+        new = [self.row(claim="first 1.5", figure="1.5"), self.row(claim="second 2.5", figure="2.5"),
+               reuse]
+        self.assertEqual(self.outcomes(old, [reuse] + new[:2]),
+                         [self.rescan.UNCHANGED, self.rescan.UNCHANGED])
+        # The second citation deleted: the reuse must not stand in for it.
+        self.assertEqual(self.outcomes(old, [new[0], reuse]),
+                         [self.rescan.UNCHANGED, self.rescan.REMOVED])
 
     def test_unlisted_rows_and_tool_errors_are_not_posted_rows(self):
         old = [self.row(kind="current"), self.row(article="Nepal", indicator="MS.MIL.XPND.GD.ZS"),

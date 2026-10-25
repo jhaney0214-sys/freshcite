@@ -127,11 +127,12 @@ REF_BLOCK = re.compile(r"<ref\b[^>/]*>(?P<body>.*?)</ref\s*>", re.I | re.S)
 class Citation(object):
     """One World Bank citation: where its ref starts, and what it names."""
 
-    def __init__(self, ref_start, url, indicator, country):
+    def __init__(self, ref_start, url, indicator, country, reused=False):
         self.ref_start = ref_start
         self.url = url
         self.indicator = indicator
         self.country = country
+        self.reused = reused
 
     def __repr__(self):
         return "Citation(%s, %s)" % (self.indicator, self.country)
@@ -154,15 +155,26 @@ def parse_url(url):
     return indicator, country
 
 
-def citations(wikitext):
+REF_NAME = re.compile(r"""\bname\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>/"']+))""", re.I)
+REF_REUSE = re.compile(r"<ref\b(?P<attrs>[^>]*?)/\s*>", re.I)
+
+
+def ref_name(attrs):
+    match = REF_NAME.search(attrs)
+    return next((g for g in match.groups() if g), "").strip() if match else ""
+
+
+def citations(wikitext, reused=False):
     """Every <ref> whose primary URL is a World Bank indicator page.
 
     A ref's `archive-url` usually repeats the same link through the Wayback
     Machine; only the first link that is not an archive copy counts, once per
-    ref. Named refs reused elsewhere (`<ref name="x"/>`) are checked only
-    where they are defined, since that is the only place the link appears.
+    ref. With `reused`, a named ref is also checked everywhere it is reused
+    (`<ref name="x"/>`): 651 places in the 2026-09-27 scan's 2,730 citations
+    that were otherwise never read. The reuses come after every definition, so
+    the citations a scan without them finds keep their order.
     """
-    found = []
+    found, named = [], {}
     for block in REF_BLOCK.finditer(wikitext):
         for match in CITATION_URL.finditer(block.group("body")):
             if match.group("prefix"):
@@ -170,7 +182,16 @@ def citations(wikitext):
             url = match.group(0)
             indicator, country = parse_url(url)
             found.append(Citation(block.start(), url, indicator, country))
+            name = ref_name(wikitext[block.start():block.start("body")])
+            if name:
+                named.setdefault(name, found[-1])
             break
+    if reused and named:
+        for match in REF_REUSE.finditer(wikitext):
+            source = named.get(ref_name(match.group("attrs")))
+            if source:
+                found.append(Citation(match.start(), source.url, source.indicator,
+                                      source.country, reused=True))
     return found
 
 
@@ -548,6 +569,8 @@ class Finding(object):
                "key": self.key, "citation": self.citation.url,
                "indicator": self.citation.indicator, "country": self.citation.country,
                "note": self.note}
+        if self.citation.reused:
+            out["reused"] = True
         if self.figure is not None:
             out["figure"] = self.figure.raw
         if self.year is not None:
@@ -780,11 +803,11 @@ def raw_url(title):
     return WIKI + "/w/index.php?" + urllib.parse.urlencode({"title": title, "action": "raw"})
 
 
-def check_wikitext(title, wikitext, fetch):
+def check_wikitext(title, wikitext, fetch, reused=False):
     """Every World Bank citation in one article, judged."""
     findings, cache = [], {}
     former = bool(ENDED_STATE.search(wikitext))
-    for citation in citations(wikitext):
+    for citation in citations(wikitext, reused):
         if not citation.country:
             findings.append(Finding(title, citation, NO_COUNTRY))
             continue
@@ -803,8 +826,8 @@ def check_wikitext(title, wikitext, fetch):
     return findings
 
 
-def check_article(title, fetch):
-    return check_wikitext(title, fetch(raw_url(title)), fetch)
+def check_article(title, fetch, reused=False):
+    return check_wikitext(title, fetch(raw_url(title)), fetch, reused)
 
 
 LINK_ROW = re.compile(
@@ -964,6 +987,10 @@ def main(argv=None):
     one = sub.add_parser("check", help="check one article")
     one.add_argument("title")
     many = sub.add_parser("scan", help="check the articles that cite the World Bank")
+    for each in (one, many):
+        each.add_argument("--reused", action="store_true",
+                          help="also check each place a named World Bank ref is reused; "
+                               "17 of 27 such rows were right when measured, so it is off by default")
     many.add_argument("--limit", type=int, default=None, help="stop after this many articles")
     many.add_argument("--title", action="append", default=[],
                       help="scan this article instead of every linking one (repeatable); "
@@ -987,7 +1014,7 @@ def main(argv=None):
 
     fetch = Fetcher(cache_dir=args.cache, log=lambda m: sys.stderr.write(m + "\n"))
     if args.command == "check":
-        findings = check_article(args.title, fetch)
+        findings = check_article(args.title, fetch, args.reused)
         print_findings(findings)
         return 0
 
@@ -995,7 +1022,7 @@ def main(argv=None):
     findings, unread = [], []
     for n, title in enumerate(titles, 1):
         try:
-            found = check_article(title, fetch)
+            found = check_article(title, fetch, args.reused)
         except (OSError, ValueError) as exc:
             # One unreadable page must never end a scan of a thousand.
             why = "HTTP %s" % exc.code if isinstance(exc, urllib.error.HTTPError) else type(exc).__name__

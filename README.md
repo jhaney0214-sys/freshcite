@@ -193,7 +193,14 @@ That keeps a poverty line of "$8.30 a day" from being read as a revision of a
   first scan, 984 link to no single country and 410 have no figure beside
   them. The report's last table counts each reason.
 - **A named reference reused elsewhere** (`<ref name="x"/>`) is checked only
-  where it is defined, since that is the only place the link appears.
+  where it is defined unless `--reused` is given. Measured 2026-10-24 on the
+  pages the 2026-09-27 scan read: the 2,730 citations are reused at 651 more
+  places, and reading them adds 27 rows, of which 17 were right by hand. Most
+  of the ten wrong ones are a reused ref placed after a sentence about another
+  statistic (debt on a poverty series, a migration rate on a fertility
+  series), which editors do more freely with a ref they did not write out.
+  At 63% against about 90%, it stays off by default, and
+  `tools/rescan.py` ignores any row it adds.
 - **A link without `locations=`** is skipped, even when the article's subject
   makes the country obvious. Guessing it would be right most of the time, and
   "most of the time" is the standard this tool exists to refuse.
@@ -212,7 +219,7 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests       # 107 tests
+python -m unittest discover -s tests       # 110 tests
 docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 

@@ -77,6 +77,9 @@ def outcome(old, new, article_read):
 
 def compare(baseline, fresh):
     """[(posted row, its row in the fresh scan or None, outcome)]."""
+    # The posted list never read reused refs; a scan run with --reused would
+    # otherwise add rows under the same article and URL and shift the pairing.
+    fresh = [r for r in fresh if not r.get("reused")]
     by_key = collections.defaultdict(list)
     for r in fresh:
         by_key[(r["article"], r["citation"])].append(r)
