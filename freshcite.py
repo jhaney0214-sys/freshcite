@@ -839,7 +839,13 @@ def judge(article, citation, key, claim, series, row=False, former=False, lead="
         stated = year_of(figure)
         if stated in series.values:
             source = series.values[stated]
-            if (source and 0.5 <= figure.value / source <= 2.0
+            # "29%" for 29.91 is the source's value cut off rather than
+            # rounded: the figure is right to the precision it was written to.
+            # Found in the 2026-10-30 re-scan (Demographics of Libya, "from 45%
+            # in 1985 to 29% in 2010", the source's 45.5 and 29.91).
+            truncated = (source * figure.value > 0
+                         and 0 <= abs(source) - abs(figure.value) < 2 * figure.tolerance)
+            if (source and not truncated and 0.5 <= figure.value / source <= 2.0
                     and relative(source, figure.value) >= DIFFERS_AT_LEAST):
                 return Finding(kind=DIFFERS, figure=figure, year=stated,
                                note="the text gives %s for %d; the source now gives %s" % (

@@ -205,7 +205,15 @@ That keeps a poverty line of "$8.30 a day" from being read as a revision of a
   kept, seven wrong ones gone. The three left are errors of the default
   rules, not of reuse. Those 85% are measured on the rows the rules were
   written from, so they are not yet a measurement; it stays off by default,
-  and `tools/rescan.py` ignores any row it adds.
+  and `tools/rescan.py` ignores any row it adds. The 2026-10-30 re-scan read
+  the same pages and listed the same 20, so it is still not one: a fair
+  measurement needs pages the rules were not written from.
+- **A figure cut off rather than rounded is right to its precision.** "29%"
+  for the source's 29.91 is not reported as differing (since 2026-10-30,
+  from Demographics of Libya's "from 45% in 1985 to 29% in 2010", against
+  45.50 and 29.91). On the 2026-10-30 re-scan this takes three rows out of
+  the report: that one, Economy of India's 31% (31.90) and Colombia's 0.9%
+  (0.99).
 - **A link without `locations=`** is skipped, even when the article's subject
   makes the country obvious. Guessing it would be right most of the time, and
   "most of the time" is the standard this tool exists to refuse.
@@ -224,7 +232,7 @@ when `api.php` did not.
 ## Development
 
 ```bash
-python -m unittest discover -s tests       # 116 tests
+python -m unittest discover -s tests       # 117 tests
 docclaims verify . --scan "*.md" "reports/*.wiki"  # every number in this README
 ```
 

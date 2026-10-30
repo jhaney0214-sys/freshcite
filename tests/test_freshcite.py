@@ -101,6 +101,18 @@ class TheRealArticles(unittest.TestCase):
                             series({2015: 11.99, 2018: 10.86}, "SP.DYN.CBRT.IN", "CN"), lead=lead)
         self.assertNotIn(f.kind, freshcite.REPORTED)
 
+    def test_a_figure_cut_off_rather_than_rounded_does_not_differ(self):
+        """Demographics of Libya: "from 45% in 1985 to 29% in 2010" against
+        45.52 and 29.91. Found 2026-10-30. A real revision still differs."""
+        s = series({1985: 45.52, 2010: 29.91, 2025: 26.8}, "SP.POP.0014.TO.ZS", "LY")
+        claim = ("the proportion of Libyans under the age of 15 also decreased "
+                 "from 45% in 1985 to 29% in 2010")
+        f = freshcite.judge("Demographics of Libya", cite("SP.POP.0014.TO.ZS", "LY"), None, claim, s)
+        self.assertNotIn(f.kind, freshcite.REPORTED)
+        revised = freshcite.judge("Demographics of Libya", cite("SP.POP.0014.TO.ZS", "LY"), None,
+                                  claim.replace("29%", "28%"), s)
+        self.assertEqual((revised.kind, revised.year), (freshcite.DIFFERS, 2010))
+
     def test_the_congo_gini_is_from_2012(self):
         f = self.one("Economy of the Democratic Republic of the Congo")
         self.assertEqual((f.kind, f.figure.raw, f.matched_year), (freshcite.NEWER, "42.1", 2012))
